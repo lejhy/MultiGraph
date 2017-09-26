@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:UMLLabProfile="http:///schemas/UMLLabProfile/NS/0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/UMLLabProfile/NS/0 pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile-Annotation_2-UMLLabProfile">
+  <uml:Model xmi:id="_-l2y0J4BEeeUS6kuDHErWg" name="Metro">
+    <eAnnotations xmi:id="__TYnMJ4BEeeUS6kuDHErWg" source="http://ns.yatta.de/umllab">
+      <contents xmi:type="ecore:EAnnotation" xmi:id="__TbqgJ4BEeeUS6kuDHErWg" source="codegen">
+        <details xmi:id="__TbqgZ4BEeeUS6kuDHErWg" key="codegenDirectory" value="/Metro/src"/>
+      </contents>
+    </eAnnotations>
+    <packagedElement xmi:type="uml:Class" xmi:id="_CkB4kJ4CEeeUS6kuDHErWg" name="Metro" isAbstract="true">
+      <ownedAttribute xmi:id="_PCxbwZ4DEeeUS6kuDHErWg" name="station" type="_MtxTQJ4DEeeUS6kuDHErWg" association="_PCxbwJ4DEeeUS6kuDHErWg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PCxbwp4DEeeUS6kuDHErWg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PCxbw54DEeeUS6kuDHErWg" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_2FJZNJ4FEeeUS6kuDHErWg" name="route" type="_zYK1kJ4FEeeUS6kuDHErWg" association="_2FJZMJ4FEeeUS6kuDHErWg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_2FJZNZ4FEeeUS6kuDHErWg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2FJZNp4FEeeUS6kuDHErWg" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_2RrSwKK6EeeoVIlIaBWWHw" name="multiGraph" type="_ZCgJYJ4FEeeUS6kuDHErWg" association="_2RpdkKK6EeeoVIlIaBWWHw">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_2RvkMKK6EeeoVIlIaBWWHw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2RwLQKK6EeeoVIlIaBWWHw" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_gGkJYJ4CEeeUS6kuDHErWg" name="AdjacencyListMultiGraph">
+      <ownedTemplateSignature xmi:type="uml:RedefinableTemplateSignature" xmi:id="_yNRzwKK7EeeoVIlIaBWWHw" parameter="_yNRzwaK7EeeoVIlIaBWWHw _zUc3MKK7EeeoVIlIaBWWHw">
+        <ownedParameter xmi:type="uml:ClassifierTemplateParameter" xmi:id="_yNRzwaK7EeeoVIlIaBWWHw" parameteredElement="_yNRzwqK7EeeoVIlIaBWWHw">
+          <ownedParameteredElement xmi:type="uml:Class" xmi:id="_yNRzwqK7EeeoVIlIaBWWHw" name="E" templateParameter="_yNRzwaK7EeeoVIlIaBWWHw"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:ClassifierTemplateParameter" xmi:id="_zUc3MKK7EeeoVIlIaBWWHw" parameteredElement="_zUc3MaK7EeeoVIlIaBWWHw">
+          <ownedParameteredElement xmi:type="uml:Class" xmi:id="_zUc3MaK7EeeoVIlIaBWWHw" name="T" templateParameter="_zUc3MKK7EeeoVIlIaBWWHw"/>
+        </ownedParameter>
+      </ownedTemplateSignature>
+      <ownedAttribute xmi:id="_A79OsqK8EeeoVIlIaBWWHw" name="list" type="_-ac7QKK7EeeoVIlIaBWWHw" association="_A78noKK8EeeoVIlIaBWWHw">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_A79Os6K8EeeoVIlIaBWWHw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_A791wKK8EeeoVIlIaBWWHw" value="*"/>
+      </ownedAttribute>
+      <interfaceRealization xmi:id="_2tnucJ4FEeeUS6kuDHErWg" client="_gGkJYJ4CEeeUS6kuDHErWg" supplier="_ZCgJYJ4FEeeUS6kuDHErWg" contract="_ZCgJYJ4FEeeUS6kuDHErWg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_MtxTQJ4DEeeUS6kuDHErWg" name="Station">
+      <ownedAttribute xmi:id="_PCxbxJ4DEeeUS6kuDHErWg" name="metro" type="_CkB4kJ4CEeeUS6kuDHErWg" association="_PCxbwJ4DEeeUS6kuDHErWg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PCxbxZ4DEeeUS6kuDHErWg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PCyC0J4DEeeUS6kuDHErWg" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_PCxbwJ4DEeeUS6kuDHErWg" name="" memberEnd="_PCxbwZ4DEeeUS6kuDHErWg _PCxbxJ4DEeeUS6kuDHErWg"/>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_ZCgJYJ4FEeeUS6kuDHErWg" name="MultiGraph">
+      <ownedTemplateSignature xmi:type="uml:RedefinableTemplateSignature" xmi:id="_Qy_1UKK7EeeoVIlIaBWWHw" parameter="_QzAcYKK7EeeoVIlIaBWWHw _b5mWUKK7EeeoVIlIaBWWHw">
+        <ownedParameter xmi:type="uml:ClassifierTemplateParameter" xmi:id="_QzAcYKK7EeeoVIlIaBWWHw" parameteredElement="_QzAcYaK7EeeoVIlIaBWWHw">
+          <ownedParameteredElement xmi:type="uml:Class" xmi:id="_QzAcYaK7EeeoVIlIaBWWHw" name="E" templateParameter="_QzAcYKK7EeeoVIlIaBWWHw"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:ClassifierTemplateParameter" xmi:id="_b5mWUKK7EeeoVIlIaBWWHw" parameteredElement="_b5mWUaK7EeeoVIlIaBWWHw">
+          <ownedParameteredElement xmi:type="uml:Class" xmi:id="_b5mWUaK7EeeoVIlIaBWWHw" name="T" templateParameter="_b5mWUKK7EeeoVIlIaBWWHw"/>
+        </ownedParameter>
+      </ownedTemplateSignature>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_zYK1kJ4FEeeUS6kuDHErWg" name="Route">
+      <ownedAttribute xmi:id="_2FJZMZ4FEeeUS6kuDHErWg" name="metro" type="_CkB4kJ4CEeeUS6kuDHErWg" association="_2FJZMJ4FEeeUS6kuDHErWg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_2FJZMp4FEeeUS6kuDHErWg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2FJZM54FEeeUS6kuDHErWg" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_2FJZMJ4FEeeUS6kuDHErWg" name="" memberEnd="_2FJZMZ4FEeeUS6kuDHErWg _2FJZNJ4FEeeUS6kuDHErWg"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_2RpdkKK6EeeoVIlIaBWWHw" name="" memberEnd="_2RqEoKK6EeeoVIlIaBWWHw _2RrSwKK6EeeoVIlIaBWWHw">
+      <ownedEnd xmi:id="_2RqEoKK6EeeoVIlIaBWWHw" name="metro" type="_CkB4kJ4CEeeUS6kuDHErWg" association="_2RpdkKK6EeeoVIlIaBWWHw">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_2RqrsKK6EeeoVIlIaBWWHw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2RqrsaK6EeeoVIlIaBWWHw" value="*"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_-ac7QKK7EeeoVIlIaBWWHw" name="List"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_A78noKK8EeeoVIlIaBWWHw" name="" memberEnd="_A78noaK8EeeoVIlIaBWWHw _A79OsqK8EeeoVIlIaBWWHw">
+      <ownedEnd xmi:id="_A78noaK8EeeoVIlIaBWWHw" name="adjacencyListMultiGraph" type="_gGkJYJ4CEeeUS6kuDHErWg" association="_A78noKK8EeeoVIlIaBWWHw">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_A79OsKK8EeeoVIlIaBWWHw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_A79OsaK8EeeoVIlIaBWWHw" value="*"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_THJz0KK8EeeoVIlIaBWWHw" name="Display">
+      <ownedAttribute xmi:id="_iKpoMqK8EeeoVIlIaBWWHw" name="metro" type="_CkB4kJ4CEeeUS6kuDHErWg" association="_iKpBIKK8EeeoVIlIaBWWHw">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_iKqPQKK8EeeoVIlIaBWWHw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_iKqPQaK8EeeoVIlIaBWWHw" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_lZrTgaK9EeeoVIlIaBWWHw" name="controller" type="_ZXi-YKK9EeeoVIlIaBWWHw" association="_lZqscKK9EeeoVIlIaBWWHw">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lZrTgqK9EeeoVIlIaBWWHw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lZrTg6K9EeeoVIlIaBWWHw" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_iKpBIKK8EeeoVIlIaBWWHw" name="" memberEnd="_iKpBIaK8EeeoVIlIaBWWHw _iKpoMqK8EeeoVIlIaBWWHw">
+      <ownedEnd xmi:id="_iKpBIaK8EeeoVIlIaBWWHw" name="display" type="_THJz0KK8EeeoVIlIaBWWHw" association="_iKpBIKK8EeeoVIlIaBWWHw">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_iKpoMKK8EeeoVIlIaBWWHw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_iKpoMaK8EeeoVIlIaBWWHw" value="*"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ZXi-YKK9EeeoVIlIaBWWHw" name="Controller">
+      <ownedAttribute xmi:id="_l5kUgKK9EeeoVIlIaBWWHw" name="display" type="_THJz0KK8EeeoVIlIaBWWHw" association="_l5jGYKK9EeeoVIlIaBWWHw">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_l5kUgaK9EeeoVIlIaBWWHw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_l5kUgqK9EeeoVIlIaBWWHw" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_omXR8KK9EeeoVIlIaBWWHw" name="metro" type="_CkB4kJ4CEeeUS6kuDHErWg" association="_omWD0KK9EeeoVIlIaBWWHw">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_omXR8aK9EeeoVIlIaBWWHw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_omXR8qK9EeeoVIlIaBWWHw" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_lZqscKK9EeeoVIlIaBWWHw" name="" memberEnd="_lZqscaK9EeeoVIlIaBWWHw _lZrTgaK9EeeoVIlIaBWWHw">
+      <ownedEnd xmi:id="_lZqscaK9EeeoVIlIaBWWHw" name="display" type="_THJz0KK8EeeoVIlIaBWWHw" association="_lZqscKK9EeeoVIlIaBWWHw">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lZqscqK9EeeoVIlIaBWWHw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lZrTgKK9EeeoVIlIaBWWHw" value="*"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_l5jGYKK9EeeoVIlIaBWWHw" name="" memberEnd="_l5jtcKK9EeeoVIlIaBWWHw _l5kUgKK9EeeoVIlIaBWWHw">
+      <ownedEnd xmi:id="_l5jtcKK9EeeoVIlIaBWWHw" name="controller" type="_ZXi-YKK9EeeoVIlIaBWWHw" association="_l5jGYKK9EeeoVIlIaBWWHw">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_l5jtcaK9EeeoVIlIaBWWHw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_l5jtcqK9EeeoVIlIaBWWHw" value="*"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_omWD0KK9EeeoVIlIaBWWHw" name="" memberEnd="_omWq4KK9EeeoVIlIaBWWHw _omXR8KK9EeeoVIlIaBWWHw">
+      <ownedEnd xmi:id="_omWq4KK9EeeoVIlIaBWWHw" name="controller" type="_ZXi-YKK9EeeoVIlIaBWWHw" association="_omWD0KK9EeeoVIlIaBWWHw">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_omWq4aK9EeeoVIlIaBWWHw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_omWq4qK9EeeoVIlIaBWWHw" value="*"/>
+      </ownedEnd>
+    </packagedElement>
+    <profileApplication xmi:id="__TdfsJ4BEeeUS6kuDHErWg">
+      <eAnnotations xmi:id="__TfU4J4BEeeUS6kuDHErWg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile-Annotation_2-UMLLabProfile"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLLabProfile:TargetLanguage xmi:id="__TsJMJ4BEeeUS6kuDHErWg" base_Package="_-l2y0J4BEeeUS6kuDHErWg">
+    <languageName>java</languageName>
+  </UMLLabProfile:TargetLanguage>
+</xmi:XMI>
