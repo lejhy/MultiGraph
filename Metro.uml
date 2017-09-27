@@ -4,7 +4,14 @@
     <eAnnotations xmi:id="__TYnMJ4BEeeUS6kuDHErWg" source="http://ns.yatta.de/umllab">
       <contents xmi:type="ecore:EAnnotation" xmi:id="__TbqgJ4BEeeUS6kuDHErWg" source="codegen">
         <details xmi:id="__TbqgZ4BEeeUS6kuDHErWg" key="codegenDirectory" value="/Metro/src"/>
-        <details xmi:id="_S5OrUKNmEeecmZxP9sTelA" key="AssociatedSourceCode" value="/Metro/src/Metro.java;1853226784/1;/Metro/src/AdjacencyListMultiGraph.java;1899366793/1;/Metro/src/Station.java;3221938026/1;/Metro/src/MultiGraph.java;684446754/1;/Metro/src/Route.java;1954387127/1;/Metro/src/Display.java;2529198936/1;/Metro/src/Controller.java;3773457071/1;"/>
+        <details xmi:id="_S5OrUKNmEeecmZxP9sTelA" key="AssociatedSourceCode" value="/Metro/src/Metro.java;1853226784/1;/Metro/src/AdjacencyListMultiGraph.java;1899366793/1;/Metro/src/Station.java;3221938026/1;/Metro/src/MultiGraph.java;230851103/1;/Metro/src/Route.java;1954387127/1;/Metro/src/Display.java;2529198936/1;/Metro/src/Controller.java;3773457071/1;"/>
+      </contents>
+      <contents xmi:type="ecore:EAnnotation" xmi:id="_sODnwKN1EeemAoC734YJkw" source="preferences">
+        <contents xmi:type="ecore:EAnnotation" xmi:id="_sOEO0KN1EeemAoC734YJkw" source="com.yattasolutions.codegen.reverse">
+          <details xmi:id="_sOEO0aN1EeemAoC734YJkw" key="com.yattasolutions.codegen.reverse.roundtrip.ReverseEngineerNewFiles" value="true"/>
+          <details xmi:id="_sOEO0qN1EeemAoC734YJkw" key="com.yattasolutions.codegen.reverse.roundtrip.ReverseEngineerChangedFiles" value="true"/>
+          <details xmi:id="_sOEO06N1EeemAoC734YJkw" key="com.yattasolutions.codegen.reverse.roundtrip.RemoveDeletedFiles" value="true"/>
+        </contents>
       </contents>
     </eAnnotations>
     <elementImport xmi:id="_rBEcwKNgEeecmZxP9sTelA">
@@ -189,6 +196,12 @@
           <ownedParameteredElement xmi:type="uml:Class" xmi:id="_b5mWUaK7EeeoVIlIaBWWHw" name="E" templateParameter="_b5mWUKK7EeeoVIlIaBWWHw"/>
         </ownedParameter>
       </ownedTemplateSignature>
+      <ownedAttribute xmi:id="_se6uQKN1EeemAoC734YJkw" name="nodes" type="_vqsTQKNgEeecmZxP9sTelA" isOrdered="true" association="_se-_sKN1EeemAoC734YJkw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_se7VUKN1EeemAoC734YJkw" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_se78YKN1EeemAoC734YJkw" name="edges" type="_MIoTgKNhEeecmZxP9sTelA" isOrdered="true" association="_se_mwKN1EeemAoC734YJkw">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_se8jcKN1EeemAoC734YJkw" value="*"/>
+      </ownedAttribute>
       <ownedOperation xmi:id="_gssC4KNgEeecmZxP9sTelA" name="addNode" visibility="public">
         <ownedParameter xmi:id="_gssC4aNgEeecmZxP9sTelA" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
@@ -214,12 +227,6 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
         </ownedParameter>
         <ownedParameter xmi:id="_d9hRcKNhEeecmZxP9sTelA" name="edge" type="_MIoTgKNhEeecmZxP9sTelA"/>
-      </ownedOperation>
-      <ownedOperation xmi:id="_RnXiMKNjEeecmZxP9sTelA" name="getNodes" visibility="public">
-        <ownedParameter xmi:id="_RnXiMaNjEeecmZxP9sTelA" direction="return"/>
-      </ownedOperation>
-      <ownedOperation xmi:id="_XgTEcKNjEeecmZxP9sTelA" name="getEdges" visibility="public">
-        <ownedParameter xmi:id="_XgTEcaNjEeecmZxP9sTelA" direction="return"/>
       </ownedOperation>
       <ownedOperation xmi:id="_bG5XsKNjEeecmZxP9sTelA" name="containsNode" visibility="public">
         <ownedParameter xmi:id="_bG5XsaNjEeecmZxP9sTelA" direction="return">
@@ -300,6 +307,12 @@
     <packagedElement xmi:type="uml:DataType" xmi:id="_VrMSEKNlEeecmZxP9sTelA" name="Metro::List&lt;List&lt;E>>"/>
     <packagedElement xmi:type="uml:DataType" xmi:id="_Xg52gKNlEeecmZxP9sTelA" name="List&lt;List&lt;E>>"/>
     <packagedElement xmi:type="uml:DataType" xmi:id="_geZ9AKNlEeecmZxP9sTelA" name="List&lt;N>"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_se-_sKN1EeemAoC734YJkw" name="" memberEnd="_se6uQKN1EeemAoC734YJkw _se-_saN1EeemAoC734YJkw">
+      <ownedEnd xmi:id="_se-_saN1EeemAoC734YJkw" name="" type="_ZCgJYJ4FEeeUS6kuDHErWg" association="_se-_sKN1EeemAoC734YJkw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_se_mwKN1EeemAoC734YJkw" name="" memberEnd="_se78YKN1EeemAoC734YJkw _sfAN0KN1EeemAoC734YJkw">
+      <ownedEnd xmi:id="_sfAN0KN1EeemAoC734YJkw" name="" type="_ZCgJYJ4FEeeUS6kuDHErWg" association="_se_mwKN1EeemAoC734YJkw"/>
+    </packagedElement>
     <profileApplication xmi:id="__TdfsJ4BEeeUS6kuDHErWg">
       <eAnnotations xmi:id="__TfU4J4BEeeUS6kuDHErWg" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile-Annotation_2-UMLLabProfile"/>
@@ -372,4 +385,5 @@
     <body>return null;&#xD;
 	</body>
   </uml:OpaqueBehavior>
+  <UMLLabProfile:Generics xmi:id="_se11wKN1EeemAoC734YJkw" genericsValue="N, E" base_Element="_ZCgJYJ4FEeeUS6kuDHErWg"/>
 </xmi:XMI>
