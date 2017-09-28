@@ -1,6 +1,6 @@
 import java.util.List;
 
-public interface MultiGraph <N, E> {
+public interface MultiGraph <N, E extends LabeledEdge> {
    public boolean addNode(N node);
    
    public boolean addEdge(N node1, N node2, E edge);
@@ -13,8 +13,6 @@ public interface MultiGraph <N, E> {
    
    public List<E> getEdges();
    
-   public boolean containsNode(N node);
-   
-   public boolean containsEdge(E edge);
+   public List<E> getPath(N node1, N node2);
    
    }
