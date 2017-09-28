@@ -1,10 +1,17 @@
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Queue;
 
 public class AdjacencyMapMultiGraph<N, E extends LabeledEdge<N>> implements MultiGraph<N, E> {
-   private Map<N, List<E>> adjacencyMap;
+	private Map<N, List<E>> adjacencyMap;
 
+	public AdjacencyMapMultiGraph() {
+	   adjacencyMap = new HashMap<N, List<E>>();
+   	}
+   
 	@Override
 	public boolean addNode(N node) {
 		if (adjacencyMap.containsKey(node) == false) {
@@ -80,9 +87,32 @@ public class AdjacencyMapMultiGraph<N, E extends LabeledEdge<N>> implements Mult
 	}
 
 	@Override
-	public List<E> getPath(N node1, N node2) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<E> getPath(N source, N destination) {
+		Map<N, E> pathSource = new HashMap<N, E>();
+		List<N> visited = new ArrayList<N>();
+		Queue<N> queue = new ArrayDeque<N>();
+		visited.add(source);
+		queue.add(source);
+		N node;
+		while (queue.isEmpty() == false) {
+			node = queue.poll();
+			for(E edge: adjacencyMap.get(node)) {
+				node = getNode(edge, node);
+				if (visited.contains(node) == false) {
+					visited.add(node);
+					pathSource.put(node, edge);
+					queue.add(node);
+				}
+			}
+		}
+		List<E> edgeList= new ArrayList<E>();
+		node = destination;
+		while (node != source) {
+			E edge = pathSource.get(node);
+			edgeList.add(edge);
+			node = getNode(edge, node);
+		}
+		return edgeList;
 	}
 	
 	private boolean containsEdge(E edge) {
