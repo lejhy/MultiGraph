@@ -1,31 +1,40 @@
-import java.util.Set;
-import java.util.HashSet;
+public class Route<N> implements LabeledEdge<N>{
+	
+	private String label;
+	private N nodeIn;
+	private N nodeOut;
+	
+	public Route(String label) {
+		this.label = label;
+	}
 
-public class Route {
-   /**
-    * <pre>
-    *           0..*     0..*
-    * Route ------------------------- Metro
-    *           route        &lt;       metro
-    * </pre>
-    */
-   private Set<Metro> metro;
-   
-   public Set<Metro> getMetro() {
-      if (this.metro == null) {
-         this.metro = new HashSet<Metro>();
-      }
-      return this.metro;
-   }
-   
-   private int color;
-   
-   public void setColor(int value) {
-      this.color = value;
-   }
-   
-   public int getColor() {
-      return this.color;
-   }
+	@Override
+	public String getLabel() {
+		return label;
+	}
+	
+	public void setLabel(String string) {
+		label = string;
+	}
+
+	@Override
+	public N getNodeIn() {
+		return nodeIn;
+	}
+
+	@Override
+	public void setNodeIn(N node) {
+		nodeIn = node;		
+	}
+
+	@Override
+	public N getNodeOut() {
+		return nodeOut;
+	}
+
+	@Override
+	public void setNodeOut(N node) {
+		nodeOut = node;		
+	}
    
    }

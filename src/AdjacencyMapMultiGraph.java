@@ -6,6 +6,20 @@ import java.util.Map;
 import java.util.Queue;
 
 public class AdjacencyMapMultiGraph<N, E extends LabeledEdge<N>> implements MultiGraph<N, E> {
+	
+	public static void main(String args[]) {
+		// just a main method for temporary testing until the rest of the system has been finished
+		MultiGraph <Station, Route<Station>> graph = new AdjacencyMapMultiGraph<Station, Route<Station>>();
+		System.out.println(graph.addEdge(new Station("First"), new Station("Second"), new Route<Station> ("green")));
+		System.out.println(graph.addNode(new Station("First")));
+		System.out.println(graph.addNode(new Station("Second")));
+		System.out.println(graph.addEdge(graph.getNodes().get(0), graph.getNodes().get(1), new Route<Station> ("green")));
+		System.out.println(graph.addEdge(graph.getNodes().get(0), graph.getNodes().get(1), graph.getEdges().get(0)));
+		System.out.println(graph.addNode(graph.getNodes().get(0)));
+		System.out.println(graph.getPath(graph.getNodes().get(0), graph.getNodes().get(1)));
+	}
+	
+	
 	private Map<N, List<E>> adjacencyMap;
 
 	public AdjacencyMapMultiGraph() {
@@ -71,14 +85,14 @@ public class AdjacencyMapMultiGraph<N, E extends LabeledEdge<N>> implements Mult
 	}
 	
 	@Override
-	public List getNodes() {
+	public List<N> getNodes() {
 		List<N> nodeList = new ArrayList<N>();
 		nodeList.addAll(adjacencyMap.keySet());
 		return nodeList;
 	}
 	
 	@Override
-	public List getEdges() {
+	public List<E> getEdges() {
 		List<E> edgeList = new ArrayList<E>();
 		for (List<E> list : adjacencyMap.values()) {
 			edgeList.addAll(list);
