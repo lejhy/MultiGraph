@@ -33,5 +33,64 @@ public class Controller {
       }
       return this.metro;
    }
-   
+
+
+
+
+
+   /* Initialise the Metro model and display
+      Tell model to initialise all data necessary
+      and send to menu to begin core loop
+    */
+   private void initialise() {
+      /////
+      /////
+      menu();
    }
+
+   /* Core loop which will continue until
+      user has specified to exit
+    */
+   private void menu() {
+   }
+
+   /* Prompt display to give the starting point
+      and destination
+    */
+   private String[] retrieveStartAndEnd() {
+      return null;
+   }
+
+   /* Take a list of options and
+      make display print them out
+    */
+   private void printOptions() {
+   }
+
+   /* Send a request to find the
+      best path between 2 stations
+      and send the route to the
+      display to be printed
+    */
+   private void findPath() {
+   }
+
+
+   private boolean isStation(String station) {
+      return false;
+   }
+
+   private boolean isValidMenuChoice(int choice) {
+      return false;
+   }
+
+
+
+
+
+
+
+
+
+
+}

@@ -1,7 +1,10 @@
+import java.util.Scanner;
 import java.util.Set;
 import java.util.HashSet;
 
 public class Display {
+
+   private static Scanner reader;
    /**
     * <pre>
     *           0..*     0..*
@@ -33,5 +36,30 @@ public class Display {
       }
       return this.controller;
    }
-   
+
+
+   public Display() {
+      reader = new Scanner(System.in);
    }
+
+   public String readLine() {
+      return reader.nextLine();
+   }
+
+   public int readInt() {
+      return reader.nextInt();
+   }
+
+
+   public void printMenu() {
+      output("Would you like to 1.Plan your route or 2.exit");
+      output("Please enter the number of the option you require");
+      printPrompt();
+   }
+
+
+
+   private void output(String s) { System.out.println(s); }
+
+   private void printPrompt() {System.out.print(">");}
+}
