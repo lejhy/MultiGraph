@@ -2,6 +2,9 @@ import java.util.Set;
 import java.util.HashSet;
 
 public class Controller {
+	private Metro model;
+	private Display view;
+	
    /**
     * <pre>
     *           0..*     0..*
@@ -9,14 +12,15 @@ public class Controller {
     *           controller        &gt;       display
     * </pre>
     */
-   private Set<Display> display;
-   
-   public Set<Display> getDisplay() {
-      if (this.display == null) {
-         this.display = new HashSet<Display>();
-      }
-      return this.display;
-   }
+	//Commenting these out for now probably don't need them
+//   private Set<Display> display;
+//   
+//   public Set<Display> getDisplay() {
+//      if (this.display == null) {
+//         this.display = new HashSet<Display>();
+//      }
+//      return this.display;
+//   }
    
    /**
     * <pre>
@@ -25,14 +29,15 @@ public class Controller {
     *           controller        &gt;       metro
     * </pre>
     */
-   private Set<Metro> metro;
-   
-   public Set<Metro> getMetro() {
-      if (this.metro == null) {
-         this.metro = new HashSet<Metro>();
-      }
-      return this.metro;
-   }
+	//Same as above
+//   private Set<Metro> metro;
+//   
+//   public Set<Metro> getMetro() {
+//      if (this.metro == null) {
+//         this.metro = new HashSet<Metro>();
+//      }
+//      return this.metro;
+//   }
 
 
 
@@ -43,8 +48,9 @@ public class Controller {
       and send to menu to begin core loop
     */
    private void initialise() {
-      /////
-      /////
+      view = new Display();
+      model = new Metro();model
+      model.initialise();
       menu();
    }
 
@@ -52,6 +58,12 @@ public class Controller {
       user has specified to exit
     */
    private void menu() {
+	   boolean isRunning= true;
+	   while()
+	   view.printMenu();
+	   int result = view.readInt();
+	   boolean checkMenu = isValidMenuChoice(result);
+	   
    }
 
    /* Prompt display to give the starting point
@@ -83,6 +95,8 @@ public class Controller {
    private boolean isValidMenuChoice(int choice) {
       return false;
    }
+ 
+   
 
 
 

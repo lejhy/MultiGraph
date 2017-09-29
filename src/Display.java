@@ -12,14 +12,15 @@ public class Display {
     *           display        &gt;       metro
     * </pre>
     */
-   private Set<Metro> metro;
-   
-   public Set<Metro> getMetro() {
-      if (this.metro == null) {
-         this.metro = new HashSet<Metro>();
-      }
-      return this.metro;
-   }
+	//Commenting these out for now probably don't need them
+//   private Set<Metro> metro;
+//   
+//   public Set<Metro> getMetro() {
+//      if (this.metro == null) {
+//         this.metro = new HashSet<Metro>();
+//      }
+//      return this.metro;
+//   }
    
    /**
     * <pre>
@@ -28,14 +29,15 @@ public class Display {
     *           display        &gt;       controller
     * </pre>
     */
-   private Set<Controller> controller;
-   
-   public Set<Controller> getController() {
-      if (this.controller == null) {
-         this.controller = new HashSet<Controller>();
-      }
-      return this.controller;
-   }
+   // Same as above
+//   private Set<Controller> controller;
+//   
+//   public Set<Controller> getController() {
+//      if (this.controller == null) {
+//         this.controller = new HashSet<Controller>();
+//      }
+//      return this.controller;
+//   }
 
 
    public Display() {
@@ -56,10 +58,16 @@ public class Display {
       output("Please enter the number of the option you require");
       printPrompt();
    }
+   
+   public String getStation(String s) {
+	   output(s);
+	   printPrompt();
+	   return readLine();
+   }
 
 
 
-   private void output(String s) { System.out.println(s); }
+   public void output(String s) { System.out.println(s); }
 
    private void printPrompt() {System.out.print(">");}
 }

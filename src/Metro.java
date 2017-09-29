@@ -1,5 +1,2 @@
 public abstract class Metro {
-
-
-   
-   }
+}
