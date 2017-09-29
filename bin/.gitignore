@@ -1,2 +1,8 @@
-/LabeledEdge.class
 /AdjacencyMapMultiGraph.class
+/Controller.class
+/Display.class
+/LabeledEdge.class
+/Metro.class
+/MultiGraph.class
+/Route.class
+/Station.class
