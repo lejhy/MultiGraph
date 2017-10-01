@@ -59,8 +59,8 @@ public class Display {
       printPrompt();
    }
    
-   public String getStation(String s) {
-	   output(s);
+   public String getStation(String line) {
+      output(line);
 	   printPrompt();
 	   return readLine();
    }

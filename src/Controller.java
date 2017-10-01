@@ -4,8 +4,10 @@ import java.util.HashSet;
 public class Controller {
 	private Metro model;
 	private Display view;
-	
-   /**
+	private boolean keepGoing;
+
+
+    /**
     * <pre>
     *           0..*     0..*
     * Controller ------------------------> Display
@@ -21,7 +23,7 @@ public class Controller {
 //      }
 //      return this.display;
 //   }
-   
+
    /**
     * <pre>
     *           0..*     0..*
@@ -49,8 +51,9 @@ public class Controller {
     */
    private void initialise() {
       view = new Display();
-      model = new Metro();model
+      model = new Metro();
       model.initialise();
+      keepGoing=true;
       menu();
    }
 
@@ -59,44 +62,92 @@ public class Controller {
     */
    private void menu() {
 	   boolean isRunning= true;
-	   while()
-	   view.printMenu();
-	   int result = view.readInt();
-	   boolean checkMenu = isValidMenuChoice(result);
-	   
+	   while(isRunning) {
+           view.printMenu();
+           int result = view.readInt();
+           boolean checkMenu = isValidMenuChoice(result);
+           if(checkMenu) {
+               if(result==2)
+                   isRunning=false;
+               else if(result==1) {
+                   String[] startAndEnd = retrieveStartAndEnd();
+                   if(!keepGoing) {
+                       keepGoing=true;
+                       continue;
+                   }
+                   findPath(startAndEnd);
+               }
+           }
+       }
+
    }
 
    /* Prompt display to give the starting point
       and destination
+      TODO: probably don't have to loop twice
     */
    private String[] retrieveStartAndEnd() {
-      return null;
+       boolean checkStation = false;
+       String start = "";
+       String end = "";
+       while(!checkStation && keepGoing) {
+           start = view.getStation("Please enter your starting station");
+           if(!keepGoing)
+               break;
+           checkStation = isStation(start);
+           if(!checkStation)
+               view.output("Sorry, that is not a valid station");
+       }
+
+       checkStation=false;
+       while(!checkStation && keepGoing) {
+           end = view.getStation("Please enter your destination station");
+           if(!keepGoing)
+               break;
+           checkStation = isStation(end);
+           if(!checkStation)
+               view.output("Sorry, that is not a valid station");
+       }
+
+       String[] stations = new String[2];
+       stations[0] = start;
+       stations[1] = end;
+       return stations;
+
+
    }
 
-   /* Take a list of options and
-      make display print them out
-    */
-   private void printOptions() {
-   }
 
    /* Send a request to find the
       best path between 2 stations
       and send the route to the
       display to be printed
     */
-   private void findPath() {
+   private void findPath(String[] stations) {
+       model.findPath(stations[0], stations[1], model);
+
    }
 
 
    private boolean isStation(String station) {
-      return false;
+       if(station==null) {
+           return false;
+           keepGoing=false;
+       }
+      if(model.isStation(station))
+          return true;
+      else
+          return false;
    }
 
    private boolean isValidMenuChoice(int choice) {
-      return false;
+      if(choice>0 && choice< 3)
+          return true;
+      else
+          return false;
    }
- 
-   
+
+
 
 
 
