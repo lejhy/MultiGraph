@@ -6,45 +6,6 @@ public class Controller {
 	private Display view;
 	private boolean keepGoing;
 
-
-    /**
-    * <pre>
-    *           0..*     0..*
-    * Controller ------------------------> Display
-    *           controller        &gt;       display
-    * </pre>
-    */
-	//Commenting these out for now probably don't need them
-//   private Set<Display> display;
-//   
-//   public Set<Display> getDisplay() {
-//      if (this.display == null) {
-//         this.display = new HashSet<Display>();
-//      }
-//      return this.display;
-//   }
-
-   /**
-    * <pre>
-    *           0..*     0..*
-    * Controller ------------------------> Metro
-    *           controller        &gt;       metro
-    * </pre>
-    */
-	//Same as above
-//   private Set<Metro> metro;
-//   
-//   public Set<Metro> getMetro() {
-//      if (this.metro == null) {
-//         this.metro = new HashSet<Metro>();
-//      }
-//      return this.metro;
-//   }
-
-
-
-
-
    /* Initialise the Metro model and display
       Tell model to initialise all data necessary
       and send to menu to begin core loop
@@ -124,7 +85,7 @@ public class Controller {
       display to be printed
     */
    private void findPath(String[] stations) {
-       model.findPath(stations[0], stations[1], model);
+       model.findPath(stations[0], stations[1]);
 
    }
 
@@ -132,9 +93,8 @@ public class Controller {
    private boolean isStation(String station) {
        if(station==null) {
            return false;
-           keepGoing=false;
        }
-      if(model.isStation(station))
+      if(model.getStation(station)!=null)
           return true;
       else
           return false;

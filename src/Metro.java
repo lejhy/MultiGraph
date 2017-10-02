@@ -5,25 +5,31 @@ public class Metro {
 	private MultiGraph<Station, Route<Station>> graph;
 	
 	
-	public void initialise() {
+	public Metro() {
 		graph = new AdjacencyMapMultiGraph<>();
-		
 	}
 	
-	public void findPath(String start, String end, Display view) {
-		Station first = graph.getNode(start);
-		Station last = graph.getNode(end);
-		List<Route<Station>> path = graph.getPath(first, last);
-		
-		for(Route<Station> r : path) {
-			view.output("Go from " + r.getNodeIn().getName() + " on the " + r.getLabel() + " to " + r.getNodeOut().getName()); 
+	public void initialise() {
+	}
+	
+	public List<Route<Station>> findPath(String startName, String endName) {
+		Station start = getStation(startName);
+		Station end = getStation(endName);
+		if (start != null && end != null) {
+			return graph.getPath(start, end);
+		} else {
+			return null;
 		}
 	}
 
-	public boolean stationCheck(String name) {
-		boolean isStation = graph.containsNode(name);
-		return isStation;		
+	public Station getStation (String name) {
+		for (Station station : graph.getNodes()) {
+			if (station.getName().equals(name)) {
+				return station;
+			}
+		}		
+		return null;
 	}
    
-   }
+  }
 
