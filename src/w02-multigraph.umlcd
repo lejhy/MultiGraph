@@ -14,6 +14,9 @@
     </sourceRole>
     <targetRole xmi:id="_sfdwdqddEee4N_F427T3yQ" aggregationKind="NONE" name="reader" navigable="true">
       <modelElement href="w02-multigraph.uml#_k_h0IaddEee4N_F427T3yQ"/>
+      <stereotypes xmi:id="_S5WdoKd4EeexV7QKogiYQw" name="LegacyStyledElement">
+        <modelElement href="w02-multigraph.uml#_k_ibMKddEee4N_F427T3yQ"/>
+      </stereotypes>
       <visibility xmi:id="_sfdwd6ddEee4N_F427T3yQ" label="-"/>
       <cardinality xmi:id="_sfdweKddEee4N_F427T3yQ" label="1" max="1" min="1"/>
     </targetRole>
@@ -60,28 +63,34 @@
       <cardinality xmi:id="_sfx5gqddEee4N_F427T3yQ" label="1" max="1" min="1"/>
     </targetRole>
   </edges>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_sf5OQKddEee4N_F427T3yQ" sourceAnchor="236.0,132.0" targetAnchor="194.0,0.0" target="_sfygkKddEee4N_F427T3yQ" source="_sf8RkKddEee4N_F427T3yQ">
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_sf5OQKddEee4N_F427T3yQ" sourceAnchor="208.0,112.0" targetAnchor="166.0,0.0" target="_sfygkKddEee4N_F427T3yQ" source="_sf8RkKddEee4N_F427T3yQ">
     <modelElement href="w02-multigraph.uml#_k_-gEaddEee4N_F427T3yQ"/>
     <stereotypes xmi:id="_sf6cYKddEee4N_F427T3yQ" name="Reference">
       <modelElement href="w02-multigraph.uml#_k__HIKddEee4N_F427T3yQ"/>
     </stereotypes>
     <nameVisual xmi:id="_sf51UKddEee4N_F427T3yQ" text="">
-      <visualProperties xmi:id="_sqQEIKddEee4N_F427T3yQ" position="-49.0,25.0"/>
+      <visualProperties xmi:id="_sqQEIKddEee4N_F427T3yQ" position="2.0,19.0"/>
     </nameVisual>
     <sourceRole xmi:id="_sf51UaddEee4N_F427T3yQ" aggregationKind="NONE" name="">
       <modelElement href="w02-multigraph.uml#_k_-gEqddEee4N_F427T3yQ"/>
-      <visualProperties xmi:id="_sqPdEKddEee4N_F427T3yQ" position="-17.0,25.0"/>
+      <visualProperties xmi:id="_sqPdEKddEee4N_F427T3yQ" position="2.0,28.0"/>
       <visibility xmi:id="_sf7DcaddEee4N_F427T3yQ" label="+"/>
       <cardinality xmi:id="_sf7DcKddEee4N_F427T3yQ" label="1" max="1" min="1"/>
     </sourceRole>
     <targetRole xmi:id="_sf51UqddEee4N_F427T3yQ" aggregationKind="NONE" name="graph" navigable="true">
       <modelElement href="w02-multigraph.uml#_k_jCQKddEee4N_F427T3yQ"/>
-      <visualProperties xmi:id="_sqQEIaddEee4N_F427T3yQ" position="2.0,-81.0"/>
+      <visualProperties xmi:id="_sqQEIaddEee4N_F427T3yQ" position="-48.0,-101.0"/>
+      <stereotypes xmi:id="_S5Wdoad4EeexV7QKogiYQw" name="Generics">
+        <modelElement href="w02-multigraph.uml#_k_jpUKddEee4N_F427T3yQ"/>
+      </stereotypes>
+      <stereotypes xmi:id="_S5Wdoqd4EeexV7QKogiYQw" name="LegacyStyledElement">
+        <modelElement href="w02-multigraph.uml#_k_jpUaddEee4N_F427T3yQ"/>
+      </stereotypes>
       <visibility xmi:id="_sf7Dc6ddEee4N_F427T3yQ" label="-"/>
       <cardinality xmi:id="_sf7DcqddEee4N_F427T3yQ" label="1" max="1" min="1"/>
     </targetRole>
   </edges>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_sgBKEKddEee4N_F427T3yQ" sourceAnchor="225.0,0.0" targetAnchor="194.0,229.0" dashed="true" superClass="_sfygkKddEee4N_F427T3yQ" subClass="_sgH3wKddEee4N_F427T3yQ">
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_sgBKEKddEee4N_F427T3yQ" sourceAnchor="197.0,0.0" targetAnchor="166.0,276.0" dashed="true" superClass="_sfygkKddEee4N_F427T3yQ" subClass="_sgH3wKddEee4N_F427T3yQ">
     <modelElement href="w02-multigraph.uml#_k-3FwaddEee4N_F427T3yQ"/>
   </edges>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_sgHQsKddEee4N_F427T3yQ" source="_sgH3wKddEee4N_F427T3yQ">
@@ -97,6 +106,12 @@
     </sourceRole>
     <targetRole xmi:id="_sgHQtqddEee4N_F427T3yQ" aggregationKind="NONE" name="adjacencyMap" navigable="true">
       <modelElement href="w02-multigraph.uml#_k_disKddEee4N_F427T3yQ"/>
+      <stereotypes xmi:id="_S5Wdo6d4EeexV7QKogiYQw" name="Generics">
+        <modelElement href="w02-multigraph.uml#_k_eJwKddEee4N_F427T3yQ"/>
+      </stereotypes>
+      <stereotypes xmi:id="_S5WdpKd4EeexV7QKogiYQw" name="LegacyStyledElement">
+        <modelElement href="w02-multigraph.uml#_k_fX4KddEee4N_F427T3yQ"/>
+      </stereotypes>
       <visibility xmi:id="_sgHQt6ddEee4N_F427T3yQ" label="-"/>
       <cardinality xmi:id="_sgHQuKddEee4N_F427T3yQ" label="1" max="1" min="1"/>
       <qualifierHelper xmi:id="_sgHQuaddEee4N_F427T3yQ">
@@ -111,7 +126,7 @@
       </qualifierHelper>
     </targetRole>
   </edges>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_sgSP0KddEee4N_F427T3yQ" sourceAnchor="100.0,161.0" targetAnchor="66.0,0.0" dashed="true" superClass="_sfry6KddEee4N_F427T3yQ" subClass="_sgVTIKddEee4N_F427T3yQ">
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_sgSP0KddEee4N_F427T3yQ" sourceAnchor="134.0,136.0" targetAnchor="58.0,0.0" dashed="true" superClass="_sfry6KddEee4N_F427T3yQ" subClass="_sgVTIKddEee4N_F427T3yQ">
     <modelElement href="w02-multigraph.uml#_k_EhIKddEee4N_F427T3yQ"/>
   </edges>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_sgS24KddEee4N_F427T3yQ" source="_sgVTIKddEee4N_F427T3yQ">
@@ -127,6 +142,9 @@
     </sourceRole>
     <targetRole xmi:id="_sgUFAqddEee4N_F427T3yQ" aggregationKind="NONE" name="nodeIn" navigable="true">
       <modelElement href="w02-multigraph.uml#_k_mFkKddEee4N_F427T3yQ"/>
+      <stereotypes xmi:id="_S5gOoKd4EeexV7QKogiYQw" name="LegacyStyledElement">
+        <modelElement href="w02-multigraph.uml#_k_mFkaddEee4N_F427T3yQ"/>
+      </stereotypes>
       <visibility xmi:id="_sgUsE6ddEee4N_F427T3yQ" label="+"/>
       <cardinality xmi:id="_sgUsEqddEee4N_F427T3yQ" label="1" max="1" min="1"/>
     </targetRole>
@@ -144,11 +162,14 @@
     </sourceRole>
     <targetRole xmi:id="_sgUFBqddEee4N_F427T3yQ" aggregationKind="NONE" name="nodeOut" navigable="true">
       <modelElement href="w02-multigraph.uml#_k_nTtKddEee4N_F427T3yQ"/>
+      <stereotypes xmi:id="_S5gOoad4EeexV7QKogiYQw" name="LegacyStyledElement">
+        <modelElement href="w02-multigraph.uml#_k_n6wKddEee4N_F427T3yQ"/>
+      </stereotypes>
       <visibility xmi:id="_sgUsGKddEee4N_F427T3yQ" label="+"/>
       <cardinality xmi:id="_sgUsF6ddEee4N_F427T3yQ" label="1" max="1" min="1"/>
     </targetRole>
   </edges>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_sgY9gKddEee4N_F427T3yQ" sourceAnchor="134.0,208.0" targetAnchor="238.0,0.0" target="_sf8RkKddEee4N_F427T3yQ" source="_sgd2AKddEee4N_F427T3yQ">
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_sgY9gKddEee4N_F427T3yQ" sourceAnchor="132.0,176.0" targetAnchor="236.0,0.0" target="_sf8RkKddEee4N_F427T3yQ" source="_sgd2AKddEee4N_F427T3yQ">
     <modelElement href="w02-multigraph.uml#_k_8q4addEee4N_F427T3yQ"/>
     <stereotypes xmi:id="_sgaLo6ddEee4N_F427T3yQ" name="Reference">
       <modelElement href="w02-multigraph.uml#_k_9R8KddEee4N_F427T3yQ"/>
@@ -165,106 +186,132 @@
     <targetRole xmi:id="_sgaLoqddEee4N_F427T3yQ" aggregationKind="NONE" name="model" navigable="true">
       <modelElement href="w02-multigraph.uml#_k_gmAKddEee4N_F427T3yQ"/>
       <visualProperties xmi:id="_sqRSQaddEee4N_F427T3yQ" position="-57.0,-81.0"/>
+      <stereotypes xmi:id="_S5gOoqd4EeexV7QKogiYQw" name="LegacyStyledElement">
+        <modelElement href="w02-multigraph.uml#_k_gmAaddEee4N_F427T3yQ"/>
+      </stereotypes>
       <visibility xmi:id="_sgcA06ddEee4N_F427T3yQ" label="-"/>
       <cardinality xmi:id="_sgcA0qddEee4N_F427T3yQ" label="1" max="1" min="1"/>
     </targetRole>
   </edges>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_sgZkkKddEee4N_F427T3yQ" sourceAnchor="0.0,74.0" targetAnchor="265.0,116.0" target="_sfdweaddEee4N_F427T3yQ" source="_sgd2AKddEee4N_F427T3yQ">
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_sgZkkKddEee4N_F427T3yQ" sourceAnchor="0.0,72.0" targetAnchor="229.0,114.0" target="_sfdweaddEee4N_F427T3yQ" source="_sgd2AKddEee4N_F427T3yQ">
     <modelElement href="w02-multigraph.uml#_k_9R8addEee4N_F427T3yQ"/>
     <stereotypes xmi:id="_sgaysqddEee4N_F427T3yQ" name="Reference">
       <modelElement href="w02-multigraph.uml#_k_95AKddEee4N_F427T3yQ"/>
     </stereotypes>
     <nameVisual xmi:id="_sgaLpKddEee4N_F427T3yQ" text="">
-      <visualProperties xmi:id="_sqR5UaddEee4N_F427T3yQ" position="-7.800000000000011,-24.499999999999943"/>
+      <visualProperties xmi:id="_sqR5UaddEee4N_F427T3yQ" position="-8.0,-25.000000000000057"/>
     </nameVisual>
     <sourceRole xmi:id="_sgaysKddEee4N_F427T3yQ" aggregationKind="NONE" name="">
       <modelElement href="w02-multigraph.uml#_k_9R8qddEee4N_F427T3yQ"/>
-      <visualProperties xmi:id="_sqR5UKddEee4N_F427T3yQ" position="-29.25,-57.5"/>
+      <visualProperties xmi:id="_sqR5UKddEee4N_F427T3yQ" position="-30.0,-58.0"/>
       <visibility xmi:id="_sgcn4KddEee4N_F427T3yQ" label="+"/>
       <cardinality xmi:id="_sgcA1addEee4N_F427T3yQ" label="1" max="1" min="1"/>
     </sourceRole>
     <targetRole xmi:id="_sgaysaddEee4N_F427T3yQ" aggregationKind="NONE" name="view" navigable="true">
       <modelElement href="w02-multigraph.uml#_k_hNEKddEee4N_F427T3yQ"/>
-      <visualProperties xmi:id="_sqSgYKddEee4N_F427T3yQ" position="33.25,-57.5"/>
+      <visualProperties xmi:id="_sqSgYKddEee4N_F427T3yQ" position="33.0,-58.0"/>
+      <stereotypes xmi:id="_S5gOo6d4EeexV7QKogiYQw" name="LegacyStyledElement">
+        <modelElement href="w02-multigraph.uml#_k_hNEaddEee4N_F427T3yQ"/>
+      </stereotypes>
       <visibility xmi:id="_sgcn4qddEee4N_F427T3yQ" label="-"/>
       <cardinality xmi:id="_sgcn4addEee4N_F427T3yQ" label="1" max="1" min="1"/>
     </targetRole>
   </edges>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_jn1zAKdeEee4N_F427T3yQ" sourceAnchor="0.0,188.0" targetAnchor="134.0,74.0" target="_sfry6KddEee4N_F427T3yQ" source="_sfygkKddEee4N_F427T3yQ">
-    <modelElement href="w02-multigraph.uml#_jnz90KdeEee4N_F427T3yQ"/>
-    <visualProperties xmi:id="_jn1zAadeEee4N_F427T3yQ"/>
-    <nameVisual xmi:id="_jn1zAqdeEee4N_F427T3yQ" text="">
-      <visualProperties xmi:id="_j0KXwadeEee4N_F427T3yQ" position="-11.0,-24.000000000000057"/>
-    </nameVisual>
-    <sourceRole xmi:id="_jn1zA6deEee4N_F427T3yQ" aggregationKind="NONE" name="multiGraph">
-      <modelElement href="w02-multigraph.uml#_jnz90adeEee4N_F427T3yQ"/>
-      <visualProperties xmi:id="_j0KXwKdeEee4N_F427T3yQ" position="-131.0,-57.0"/>
-      <visibility xmi:id="_jn1zBKdeEee4N_F427T3yQ" label="+"/>
-      <cardinality xmi:id="_jn1zBadeEee4N_F427T3yQ" label="*" max="-1"/>
-    </sourceRole>
-    <targetRole xmi:id="_jn1zBqdeEee4N_F427T3yQ" aggregationKind="NONE" name="labeledEdge" navigable="true">
-      <modelElement href="w02-multigraph.uml#_jnz91KdeEee4N_F427T3yQ"/>
-      <visualProperties xmi:id="_j0KXwqdeEee4N_F427T3yQ" position="57.0,2.0"/>
-      <visibility xmi:id="_jn1zB6deEee4N_F427T3yQ" label="+"/>
-      <cardinality xmi:id="_jn1zCKdeEee4N_F427T3yQ" label="*" max="-1"/>
-    </targetRole>
-  </edges>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_Hjh-QKdfEee4N_F427T3yQ" sourceAnchor="480.0,116.0" targetAnchor="0.0,34.0" target="_sgQaoKddEee4N_F427T3yQ" source="_sf8RkKddEee4N_F427T3yQ">
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_Hjh-QKdfEee4N_F427T3yQ" sourceAnchor="405.0,53.0" targetAnchor="113.0,101.0" target="_sgQaoKddEee4N_F427T3yQ" source="_sf8RkKddEee4N_F427T3yQ">
     <modelElement href="w02-multigraph.uml#_HjfiAKdfEee4N_F427T3yQ"/>
     <visualProperties xmi:id="_Hjh-QadfEee4N_F427T3yQ"/>
+    <bendpoints xmi:id="_R2NzYKd9EeexV7QKogiYQw" sourceX="271" sourceY="1" targetY="50"/>
     <nameVisual xmi:id="_Hjh-QqdfEee4N_F427T3yQ" text="">
-      <visualProperties xmi:id="_HvZ3EadfEee4N_F427T3yQ" position="-1.0,2.0"/>
+      <visualProperties xmi:id="_HvZ3EadfEee4N_F427T3yQ" position="2.0,-26.0"/>
     </nameVisual>
     <sourceRole xmi:id="_Hjh-Q6dfEee4N_F427T3yQ" aggregationKind="NONE" name="metro">
       <modelElement href="w02-multigraph.uml#_HjgJEKdfEee4N_F427T3yQ"/>
-      <visualProperties xmi:id="_HvZ3EKdfEee4N_F427T3yQ" position="32.0,-57.0"/>
+      <visualProperties xmi:id="_HvZ3EKdfEee4N_F427T3yQ" position="38.0,-47.0"/>
       <visibility xmi:id="_Hjh-RKdfEee4N_F427T3yQ" label="+"/>
       <cardinality xmi:id="_Hjh-RadfEee4N_F427T3yQ" label="*" max="-1"/>
     </sourceRole>
     <targetRole xmi:id="_Hjh-RqdfEee4N_F427T3yQ" aggregationKind="NONE" name="station" navigable="true">
       <modelElement href="w02-multigraph.uml#_HjgJE6dfEee4N_F427T3yQ"/>
-      <visualProperties xmi:id="_HvaeIKdfEee4N_F427T3yQ" position="-90.0,-57.0"/>
+      <visualProperties xmi:id="_HvaeIKdfEee4N_F427T3yQ" position="-92.0,6.0"/>
       <visibility xmi:id="_Hjh-R6dfEee4N_F427T3yQ" label="+"/>
       <cardinality xmi:id="_Hjh-SKdfEee4N_F427T3yQ" label="*" max="-1"/>
     </targetRole>
   </edges>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_ICRIsKdfEee4N_F427T3yQ" sourceAnchor="0.0,72.0" targetAnchor="245.0,15.0" target="_sgVTIKddEee4N_F427T3yQ" source="_sf8RkKddEee4N_F427T3yQ">
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_ICRIsKdfEee4N_F427T3yQ" sourceAnchor="0.0,28.0" targetAnchor="212.0,120.0" target="_sgVTIKddEee4N_F427T3yQ" source="_sf8RkKddEee4N_F427T3yQ">
     <modelElement href="w02-multigraph.uml#_ICPTgKdfEee4N_F427T3yQ"/>
     <visualProperties xmi:id="_ICRIsadfEee4N_F427T3yQ"/>
     <nameVisual xmi:id="_ICRIsqdfEee4N_F427T3yQ" text="">
-      <visualProperties xmi:id="_IIWikKdfEee4N_F427T3yQ" position="4.000000000000014,2.0"/>
+      <visualProperties xmi:id="_IIWikKdfEee4N_F427T3yQ" position="-5.999999999999986,-18.999999999999993"/>
     </nameVisual>
     <sourceRole xmi:id="_ICRIs6dfEee4N_F427T3yQ" aggregationKind="NONE" name="metro">
       <modelElement href="w02-multigraph.uml#_ICP6kKdfEee4N_F427T3yQ"/>
-      <visualProperties xmi:id="_IIV7gKdfEee4N_F427T3yQ" position="-84.99999999999999,-57.000000000000014"/>
+      <visualProperties xmi:id="_IIV7gKdfEee4N_F427T3yQ" position="-79.0,2.0"/>
       <visibility xmi:id="_ICRItKdfEee4N_F427T3yQ" label="+"/>
       <cardinality xmi:id="_ICRItadfEee4N_F427T3yQ" label="*" max="-1"/>
     </sourceRole>
     <targetRole xmi:id="_ICRItqdfEee4N_F427T3yQ" aggregationKind="NONE" name="route" navigable="true">
       <modelElement href="w02-multigraph.uml#_ICP6k6dfEee4N_F427T3yQ"/>
-      <visualProperties xmi:id="_IIWikadfEee4N_F427T3yQ" position="25.0,2.0"/>
+      <visualProperties xmi:id="_IIWikadfEee4N_F427T3yQ" position="31.999999999999986,1.9999999999999858"/>
       <visibility xmi:id="_ICRIt6dfEee4N_F427T3yQ" label="+"/>
       <cardinality xmi:id="_ICRIuKdfEee4N_F427T3yQ" label="*" max="-1"/>
     </targetRole>
   </edges>
-  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_J8GYIKdfEee4N_F427T3yQ" sourceAnchor="480.0,64.0" targetAnchor="101.0,128.0" target="_sf_78KddEee4N_F427T3yQ" source="_sf8RkKddEee4N_F427T3yQ">
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_J8GYIKdfEee4N_F427T3yQ" sourceAnchor="405.0,76.0" targetAnchor="102.0,0.0" target="_sf_78KddEee4N_F427T3yQ" source="_sf8RkKddEee4N_F427T3yQ">
     <modelElement href="w02-multigraph.uml#_J8Ei8KdfEee4N_F427T3yQ"/>
     <visualProperties xmi:id="_J8GYIadfEee4N_F427T3yQ"/>
-    <bendpoints xmi:id="_Nxbq8KdfEee4N_F427T3yQ" sourceX="240" sourceY="1" targetX="-4" targetY="89"/>
+    <bendpoints xmi:id="_R2NzYad9EeexV7QKogiYQw" sourceX="199" sourceY="1" targetX="-8" targetY="-159"/>
     <nameVisual xmi:id="_J8GYIqdfEee4N_F427T3yQ" text="">
-      <visualProperties xmi:id="_KKvREadfEee4N_F427T3yQ" position="-12.0,-63.0"/>
+      <visualProperties xmi:id="_KKvREadfEee4N_F427T3yQ" position="-12.0,41.0"/>
     </nameVisual>
     <sourceRole xmi:id="_J8GYI6dfEee4N_F427T3yQ" aggregationKind="NONE" name="metro">
       <modelElement href="w02-multigraph.uml#_J8Ei8adfEee4N_F427T3yQ"/>
-      <visualProperties xmi:id="_KKvREKdfEee4N_F427T3yQ" position="1.0,-96.00000000000001"/>
+      <visualProperties xmi:id="_KKvREKdfEee4N_F427T3yQ" position="96.0,2.0"/>
       <visibility xmi:id="_J8GYJKdfEee4N_F427T3yQ" label="+"/>
       <cardinality xmi:id="_J8GYJadfEee4N_F427T3yQ" label="*" max="-1"/>
     </sourceRole>
     <targetRole xmi:id="_J8GYJqdfEee4N_F427T3yQ" aggregationKind="NONE" name="parser" navigable="true">
       <modelElement href="w02-multigraph.uml#_J8FKAqdfEee4N_F427T3yQ"/>
-      <visualProperties xmi:id="_KKvREqdfEee4N_F427T3yQ" position="-96.0,34.0"/>
+      <visualProperties xmi:id="_KKvREqdfEee4N_F427T3yQ" position="2.0,-74.0"/>
       <visibility xmi:id="_J8GYJ6dfEee4N_F427T3yQ" label="+"/>
       <cardinality xmi:id="_J8GYKKdfEee4N_F427T3yQ" label="*" max="-1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_sRYc56d4EeexV7QKogiYQw" sourceAnchor="0.0,63.0" targetAnchor="288.0,88.0" target="_sgd2AKddEee4N_F427T3yQ" source="_XfMnYKd4EeexV7QKogiYQw">
+    <modelElement href="w02-multigraph.uml#_sRYc4Kd4EeexV7QKogiYQw"/>
+    <visualProperties xmi:id="_sRYc6Kd4EeexV7QKogiYQw"/>
+    <nameVisual xmi:id="_sRYc6ad4EeexV7QKogiYQw" text="">
+      <visualProperties xmi:id="_sU9VUqd4EeexV7QKogiYQw" position="-11.0,-20.0"/>
+    </nameVisual>
+    <sourceRole xmi:id="_sRYc6qd4EeexV7QKogiYQw" aggregationKind="NONE" name="driver">
+      <modelElement href="w02-multigraph.uml#_sRYc4ad4EeexV7QKogiYQw"/>
+      <visualProperties xmi:id="_sU9VUad4EeexV7QKogiYQw" position="-73.0,-48.0"/>
+      <visibility xmi:id="_sRYc66d4EeexV7QKogiYQw" label="+"/>
+      <cardinality xmi:id="_sRYc7Kd4EeexV7QKogiYQw" label="*" max="-1"/>
+    </sourceRole>
+    <targetRole xmi:id="_sRYc7ad4EeexV7QKogiYQw" aggregationKind="NONE" name="controller" navigable="true">
+      <modelElement href="w02-multigraph.uml#_sRYc5Kd4EeexV7QKogiYQw"/>
+      <visualProperties xmi:id="_sU9VU6d4EeexV7QKogiYQw" position="29.0,1.0"/>
+      <visibility xmi:id="_sRYc7qd4EeexV7QKogiYQw" label="+"/>
+      <cardinality xmi:id="_sRYc76d4EeexV7QKogiYQw" label="*" max="-1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_RzxjYKd9EeexV7QKogiYQw" sourceAnchor="0.0,107.0" targetAnchor="120.0,63.0" source="_sfygkKddEee4N_F427T3yQ">
+    <modelElement href="w02-multigraph.uml#_RzoZcKd9EeexV7QKogiYQw"/>
+    <visualProperties xmi:id="_RzxjYad9EeexV7QKogiYQw"/>
+    <nameVisual xmi:id="_RzxjYqd9EeexV7QKogiYQw" text="">
+      <visualProperties xmi:id="_R2NzY6d9EeexV7QKogiYQw" position="-31.095238095238102,1.9999999999999432"/>
+    </nameVisual>
+    <sourceRole xmi:id="_RzxjY6d9EeexV7QKogiYQw" aggregationKind="NONE" name="multiGraph">
+      <modelElement href="w02-multigraph.uml#_RzoZcad9EeexV7QKogiYQw"/>
+      <visualProperties xmi:id="_R2NzYqd9EeexV7QKogiYQw" position="-113.75,2.0"/>
+      <visibility xmi:id="_RzxjZKd9EeexV7QKogiYQw" label="+"/>
+      <cardinality xmi:id="_RzxjZad9EeexV7QKogiYQw" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_RzxjZqd9EeexV7QKogiYQw" aggregationKind="NONE" name="edges" navigable="true">
+      <modelElement href="w02-multigraph.uml#_RzoZdKd9EeexV7QKogiYQw"/>
+      <visualProperties xmi:id="_R2NzZKd9EeexV7QKogiYQw" position="50.0,-47.0"/>
+      <visibility xmi:id="_RzxjZ6d9EeexV7QKogiYQw" label="+"/>
+      <cardinality xmi:id="_RzxjaKd9EeexV7QKogiYQw" label="1..*" max="-1" min="1"/>
     </targetRole>
   </edges>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_sgH3wKddEee4N_F427T3yQ" name="AdjacencyMapMultiGraph" associationsOut="_sgHQsKddEee4N_F427T3yQ" generalizations="_sgBKEKddEee4N_F427T3yQ">
@@ -276,12 +323,12 @@
     <visibility xmi:id="_sgH3xKddEee4N_F427T3yQ" label="+"/>
     <attributes xmi:id="_sgH3xaddEee4N_F427T3yQ" name="adjacencyMap">
       <modelElement href="w02-multigraph.uml#_k_disKddEee4N_F427T3yQ"/>
-      <stereotypes xmi:id="_sgH3xqddEee4N_F427T3yQ" name="Generics">
-        <modelElement href="w02-multigraph.uml#_k_eJwKddEee4N_F427T3yQ"/>
-      </stereotypes>
-      <stereotypes xmi:id="_sgH3x6ddEee4N_F427T3yQ" name="LegacyStyledElement">
-        <modelElement href="w02-multigraph.uml#_k_fX4KddEee4N_F427T3yQ"/>
-      </stereotypes>
+      <stereotypes xmi:id="_S5zJlKd4EeexV7QKogiYQw" name="Generics"/>
+      <stereotypes xmi:id="_S5zJlad4EeexV7QKogiYQw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_S5zJlqd4EeexV7QKogiYQw" name="Generics"/>
+      <stereotypes xmi:id="_S5zJl6d4EeexV7QKogiYQw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_S5zJoKd4EeexV7QKogiYQw" name="Generics"/>
+      <stereotypes xmi:id="_S5zJoad4EeexV7QKogiYQw" name="LegacyStyledElement"/>
       <visibility xmi:id="_sgH3yKddEee4N_F427T3yQ" label="-"/>
       <cardinality xmi:id="_sgH3yaddEee4N_F427T3yQ" label="1" max="1" min="1"/>
       <type xmi:id="_sgH3yqddEee4N_F427T3yQ" name="List">
@@ -519,147 +566,18 @@
       </parameters>
     </operations>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_sgVTIKddEee4N_F427T3yQ" name="Route" associationsIn="_ICRIsKdfEee4N_F427T3yQ" associationsOut="_sgS24KddEee4N_F427T3yQ _sgTd8KddEee4N_F427T3yQ" generalizations="_sgSP0KddEee4N_F427T3yQ">
-    <modelElement href="w02-multigraph.uml#_k-J7IKddEee4N_F427T3yQ"/>
-    <visualProperties xmi:id="_sgVTIaddEee4N_F427T3yQ" position="-224.0,61.0" size="-1.0,-1.0"/>
-    <stereotypes xmi:id="_sgVTIqddEee4N_F427T3yQ" name="Generics">
-      <modelElement href="w02-multigraph.uml#_k-LJQKddEee4N_F427T3yQ"/>
-    </stereotypes>
-    <visibility xmi:id="_sgVTI6ddEee4N_F427T3yQ" label="+"/>
-    <attributes xmi:id="_sgVTJKddEee4N_F427T3yQ" name="label">
-      <modelElement href="w02-multigraph.uml#_k_kQYKddEee4N_F427T3yQ"/>
-      <stereotypes xmi:id="_sgVTJaddEee4N_F427T3yQ" name="LegacyStyledElement">
-        <modelElement href="w02-multigraph.uml#_k_kQYaddEee4N_F427T3yQ"/>
-      </stereotypes>
-      <visibility xmi:id="_sgVTJqddEee4N_F427T3yQ" label="+"/>
-      <cardinality xmi:id="_sgVTJ6ddEee4N_F427T3yQ" label="1" max="1" min="1"/>
-      <type xmi:id="_sgV6MKddEee4N_F427T3yQ" name="String">
-        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_sgV6MaddEee4N_F427T3yQ" name="nodeIn">
-      <modelElement href="w02-multigraph.uml#_k_mFkKddEee4N_F427T3yQ"/>
-      <stereotypes xmi:id="_sgV6MqddEee4N_F427T3yQ" name="LegacyStyledElement">
-        <modelElement href="w02-multigraph.uml#_k_mFkaddEee4N_F427T3yQ"/>
-      </stereotypes>
-      <visibility xmi:id="_sgV6M6ddEee4N_F427T3yQ" label="+"/>
-      <cardinality xmi:id="_sgV6NKddEee4N_F427T3yQ" label="1" max="1" min="1"/>
-      <type xmi:id="_sgV6NaddEee4N_F427T3yQ" name="N">
-        <modelElement href="w02-multigraph.uml#_k_LO0KddEee4N_F427T3yQ"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_sgV6NqddEee4N_F427T3yQ" name="nodeOut">
-      <modelElement href="w02-multigraph.uml#_k_nTtKddEee4N_F427T3yQ"/>
-      <stereotypes xmi:id="_sgV6N6ddEee4N_F427T3yQ" name="LegacyStyledElement">
-        <modelElement href="w02-multigraph.uml#_k_n6wKddEee4N_F427T3yQ"/>
-      </stereotypes>
-      <visibility xmi:id="_sgV6OKddEee4N_F427T3yQ" label="+"/>
-      <cardinality xmi:id="_sgV6OaddEee4N_F427T3yQ" label="1" max="1" min="1"/>
-      <type xmi:id="_sgV6OqddEee4N_F427T3yQ" name="N">
-        <modelElement href="w02-multigraph.uml#_k_LO0KddEee4N_F427T3yQ"/>
-      </type>
-    </attributes>
-    <operations xmi:id="_sgV6O6ddEee4N_F427T3yQ" name="Route">
-      <modelElement href="w02-multigraph.uml#_k-MXYKddEee4N_F427T3yQ"/>
-      <keywords xmi:id="_sgV6PKddEee4N_F427T3yQ" keyword="create"/>
-      <visibility xmi:id="_sgV6PaddEee4N_F427T3yQ" label="+"/>
-      <cardinality xmi:id="_sgV6PqddEee4N_F427T3yQ" label="1" max="1" min="1"/>
-      <outParameters xmi:id="_sgV6P6ddEee4N_F427T3yQ">
-        <modelElement href="w02-multigraph.uml#_k-M-c6ddEee4N_F427T3yQ"/>
-        <type xmi:id="_sgV6QKddEee4N_F427T3yQ" name="Route">
-          <modelElement href="w02-multigraph.uml#_k-J7IKddEee4N_F427T3yQ"/>
-        </type>
-      </outParameters>
-      <parameters xmi:id="_sgV6QaddEee4N_F427T3yQ" name="label">
-        <modelElement href="w02-multigraph.uml#_k-M-cKddEee4N_F427T3yQ"/>
-        <cardinality xmi:id="_sgV6QqddEee4N_F427T3yQ" label="1" max="1" min="1"/>
-        <type xmi:id="_sgV6Q6ddEee4N_F427T3yQ" name="String">
-          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </type>
-      </parameters>
-    </operations>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:InterfaceVisual" xmi:id="_sfry6KddEee4N_F427T3yQ" name="LabeledEdge" associationsIn="_sfrL0KddEee4N_F427T3yQ _sfry4KddEee4N_F427T3yQ _jn1zAKdeEee4N_F427T3yQ" subclassedBy="_sgSP0KddEee4N_F427T3yQ">
-    <modelElement href="w02-multigraph.uml#_k941YKddEee4N_F427T3yQ"/>
-    <visualProperties xmi:id="_sfry6addEee4N_F427T3yQ" position="-190.0,358.0" size="-1.0,-1.0"/>
-    <stereotypes xmi:id="_sfry6qddEee4N_F427T3yQ" name="Generics">
-      <modelElement href="w02-multigraph.uml#_k96DgKddEee4N_F427T3yQ"/>
-    </stereotypes>
-    <visibility xmi:id="_sfry66ddEee4N_F427T3yQ" label="+"/>
-    <attributes xmi:id="_sfry7KddEee4N_F427T3yQ" name="label">
-      <modelElement href="w02-multigraph.uml#_k96DgaddEee4N_F427T3yQ"/>
-      <visibility xmi:id="_sfry7addEee4N_F427T3yQ" label="+"/>
-      <cardinality xmi:id="_sfry7qddEee4N_F427T3yQ" label="1" max="1" min="1"/>
-      <type xmi:id="_sfry76ddEee4N_F427T3yQ" name="String">
-        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_sfry8KddEee4N_F427T3yQ" name="nodeIn">
-      <modelElement href="w02-multigraph.uml#_k96qkKddEee4N_F427T3yQ"/>
-      <visibility xmi:id="_sfry8addEee4N_F427T3yQ" label="+"/>
-      <cardinality xmi:id="_sfry8qddEee4N_F427T3yQ" label="1" max="1" min="1"/>
-      <type xmi:id="_sfry86ddEee4N_F427T3yQ" name="N">
-        <modelElement href="w02-multigraph.uml#_k_LO0KddEee4N_F427T3yQ"/>
-      </type>
-    </attributes>
-    <attributes xmi:id="_sfry9KddEee4N_F427T3yQ" name="nodeOut">
-      <modelElement href="w02-multigraph.uml#_k97RoKddEee4N_F427T3yQ"/>
-      <visibility xmi:id="_sfry9addEee4N_F427T3yQ" label="+"/>
-      <cardinality xmi:id="_sfry9qddEee4N_F427T3yQ" label="1" max="1" min="1"/>
-      <type xmi:id="_sfry96ddEee4N_F427T3yQ" name="N">
-        <modelElement href="w02-multigraph.uml#_k_LO0KddEee4N_F427T3yQ"/>
-      </type>
-    </attributes>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_sgQaoKddEee4N_F427T3yQ" name="Station" associationsIn="_Hjh-QKdfEee4N_F427T3yQ">
-    <modelElement href="w02-multigraph.uml#_k-QBwKddEee4N_F427T3yQ"/>
-    <visualProperties xmi:id="_sgQaoaddEee4N_F427T3yQ" position="829.0,86.0" size="-1.0,-1.0"/>
-    <visibility xmi:id="_sgQaoqddEee4N_F427T3yQ" label="+"/>
-    <attributes xmi:id="_sgQao6ddEee4N_F427T3yQ" name="name">
-      <modelElement href="w02-multigraph.uml#_k_pv8KddEee4N_F427T3yQ"/>
-      <visibility xmi:id="_sgQapKddEee4N_F427T3yQ" label="+"/>
-      <cardinality xmi:id="_sgQapaddEee4N_F427T3yQ" label="1" max="1" min="1"/>
-      <type xmi:id="_sgQapqddEee4N_F427T3yQ" name="String">
-        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-      </type>
-    </attributes>
-    <operations xmi:id="_sgQap6ddEee4N_F427T3yQ" name="Station">
-      <modelElement href="w02-multigraph.uml#_k-Qo0KddEee4N_F427T3yQ"/>
-      <keywords xmi:id="_sgQaqKddEee4N_F427T3yQ" keyword="create"/>
-      <visibility xmi:id="_sgQaqaddEee4N_F427T3yQ" label="+"/>
-      <cardinality xmi:id="_sgQaqqddEee4N_F427T3yQ" label="1" max="1" min="1"/>
-      <outParameters xmi:id="_sgQaq6ddEee4N_F427T3yQ">
-        <modelElement href="w02-multigraph.uml#_k-Qo1KddEee4N_F427T3yQ"/>
-        <type xmi:id="_sgQarKddEee4N_F427T3yQ" name="Station">
-          <modelElement href="w02-multigraph.uml#_k-QBwKddEee4N_F427T3yQ"/>
-        </type>
-      </outParameters>
-      <parameters xmi:id="_sgQaraddEee4N_F427T3yQ" name="name">
-        <modelElement href="w02-multigraph.uml#_k-Qo0addEee4N_F427T3yQ"/>
-        <cardinality xmi:id="_sgQarqddEee4N_F427T3yQ" label="1" max="1" min="1"/>
-        <type xmi:id="_sgQar6ddEee4N_F427T3yQ" name="String">
-          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </type>
-      </parameters>
-    </operations>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_sf_78KddEee4N_F427T3yQ" name="Parser" associationsIn="_J8GYIKdfEee4N_F427T3yQ">
-    <modelElement href="w02-multigraph.uml#_k-G30KddEee4N_F427T3yQ"/>
-    <visualProperties xmi:id="_sf_78addEee4N_F427T3yQ" position="791.0,-148.0" size="205.0,128.0"/>
-    <visibility xmi:id="_sf_78qddEee4N_F427T3yQ" label="+"/>
-  </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_sf8RkKddEee4N_F427T3yQ" name="Metro" associationsIn="_sgY9gKddEee4N_F427T3yQ" associationsOut="_sf5OQKddEee4N_F427T3yQ _Hjh-QKdfEee4N_F427T3yQ _ICRIsKdfEee4N_F427T3yQ _J8GYIKdfEee4N_F427T3yQ">
     <modelElement href="w02-multigraph.uml#_k974sKddEee4N_F427T3yQ"/>
     <visualProperties xmi:id="_sf8RkaddEee4N_F427T3yQ" position="168.0,4.0" size="-1.0,-1.0"/>
     <visibility xmi:id="_sf8RkqddEee4N_F427T3yQ" label="+"/>
     <attributes xmi:id="_sf8Rk6ddEee4N_F427T3yQ" name="graph">
       <modelElement href="w02-multigraph.uml#_k_jCQKddEee4N_F427T3yQ"/>
-      <stereotypes xmi:id="_sf8RlKddEee4N_F427T3yQ" name="Generics">
-        <modelElement href="w02-multigraph.uml#_k_jpUKddEee4N_F427T3yQ"/>
-      </stereotypes>
-      <stereotypes xmi:id="_sf8RladdEee4N_F427T3yQ" name="LegacyStyledElement">
-        <modelElement href="w02-multigraph.uml#_k_jpUaddEee4N_F427T3yQ"/>
-      </stereotypes>
+      <stereotypes xmi:id="_S5zJkKd4EeexV7QKogiYQw" name="Generics"/>
+      <stereotypes xmi:id="_S5zJkad4EeexV7QKogiYQw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_S5zJkqd4EeexV7QKogiYQw" name="Generics"/>
+      <stereotypes xmi:id="_S5zJk6d4EeexV7QKogiYQw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_S586kqd4EeexV7QKogiYQw" name="Generics"/>
+      <stereotypes xmi:id="_S586k6d4EeexV7QKogiYQw" name="LegacyStyledElement"/>
       <visibility xmi:id="_sf8RlqddEee4N_F427T3yQ" label="-"/>
       <cardinality xmi:id="_sf8Rl6ddEee4N_F427T3yQ" label="1" max="1" min="1"/>
       <type xmi:id="_sf8RmKddEee4N_F427T3yQ" name="MultiGraph">
@@ -757,15 +675,197 @@
       </outParameters>
     </operations>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_sgd2AKddEee4N_F427T3yQ" name="Controller" associationsOut="_sgY9gKddEee4N_F427T3yQ _sgZkkKddEee4N_F427T3yQ">
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:InterfaceVisual" xmi:id="_sfry6KddEee4N_F427T3yQ" name="LabeledEdge" associationsIn="_sfrL0KddEee4N_F427T3yQ _sfry4KddEee4N_F427T3yQ" subclassedBy="_sgSP0KddEee4N_F427T3yQ">
+    <modelElement href="w02-multigraph.uml#_k941YKddEee4N_F427T3yQ"/>
+    <visualProperties xmi:id="_sfry6addEee4N_F427T3yQ" position="-138.0,288.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_sfry6qddEee4N_F427T3yQ" name="Generics">
+      <modelElement href="w02-multigraph.uml#_k96DgKddEee4N_F427T3yQ"/>
+    </stereotypes>
+    <visibility xmi:id="_sfry66ddEee4N_F427T3yQ" label="+"/>
+    <attributes xmi:id="_sfry7KddEee4N_F427T3yQ" name="label">
+      <modelElement href="w02-multigraph.uml#_k96DgaddEee4N_F427T3yQ"/>
+      <visibility xmi:id="_sfry7addEee4N_F427T3yQ" label="+"/>
+      <cardinality xmi:id="_sfry7qddEee4N_F427T3yQ" label="1" max="1" min="1"/>
+      <type xmi:id="_sfry76ddEee4N_F427T3yQ" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_sfry8KddEee4N_F427T3yQ" name="nodeIn">
+      <modelElement href="w02-multigraph.uml#_k96qkKddEee4N_F427T3yQ"/>
+      <visibility xmi:id="_sfry8addEee4N_F427T3yQ" label="+"/>
+      <cardinality xmi:id="_sfry8qddEee4N_F427T3yQ" label="1" max="1" min="1"/>
+      <type xmi:id="_sfry86ddEee4N_F427T3yQ" name="N">
+        <modelElement href="w02-multigraph.uml#_k_LO0KddEee4N_F427T3yQ"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_sfry9KddEee4N_F427T3yQ" name="nodeOut">
+      <modelElement href="w02-multigraph.uml#_k97RoKddEee4N_F427T3yQ"/>
+      <visibility xmi:id="_sfry9addEee4N_F427T3yQ" label="+"/>
+      <cardinality xmi:id="_sfry9qddEee4N_F427T3yQ" label="1" max="1" min="1"/>
+      <type xmi:id="_sfry96ddEee4N_F427T3yQ" name="N">
+        <modelElement href="w02-multigraph.uml#_k_LO0KddEee4N_F427T3yQ"/>
+      </type>
+    </attributes>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_sgVTIKddEee4N_F427T3yQ" name="Route" associationsIn="_ICRIsKdfEee4N_F427T3yQ" associationsOut="_sgS24KddEee4N_F427T3yQ _sgTd8KddEee4N_F427T3yQ" generalizations="_sgSP0KddEee4N_F427T3yQ">
+    <modelElement href="w02-multigraph.uml#_k-J7IKddEee4N_F427T3yQ"/>
+    <visualProperties xmi:id="_sgVTIaddEee4N_F427T3yQ" position="-214.0,-88.0" size="-1.0,-1.0"/>
+    <stereotypes xmi:id="_sgVTIqddEee4N_F427T3yQ" name="Generics">
+      <modelElement href="w02-multigraph.uml#_k-LJQKddEee4N_F427T3yQ"/>
+    </stereotypes>
+    <visibility xmi:id="_sgVTI6ddEee4N_F427T3yQ" label="+"/>
+    <attributes xmi:id="_sgVTJKddEee4N_F427T3yQ" name="label">
+      <modelElement href="w02-multigraph.uml#_k_kQYKddEee4N_F427T3yQ"/>
+      <stereotypes xmi:id="_sgVTJaddEee4N_F427T3yQ" name="LegacyStyledElement">
+        <modelElement href="w02-multigraph.uml#_k_kQYaddEee4N_F427T3yQ"/>
+      </stereotypes>
+      <visibility xmi:id="_sgVTJqddEee4N_F427T3yQ" label="+"/>
+      <cardinality xmi:id="_sgVTJ6ddEee4N_F427T3yQ" label="1" max="1" min="1"/>
+      <type xmi:id="_sgV6MKddEee4N_F427T3yQ" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_sgV6MaddEee4N_F427T3yQ" name="nodeIn">
+      <modelElement href="w02-multigraph.uml#_k_mFkKddEee4N_F427T3yQ"/>
+      <stereotypes xmi:id="_S5zJmKd4EeexV7QKogiYQw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_S5zJmad4EeexV7QKogiYQw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_S586kKd4EeexV7QKogiYQw" name="LegacyStyledElement"/>
+      <visibility xmi:id="_sgV6M6ddEee4N_F427T3yQ" label="+"/>
+      <cardinality xmi:id="_sgV6NKddEee4N_F427T3yQ" label="1" max="1" min="1"/>
+      <type xmi:id="_sgV6NaddEee4N_F427T3yQ" name="N">
+        <modelElement href="w02-multigraph.uml#_k_LO0KddEee4N_F427T3yQ"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_sgV6NqddEee4N_F427T3yQ" name="nodeOut">
+      <modelElement href="w02-multigraph.uml#_k_nTtKddEee4N_F427T3yQ"/>
+      <stereotypes xmi:id="_S5zJmqd4EeexV7QKogiYQw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_S5zJm6d4EeexV7QKogiYQw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_S586kad4EeexV7QKogiYQw" name="LegacyStyledElement"/>
+      <visibility xmi:id="_sgV6OKddEee4N_F427T3yQ" label="+"/>
+      <cardinality xmi:id="_sgV6OaddEee4N_F427T3yQ" label="1" max="1" min="1"/>
+      <type xmi:id="_sgV6OqddEee4N_F427T3yQ" name="N">
+        <modelElement href="w02-multigraph.uml#_k_LO0KddEee4N_F427T3yQ"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_sgV6O6ddEee4N_F427T3yQ" name="Route">
+      <modelElement href="w02-multigraph.uml#_k-MXYKddEee4N_F427T3yQ"/>
+      <keywords xmi:id="_sgV6PKddEee4N_F427T3yQ" keyword="create"/>
+      <visibility xmi:id="_sgV6PaddEee4N_F427T3yQ" label="+"/>
+      <cardinality xmi:id="_sgV6PqddEee4N_F427T3yQ" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_sgV6P6ddEee4N_F427T3yQ">
+        <modelElement href="w02-multigraph.uml#_k-M-c6ddEee4N_F427T3yQ"/>
+        <type xmi:id="_sgV6QKddEee4N_F427T3yQ" name="Route">
+          <modelElement href="w02-multigraph.uml#_k-J7IKddEee4N_F427T3yQ"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_sgV6QaddEee4N_F427T3yQ" name="label">
+        <modelElement href="w02-multigraph.uml#_k-M-cKddEee4N_F427T3yQ"/>
+        <cardinality xmi:id="_sgV6QqddEee4N_F427T3yQ" label="1" max="1" min="1"/>
+        <type xmi:id="_sgV6Q6ddEee4N_F427T3yQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_sfdweaddEee4N_F427T3yQ" name="Display" associationsIn="_sgZkkKddEee4N_F427T3yQ" associationsOut="_sfdwcKddEee4N_F427T3yQ">
+    <modelElement href="w02-multigraph.uml#_k90j8KddEee4N_F427T3yQ"/>
+    <visualProperties xmi:id="_sfdweqddEee4N_F427T3yQ" position="-169.0,-378.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_sfdwe6ddEee4N_F427T3yQ" label="+"/>
+    <attributes xmi:id="_sfdwfKddEee4N_F427T3yQ" name="reader" staticAttribute="true">
+      <modelElement href="w02-multigraph.uml#_k_h0IaddEee4N_F427T3yQ"/>
+      <stereotypes xmi:id="_S5p_oKd4EeexV7QKogiYQw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_S5p_oad4EeexV7QKogiYQw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_S586lqd4EeexV7QKogiYQw" name="LegacyStyledElement"/>
+      <visibility xmi:id="_sfdwfqddEee4N_F427T3yQ" label="-"/>
+      <cardinality xmi:id="_sfdwf6ddEee4N_F427T3yQ" label="1" max="1" min="1"/>
+      <type xmi:id="_sfdwgKddEee4N_F427T3yQ" name="Scanner">
+        <modelElement href="w02-multigraph.uml#_k-_ooKddEee4N_F427T3yQ"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_sfdwgaddEee4N_F427T3yQ" name="Display">
+      <modelElement href="w02-multigraph.uml#_k91yEKddEee4N_F427T3yQ"/>
+      <keywords xmi:id="_sfdwgqddEee4N_F427T3yQ" keyword="create"/>
+      <visibility xmi:id="_sfdwg6ddEee4N_F427T3yQ" label="+"/>
+      <cardinality xmi:id="_sfdwhKddEee4N_F427T3yQ" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_sfdwhaddEee4N_F427T3yQ">
+        <modelElement href="w02-multigraph.uml#_k91yE6ddEee4N_F427T3yQ"/>
+        <type xmi:id="_sfdwhqddEee4N_F427T3yQ" name="Display">
+          <modelElement href="w02-multigraph.uml#_k90j8KddEee4N_F427T3yQ"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_sfdwh6ddEee4N_F427T3yQ" name="readLine">
+      <modelElement href="w02-multigraph.uml#_k91yFKddEee4N_F427T3yQ"/>
+      <visibility xmi:id="_sfdwiKddEee4N_F427T3yQ" label="+"/>
+      <cardinality xmi:id="_sfdwiaddEee4N_F427T3yQ" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_sfdwiqddEee4N_F427T3yQ">
+        <modelElement href="w02-multigraph.uml#_k92ZIKddEee4N_F427T3yQ"/>
+        <type xmi:id="_sfdwi6ddEee4N_F427T3yQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_sfdwjKddEee4N_F427T3yQ" name="readInt">
+      <modelElement href="w02-multigraph.uml#_k92ZIaddEee4N_F427T3yQ"/>
+      <visibility xmi:id="_sfdwjaddEee4N_F427T3yQ" label="+"/>
+      <cardinality xmi:id="_sfdwjqddEee4N_F427T3yQ" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_sfdwj6ddEee4N_F427T3yQ">
+        <modelElement href="w02-multigraph.uml#_k92ZIqddEee4N_F427T3yQ"/>
+        <type xmi:id="_sfdwkKddEee4N_F427T3yQ" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_sfdwkaddEee4N_F427T3yQ" name="printMenu">
+      <modelElement href="w02-multigraph.uml#_k93AMKddEee4N_F427T3yQ"/>
+      <visibility xmi:id="_sfdwkqddEee4N_F427T3yQ" label="+"/>
+      <cardinality xmi:id="_sfdwk6ddEee4N_F427T3yQ" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_sfdwlKddEee4N_F427T3yQ" name="getStation">
+      <modelElement href="w02-multigraph.uml#_k93AMaddEee4N_F427T3yQ"/>
+      <visibility xmi:id="_sfdwladdEee4N_F427T3yQ" label="+"/>
+      <cardinality xmi:id="_sfdwlqddEee4N_F427T3yQ" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_sfdwl6ddEee4N_F427T3yQ">
+        <modelElement href="w02-multigraph.uml#_k93AM6ddEee4N_F427T3yQ"/>
+        <type xmi:id="_sfdwmKddEee4N_F427T3yQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_sfdwmaddEee4N_F427T3yQ" name="line">
+        <modelElement href="w02-multigraph.uml#_k93AMqddEee4N_F427T3yQ"/>
+        <cardinality xmi:id="_sfdwmqddEee4N_F427T3yQ" label="1" max="1" min="1"/>
+        <type xmi:id="_sfdwm6ddEee4N_F427T3yQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_sfdwnKddEee4N_F427T3yQ" name="output">
+      <modelElement href="w02-multigraph.uml#_k93nQKddEee4N_F427T3yQ"/>
+      <visibility xmi:id="_sfdwnaddEee4N_F427T3yQ" label="+"/>
+      <cardinality xmi:id="_sfdwnqddEee4N_F427T3yQ" label="1" max="1" min="1"/>
+      <parameters xmi:id="_sfdwn6ddEee4N_F427T3yQ" name="s">
+        <modelElement href="w02-multigraph.uml#_k93nQaddEee4N_F427T3yQ"/>
+        <cardinality xmi:id="_sfdwoKddEee4N_F427T3yQ" label="1" max="1" min="1"/>
+        <type xmi:id="_sfdwoaddEee4N_F427T3yQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_sfdwoqddEee4N_F427T3yQ" name="printPrompt">
+      <modelElement href="w02-multigraph.uml#_k94OUKddEee4N_F427T3yQ"/>
+      <visibility xmi:id="_sfdwo6ddEee4N_F427T3yQ" label="-"/>
+      <cardinality xmi:id="_sfdwpKddEee4N_F427T3yQ" label="1" max="1" min="1"/>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_sgd2AKddEee4N_F427T3yQ" name="Controller" associationsIn="_sRYc56d4EeexV7QKogiYQw" associationsOut="_sgY9gKddEee4N_F427T3yQ _sgZkkKddEee4N_F427T3yQ">
     <modelElement href="w02-multigraph.uml#_k9vEYKddEee4N_F427T3yQ"/>
     <visualProperties xmi:id="_sgd2AaddEee4N_F427T3yQ" position="272.0,-336.0" size="-1.0,-1.0"/>
     <visibility xmi:id="_sgd2AqddEee4N_F427T3yQ" label="+"/>
     <attributes xmi:id="_sgd2A6ddEee4N_F427T3yQ" name="model">
       <modelElement href="w02-multigraph.uml#_k_gmAKddEee4N_F427T3yQ"/>
-      <stereotypes xmi:id="_sgd2BKddEee4N_F427T3yQ" name="LegacyStyledElement">
-        <modelElement href="w02-multigraph.uml#_k_gmAaddEee4N_F427T3yQ"/>
-      </stereotypes>
+      <stereotypes xmi:id="_S5zJnKd4EeexV7QKogiYQw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_S5zJnad4EeexV7QKogiYQw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_S586lKd4EeexV7QKogiYQw" name="LegacyStyledElement"/>
       <visibility xmi:id="_sgd2BaddEee4N_F427T3yQ" label="-"/>
       <cardinality xmi:id="_sgd2BqddEee4N_F427T3yQ" label="1" max="1" min="1"/>
       <type xmi:id="_sgd2B6ddEee4N_F427T3yQ" name="Metro">
@@ -774,9 +874,9 @@
     </attributes>
     <attributes xmi:id="_sgd2CKddEee4N_F427T3yQ" name="view">
       <modelElement href="w02-multigraph.uml#_k_hNEKddEee4N_F427T3yQ"/>
-      <stereotypes xmi:id="_sgd2CaddEee4N_F427T3yQ" name="LegacyStyledElement">
-        <modelElement href="w02-multigraph.uml#_k_hNEaddEee4N_F427T3yQ"/>
-      </stereotypes>
+      <stereotypes xmi:id="_S5zJnqd4EeexV7QKogiYQw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_S5zJn6d4EeexV7QKogiYQw" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_S586lad4EeexV7QKogiYQw" name="LegacyStyledElement"/>
       <visibility xmi:id="_sgd2CqddEee4N_F427T3yQ" label="-"/>
       <cardinality xmi:id="_sgd2C6ddEee4N_F427T3yQ" label="1" max="1" min="1"/>
       <type xmi:id="_sgd2DKddEee4N_F427T3yQ" name="Display">
@@ -867,104 +967,109 @@
       </parameters>
     </operations>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_sfdweaddEee4N_F427T3yQ" name="Display" associationsIn="_sgZkkKddEee4N_F427T3yQ" associationsOut="_sfdwcKddEee4N_F427T3yQ">
-    <modelElement href="w02-multigraph.uml#_k90j8KddEee4N_F427T3yQ"/>
-    <visualProperties xmi:id="_sfdweqddEee4N_F427T3yQ" position="-169.0,-378.0" size="-1.0,-1.0"/>
-    <visibility xmi:id="_sfdwe6ddEee4N_F427T3yQ" label="+"/>
-    <attributes xmi:id="_sfdwfKddEee4N_F427T3yQ" name="reader" staticAttribute="true">
-      <modelElement href="w02-multigraph.uml#_k_h0IaddEee4N_F427T3yQ"/>
-      <stereotypes xmi:id="_sfdwfaddEee4N_F427T3yQ" name="LegacyStyledElement">
-        <modelElement href="w02-multigraph.uml#_k_ibMKddEee4N_F427T3yQ"/>
-      </stereotypes>
-      <visibility xmi:id="_sfdwfqddEee4N_F427T3yQ" label="-"/>
-      <cardinality xmi:id="_sfdwf6ddEee4N_F427T3yQ" label="1" max="1" min="1"/>
-      <type xmi:id="_sfdwgKddEee4N_F427T3yQ" name="Scanner">
-        <modelElement href="w02-multigraph.uml#_k-_ooKddEee4N_F427T3yQ"/>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_sgQaoKddEee4N_F427T3yQ" name="Station" associationsIn="_Hjh-QKdfEee4N_F427T3yQ">
+    <modelElement href="w02-multigraph.uml#_k-QBwKddEee4N_F427T3yQ"/>
+    <visualProperties xmi:id="_sgQaoaddEee4N_F427T3yQ" position="731.0,-93.0" size="229.0,100.0"/>
+    <visibility xmi:id="_sgQaoqddEee4N_F427T3yQ" label="+"/>
+    <attributes xmi:id="_sgQao6ddEee4N_F427T3yQ" name="name">
+      <modelElement href="w02-multigraph.uml#_k_pv8KddEee4N_F427T3yQ"/>
+      <visibility xmi:id="_sgQapKddEee4N_F427T3yQ" label="+"/>
+      <cardinality xmi:id="_sgQapaddEee4N_F427T3yQ" label="1" max="1" min="1"/>
+      <type xmi:id="_sgQapqddEee4N_F427T3yQ" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </type>
     </attributes>
-    <operations xmi:id="_sfdwgaddEee4N_F427T3yQ" name="Display">
-      <modelElement href="w02-multigraph.uml#_k91yEKddEee4N_F427T3yQ"/>
-      <keywords xmi:id="_sfdwgqddEee4N_F427T3yQ" keyword="create"/>
-      <visibility xmi:id="_sfdwg6ddEee4N_F427T3yQ" label="+"/>
-      <cardinality xmi:id="_sfdwhKddEee4N_F427T3yQ" label="1" max="1" min="1"/>
-      <outParameters xmi:id="_sfdwhaddEee4N_F427T3yQ">
-        <modelElement href="w02-multigraph.uml#_k91yE6ddEee4N_F427T3yQ"/>
-        <type xmi:id="_sfdwhqddEee4N_F427T3yQ" name="Display">
-          <modelElement href="w02-multigraph.uml#_k90j8KddEee4N_F427T3yQ"/>
+    <operations xmi:id="_sgQap6ddEee4N_F427T3yQ" name="Station">
+      <modelElement href="w02-multigraph.uml#_k-Qo0KddEee4N_F427T3yQ"/>
+      <keywords xmi:id="_sgQaqKddEee4N_F427T3yQ" keyword="create"/>
+      <visibility xmi:id="_sgQaqaddEee4N_F427T3yQ" label="+"/>
+      <cardinality xmi:id="_sgQaqqddEee4N_F427T3yQ" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_sgQaq6ddEee4N_F427T3yQ">
+        <modelElement href="w02-multigraph.uml#_k-Qo1KddEee4N_F427T3yQ"/>
+        <type xmi:id="_sgQarKddEee4N_F427T3yQ" name="Station">
+          <modelElement href="w02-multigraph.uml#_k-QBwKddEee4N_F427T3yQ"/>
         </type>
       </outParameters>
-    </operations>
-    <operations xmi:id="_sfdwh6ddEee4N_F427T3yQ" name="readLine">
-      <modelElement href="w02-multigraph.uml#_k91yFKddEee4N_F427T3yQ"/>
-      <visibility xmi:id="_sfdwiKddEee4N_F427T3yQ" label="+"/>
-      <cardinality xmi:id="_sfdwiaddEee4N_F427T3yQ" label="1" max="1" min="1"/>
-      <outParameters xmi:id="_sfdwiqddEee4N_F427T3yQ">
-        <modelElement href="w02-multigraph.uml#_k92ZIKddEee4N_F427T3yQ"/>
-        <type xmi:id="_sfdwi6ddEee4N_F427T3yQ" name="String">
-          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </type>
-      </outParameters>
-    </operations>
-    <operations xmi:id="_sfdwjKddEee4N_F427T3yQ" name="readInt">
-      <modelElement href="w02-multigraph.uml#_k92ZIaddEee4N_F427T3yQ"/>
-      <visibility xmi:id="_sfdwjaddEee4N_F427T3yQ" label="+"/>
-      <cardinality xmi:id="_sfdwjqddEee4N_F427T3yQ" label="1" max="1" min="1"/>
-      <outParameters xmi:id="_sfdwj6ddEee4N_F427T3yQ">
-        <modelElement href="w02-multigraph.uml#_k92ZIqddEee4N_F427T3yQ"/>
-        <type xmi:id="_sfdwkKddEee4N_F427T3yQ" name="int">
-          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
-        </type>
-      </outParameters>
-    </operations>
-    <operations xmi:id="_sfdwkaddEee4N_F427T3yQ" name="printMenu">
-      <modelElement href="w02-multigraph.uml#_k93AMKddEee4N_F427T3yQ"/>
-      <visibility xmi:id="_sfdwkqddEee4N_F427T3yQ" label="+"/>
-      <cardinality xmi:id="_sfdwk6ddEee4N_F427T3yQ" label="1" max="1" min="1"/>
-    </operations>
-    <operations xmi:id="_sfdwlKddEee4N_F427T3yQ" name="getStation">
-      <modelElement href="w02-multigraph.uml#_k93AMaddEee4N_F427T3yQ"/>
-      <visibility xmi:id="_sfdwladdEee4N_F427T3yQ" label="+"/>
-      <cardinality xmi:id="_sfdwlqddEee4N_F427T3yQ" label="1" max="1" min="1"/>
-      <outParameters xmi:id="_sfdwl6ddEee4N_F427T3yQ">
-        <modelElement href="w02-multigraph.uml#_k93AM6ddEee4N_F427T3yQ"/>
-        <type xmi:id="_sfdwmKddEee4N_F427T3yQ" name="String">
-          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </type>
-      </outParameters>
-      <parameters xmi:id="_sfdwmaddEee4N_F427T3yQ" name="line">
-        <modelElement href="w02-multigraph.uml#_k93AMqddEee4N_F427T3yQ"/>
-        <cardinality xmi:id="_sfdwmqddEee4N_F427T3yQ" label="1" max="1" min="1"/>
-        <type xmi:id="_sfdwm6ddEee4N_F427T3yQ" name="String">
+      <parameters xmi:id="_sgQaraddEee4N_F427T3yQ" name="name">
+        <modelElement href="w02-multigraph.uml#_k-Qo0addEee4N_F427T3yQ"/>
+        <cardinality xmi:id="_sgQarqddEee4N_F427T3yQ" label="1" max="1" min="1"/>
+        <type xmi:id="_sgQar6ddEee4N_F427T3yQ" name="String">
           <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </type>
       </parameters>
-    </operations>
-    <operations xmi:id="_sfdwnKddEee4N_F427T3yQ" name="output">
-      <modelElement href="w02-multigraph.uml#_k93nQKddEee4N_F427T3yQ"/>
-      <visibility xmi:id="_sfdwnaddEee4N_F427T3yQ" label="+"/>
-      <cardinality xmi:id="_sfdwnqddEee4N_F427T3yQ" label="1" max="1" min="1"/>
-      <parameters xmi:id="_sfdwn6ddEee4N_F427T3yQ" name="s">
-        <modelElement href="w02-multigraph.uml#_k93nQaddEee4N_F427T3yQ"/>
-        <cardinality xmi:id="_sfdwoKddEee4N_F427T3yQ" label="1" max="1" min="1"/>
-        <type xmi:id="_sfdwoaddEee4N_F427T3yQ" name="String">
-          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </type>
-      </parameters>
-    </operations>
-    <operations xmi:id="_sfdwoqddEee4N_F427T3yQ" name="printPrompt">
-      <modelElement href="w02-multigraph.uml#_k94OUKddEee4N_F427T3yQ"/>
-      <visibility xmi:id="_sfdwo6ddEee4N_F427T3yQ" label="-"/>
-      <cardinality xmi:id="_sfdwpKddEee4N_F427T3yQ" label="1" max="1" min="1"/>
     </operations>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:InterfaceVisual" xmi:id="_sfygkKddEee4N_F427T3yQ" name="MultiGraph" associationsIn="_sfvdQKddEee4N_F427T3yQ _sf5OQKddEee4N_F427T3yQ" associationsOut="_jn1zAKdeEee4N_F427T3yQ" subclassedBy="_sgBKEKddEee4N_F427T3yQ">
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_sf_78KddEee4N_F427T3yQ" name="Parser" associationsIn="_J8GYIKdfEee4N_F427T3yQ">
+    <modelElement href="w02-multigraph.uml#_k-G30KddEee4N_F427T3yQ"/>
+    <visualProperties xmi:id="_sf_78addEee4N_F427T3yQ" position="678.0,241.0" size="205.0,128.0"/>
+    <visibility xmi:id="_sf_78qddEee4N_F427T3yQ" label="+"/>
+    <operations xmi:id="_hVBdAad4EeexV7QKogiYQw" name="setFile">
+      <modelElement href="w02-multigraph.uml#_hVBdAKd4EeexV7QKogiYQw"/>
+      <visibility xmi:id="_hVBdAqd4EeexV7QKogiYQw" label="+"/>
+      <cardinality xmi:id="_hVBdA6d4EeexV7QKogiYQw" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_ix2nYad4EeexV7QKogiYQw" name="parseLine">
+      <modelElement href="w02-multigraph.uml#_ix2nYKd4EeexV7QKogiYQw"/>
+      <visibility xmi:id="_ix2nYqd4EeexV7QKogiYQw" label="+"/>
+      <cardinality xmi:id="_ix2nY6d4EeexV7QKogiYQw" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_mlWHIqd4EeexV7QKogiYQw" name="parseStation">
+      <modelElement href="w02-multigraph.uml#_mlWHIKd4EeexV7QKogiYQw"/>
+      <visibility xmi:id="_mlWHI6d4EeexV7QKogiYQw" label="+"/>
+      <cardinality xmi:id="_mlWHJKd4EeexV7QKogiYQw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_mlWHJad4EeexV7QKogiYQw">
+        <modelElement href="w02-multigraph.uml#_mlWHIad4EeexV7QKogiYQw"/>
+        <type xmi:id="_mlWHJqd4EeexV7QKogiYQw" name="Station">
+          <modelElement href="w02-multigraph.uml#_k-QBwKddEee4N_F427T3yQ"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_oWJWYqd4EeexV7QKogiYQw" name="parseRoute">
+      <modelElement href="w02-multigraph.uml#_oWJWYKd4EeexV7QKogiYQw"/>
+      <visibility xmi:id="_oWJWY6d4EeexV7QKogiYQw" label="+"/>
+      <cardinality xmi:id="_oWJWZKd4EeexV7QKogiYQw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_oWJWZad4EeexV7QKogiYQw">
+        <modelElement href="w02-multigraph.uml#_oWJWYad4EeexV7QKogiYQw"/>
+        <type xmi:id="_oWJWZqd4EeexV7QKogiYQw" name="Route">
+          <modelElement href="w02-multigraph.uml#_k-J7IKddEee4N_F427T3yQ"/>
+        </type>
+      </outParameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_XfMnYKd4EeexV7QKogiYQw" name="Driver" associationsOut="_sRYc56d4EeexV7QKogiYQw">
+    <modelElement href="w02-multigraph.uml#_XfC2YKd4EeexV7QKogiYQw"/>
+    <visualProperties xmi:id="_XfMnYad4EeexV7QKogiYQw" position="713.0,-311.0" size="156.0,132.0"/>
+    <visibility xmi:id="_XfMnYqd4EeexV7QKogiYQw" label="+"/>
+    <attributes xmi:id="_qQe8Iad4EeexV7QKogiYQw" name="control">
+      <modelElement href="w02-multigraph.uml#_qQe8IKd4EeexV7QKogiYQw"/>
+      <visibility xmi:id="_qQe8Iqd4EeexV7QKogiYQw" label="-"/>
+      <cardinality xmi:id="_qQe8I6d4EeexV7QKogiYQw" label="1" max="1" min="1"/>
+      <type xmi:id="_qQe8JKd4EeexV7QKogiYQw" name="Controller">
+        <modelElement href="w02-multigraph.uml#_k9vEYKddEee4N_F427T3yQ"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_sRYc8Kd4EeexV7QKogiYQw" name="controller">
+      <modelElement href="w02-multigraph.uml#_sRYc5Kd4EeexV7QKogiYQw"/>
+      <visibility xmi:id="_sRYc8ad4EeexV7QKogiYQw" label="+"/>
+      <cardinality xmi:id="_sRYc8qd4EeexV7QKogiYQw" label="*" max="-1"/>
+      <type xmi:id="_sRYc86d4EeexV7QKogiYQw" name="Controller">
+        <modelElement href="w02-multigraph.uml#_k9vEYKddEee4N_F427T3yQ"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_q7ZhYad4EeexV7QKogiYQw" name="main">
+      <modelElement href="w02-multigraph.uml#_q7ZhYKd4EeexV7QKogiYQw"/>
+      <visibility xmi:id="_q7ZhYqd4EeexV7QKogiYQw" label="+"/>
+      <cardinality xmi:id="_q7ZhY6d4EeexV7QKogiYQw" label="1" max="1" min="1"/>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:InterfaceVisual" xmi:id="_sfygkKddEee4N_F427T3yQ" name="MultiGraph" associationsIn="_sfvdQKddEee4N_F427T3yQ _sf5OQKddEee4N_F427T3yQ" associationsOut="_RzxjYKd9EeexV7QKogiYQw" subclassedBy="_sgBKEKddEee4N_F427T3yQ">
     <modelElement href="w02-multigraph.uml#_k-AxMKddEee4N_F427T3yQ"/>
-    <visualProperties xmi:id="_sfygkaddEee4N_F427T3yQ" position="210.0,244.0" size="-1.0,-1.0"/>
+    <visualProperties xmi:id="_sfygkaddEee4N_F427T3yQ" position="210.0,244.0" size="335.0,275.0"/>
     <stereotypes xmi:id="_sfygkqddEee4N_F427T3yQ" name="Generics">
       <modelElement href="w02-multigraph.uml#_k-BYQKddEee4N_F427T3yQ"/>
     </stereotypes>
-    <stereotypes xmi:id="_sfygk6ddEee4N_F427T3yQ" name="Patch">
-      <modelElement href="w02-multigraph.uml#_sfEH0KddEee4N_F427T3yQ"/>
+    <stereotypes xmi:id="_WC85kad9EeexV7QKogiYQw" name="Patch">
+      <modelElement href="w02-multigraph.uml#_WC85kKd9EeexV7QKogiYQw"/>
     </stereotypes>
     <visibility xmi:id="_sfyglKddEee4N_F427T3yQ" label="+"/>
     <attributes xmi:id="_sfygladdEee4N_F427T3yQ" name="nodes">
@@ -975,12 +1080,12 @@
         <modelElement href="w02-multigraph.uml#_k_LO0KddEee4N_F427T3yQ"/>
       </type>
     </attributes>
-    <attributes xmi:id="_jn2aEKdeEee4N_F427T3yQ" name="labeledEdge">
-      <modelElement href="w02-multigraph.uml#_jnz91KdeEee4N_F427T3yQ"/>
-      <visibility xmi:id="_jn2aEadeEee4N_F427T3yQ" label="+"/>
-      <cardinality xmi:id="_jn2aEqdeEee4N_F427T3yQ" label="*" max="-1"/>
-      <type xmi:id="_jn2aE6deEee4N_F427T3yQ" name="LabeledEdge">
-        <modelElement href="w02-multigraph.uml#_k941YKddEee4N_F427T3yQ"/>
+    <attributes xmi:id="_Rzxjaad9EeexV7QKogiYQw" name="edges">
+      <modelElement href="w02-multigraph.uml#_RzoZdKd9EeexV7QKogiYQw"/>
+      <visibility xmi:id="_Rzxjaqd9EeexV7QKogiYQw" label="+"/>
+      <cardinality xmi:id="_Rzxja6d9EeexV7QKogiYQw" label="1..*" max="-1" min="1"/>
+      <type xmi:id="_VNsFgad9EeexV7QKogiYQw" name="E">
+        <modelElement href="w02-multigraph.uml#_VNiUgqd9EeexV7QKogiYQw"/>
       </type>
     </attributes>
     <operations xmi:id="_sfygnaddEee4N_F427T3yQ" name="addNode">
@@ -1028,8 +1133,8 @@
       <parameters xmi:id="_sfygsKddEee4N_F427T3yQ" name="edge">
         <modelElement href="w02-multigraph.uml#_k_XcFKddEee4N_F427T3yQ"/>
         <cardinality xmi:id="_sfygsaddEee4N_F427T3yQ" label="1" max="1" min="1"/>
-        <type xmi:id="_sfygsqddEee4N_F427T3yQ" name="E">
-          <modelElement href="w02-multigraph.uml#_k_W1AKddEee4N_F427T3yQ"/>
+        <type xmi:id="_VNiUh6d9EeexV7QKogiYQw" name="E">
+          <modelElement href="w02-multigraph.uml#_VNiUgKd9EeexV7QKogiYQw"/>
         </type>
       </parameters>
     </operations>
@@ -1064,8 +1169,8 @@
       <parameters xmi:id="_sfygwKddEee4N_F427T3yQ" name="edge">
         <modelElement href="w02-multigraph.uml#_k_YqMqddEee4N_F427T3yQ"/>
         <cardinality xmi:id="_sfygwaddEee4N_F427T3yQ" label="1" max="1" min="1"/>
-        <type xmi:id="_sfygwqddEee4N_F427T3yQ" name="E">
-          <modelElement href="w02-multigraph.uml#_k_W1AKddEee4N_F427T3yQ"/>
+        <type xmi:id="_VNiUiKd9EeexV7QKogiYQw" name="E">
+          <modelElement href="w02-multigraph.uml#_VNiUgKd9EeexV7QKogiYQw"/>
         </type>
       </parameters>
     </operations>
@@ -1075,8 +1180,8 @@
       <cardinality xmi:id="_sfygxaddEee4N_F427T3yQ" label="1..*" max="-1" min="1"/>
       <outParameters xmi:id="_sfygxqddEee4N_F427T3yQ">
         <modelElement href="w02-multigraph.uml#_k_Z4U6ddEee4N_F427T3yQ"/>
-        <type xmi:id="_sfygx6ddEee4N_F427T3yQ" name="E">
-          <modelElement href="w02-multigraph.uml#_k_W1AKddEee4N_F427T3yQ"/>
+        <type xmi:id="_VNsFgKd9EeexV7QKogiYQw" name="E">
+          <modelElement href="w02-multigraph.uml#_VNiUgKd9EeexV7QKogiYQw"/>
         </type>
       </outParameters>
       <parameters xmi:id="_sfygyKddEee4N_F427T3yQ" name="node1">
@@ -1094,12 +1199,12 @@
         </type>
       </parameters>
     </operations>
-    <memberTypes xmi:id="_sfygzqddEee4N_F427T3yQ" name="E">
-      <modelElement href="w02-multigraph.uml#_k_W1AKddEee4N_F427T3yQ"/>
-      <stereotypes xmi:id="_sfygz6ddEee4N_F427T3yQ" name="Reference">
-        <modelElement href="w02-multigraph.uml#_k_XcEKddEee4N_F427T3yQ"/>
+    <memberTypes xmi:id="_VNiUhKd9EeexV7QKogiYQw" name="E">
+      <modelElement href="w02-multigraph.uml#_VNiUgKd9EeexV7QKogiYQw"/>
+      <stereotypes xmi:id="_VNiUhad9EeexV7QKogiYQw" name="Reference">
+        <modelElement href="w02-multigraph.uml#_VNiUgad9EeexV7QKogiYQw"/>
       </stereotypes>
-      <visibility xmi:id="_sfyg0KddEee4N_F427T3yQ" label="+"/>
+      <visibility xmi:id="_VNiUhqd9EeexV7QKogiYQw" label="+"/>
     </memberTypes>
   </nodes>
 </com.yattasolutions.uml.diagrams.classifier:ClassDiagram>
