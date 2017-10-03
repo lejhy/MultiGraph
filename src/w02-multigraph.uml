@@ -4,7 +4,7 @@
     <eAnnotations xmi:id="_ksKzQKddEee4N_F427T3yQ" source="http://ns.yatta.de/umllab">
       <contents xmi:type="ecore:EAnnotation" xmi:id="_ksKzQaddEee4N_F427T3yQ" source="codegen">
         <details xmi:id="_ksLaUKddEee4N_F427T3yQ" key="codegenDirectory" value="/w02-multigraph/src"/>
-        <details xmi:id="_scFFQKddEee4N_F427T3yQ" key="AssociatedSourceCode" value="/w02-multigraph/src/AdjacencyMapMultiGraph.java;524470841/1;/w02-multigraph/src/Metro.java;4101018635/1;/Metro/src/MultiGraph.java;4096826473/1;/Metro/src/LabeledEdge.java;3239313891/1;/Metro/src/Route.java;236243154/1;/Metro/src/Display.java;3499938487/1;/Metro/src/Controller.java;4206384708/1;/Metro/src/Station.java;3872793795/1;/Metro/src/Parser.java;3945934634/1;"/>
+        <details xmi:id="_scFFQKddEee4N_F427T3yQ" key="AssociatedSourceCode" value="/w02-multigraph/src/AdjacencyMapMultiGraph.java;524470841/1;/w02-multigraph/src/Metro.java;4101018635/1;/Metro/src/MultiGraph.java;4096826473/1;/Metro/src/LabeledEdge.java;3239313891/1;/Metro/src/Route.java;2051857071/1;/Metro/src/Display.java;3499938487/1;/Metro/src/Controller.java;4206384708/1;/Metro/src/Station.java;3872793795/1;/Metro/src/Parser.java;3945934634/1;"/>
       </contents>
     </eAnnotations>
     <elementImport xmi:id="_k9fMwKddEee4N_F427T3yQ">
@@ -886,7 +886,14 @@
        return false;&#xD;
 </body>
       </ownedBehavior>
-      <ownedOperation xmi:id="_k9wSgKddEee4N_F427T3yQ" name="initialise" visibility="private" method="_k_taVKddEee4N_F427T3yQ"/>
+      <ownedOperation xmi:id="_k9wSgKddEee4N_F427T3yQ" name="Controller" visibility="public" method="_k_taVKddEee4N_F427T3yQ">
+        <eAnnotations xmi:id="_4Pi3wKgXEeelWZ9aCTRdAA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:id="_4Pi3wagXEeelWZ9aCTRdAA" key="create"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_iuDzoKgUEeelWZ9aCTRdAA" name="display" type="_k90j8KddEee4N_F427T3yQ"/>
+        <ownedParameter xmi:id="_iuHeAKgUEeelWZ9aCTRdAA" name="metro" type="_k974sKddEee4N_F427T3yQ"/>
+        <ownedParameter xmi:id="_4Pi3wqgXEeelWZ9aCTRdAA" type="_k9vEYKddEee4N_F427T3yQ" direction="return"/>
+      </ownedOperation>
       <ownedOperation xmi:id="_k9wSgaddEee4N_F427T3yQ" name="menu" visibility="private" method="_k_taVaddEee4N_F427T3yQ"/>
       <ownedOperation xmi:id="_k9w5kKddEee4N_F427T3yQ" name="retrieveStartAndEnd" visibility="private" method="_k_uBYKddEee4N_F427T3yQ">
         <ownedParameter xmi:id="_k9w5kaddEee4N_F427T3yQ" direction="return">
@@ -1083,16 +1090,17 @@
         <body>graph = new AdjacencyMapMultiGraph&lt;>();&#xD;
 	</body>
       </ownedBehavior>
-      <ownedOperation xmi:id="_k99G0KddEee4N_F427T3yQ" name="initialise"/>
       <ownedOperation xmi:id="_k99G0addEee4N_F427T3yQ" name="findPath" method="_k_xEsKddEee4N_F427T3yQ">
+        <ownedParameter xmi:id="_k99t4KddEee4N_F427T3yQ" isOrdered="true" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_63J6kKgUEeelWZ9aCTRdAA" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_k99t4addEee4N_F427T3yQ" value="1"/>
+        </ownedParameter>
         <ownedParameter xmi:id="_k99G0qddEee4N_F427T3yQ" name="startName">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
         <ownedParameter xmi:id="_k99G06ddEee4N_F427T3yQ" name="endName">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedParameter>
-        <ownedParameter xmi:id="_k99t4KddEee4N_F427T3yQ" type="_k-J7IKddEee4N_F427T3yQ" isOrdered="true" direction="return">
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_k99t4addEee4N_F427T3yQ" value="*"/>
         </ownedParameter>
       </ownedOperation>
       <ownedOperation xmi:id="_k9-8AKddEee4N_F427T3yQ" name="getStation" method="_k_xrwKddEee4N_F427T3yQ">
@@ -1106,6 +1114,12 @@
           <details xmi:id="_6fcc46deEee4N_F427T3yQ" key="create"/>
         </eAnnotations>
         <ownedParameter xmi:id="_6fcc4adeEee4N_F427T3yQ" type="_k974sKddEee4N_F427T3yQ" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_Vpks0KgYEeelWZ9aCTRdAA" name="populate" visibility="public">
+        <ownedParameter xmi:id="_Vpks0agYEeelWZ9aCTRdAA" direction="return"/>
+        <ownedParameter xmi:id="_XpeIAKgYEeelWZ9aCTRdAA" name="fileName">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_k-AxMKddEee4N_F427T3yQ" name="MultiGraph">
@@ -1160,7 +1174,15 @@
           <details xmi:id="_IGM8wqd7EeexV7QKogiYQw" key="codegenDirectory" value="/Metro/src"/>
         </contents>
       </eAnnotations>
-      <ownedOperation xmi:id="_hVBdAKd4EeexV7QKogiYQw" name="setFile"/>
+      <ownedOperation xmi:id="_hVBdAKd4EeexV7QKogiYQw" name="Parser">
+        <eAnnotations xmi:id="_CWqgcKgSEeelWZ9aCTRdAA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:id="_CWrHgKgSEeelWZ9aCTRdAA" key="create"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_9QnzsKgREeelWZ9aCTRdAA" type="_k-G30KddEee4N_F427T3yQ" direction="return"/>
+        <ownedParameter xmi:id="_HAcvAKgSEeelWZ9aCTRdAA" name="fileName">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
       <ownedOperation xmi:id="_ix2nYKd4EeexV7QKogiYQw" name="parseLine"/>
       <ownedOperation xmi:id="_mlWHIKd4EeexV7QKogiYQw" name="parseStation">
         <ownedParameter xmi:id="_mlWHIad4EeexV7QKogiYQw" type="_k-QBwKddEee4N_F427T3yQ" direction="return"/>
@@ -1192,6 +1214,14 @@
         <body>this.label = label;&#xD;
 	</body>
       </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_UNSKcKgXEeelWZ9aCTRdAA" name="getColor" specification="_MPZt4KgXEeelWZ9aCTRdAA">
+        <ownedParameter xmi:id="_UNSKcagXEeelWZ9aCTRdAA" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>return getLabel();&#xD;
+	</body>
+      </ownedBehavior>
       <ownedOperation xmi:id="_k-MXYKddEee4N_F427T3yQ" name="Route" method="_k_zg9KddEee4N_F427T3yQ">
         <eAnnotations xmi:id="_k-M-caddEee4N_F427T3yQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
           <details xmi:id="_k-M-cqddEee4N_F427T3yQ" key="create"/>
@@ -1200,6 +1230,11 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
         <ownedParameter xmi:id="_k-M-c6ddEee4N_F427T3yQ" type="_k-J7IKddEee4N_F427T3yQ" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_MPZt4KgXEeelWZ9aCTRdAA" name="getColor" visibility="public" method="_UNSKcKgXEeelWZ9aCTRdAA">
+        <ownedParameter xmi:id="_MPZt4agXEeelWZ9aCTRdAA" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_k-QBwKddEee4N_F427T3yQ" name="Station">
@@ -4814,6 +4849,9 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_VNiUgqd9EeexV7QKogiYQw" name="E"/>
     <packagedElement xmi:type="uml:Dependency" xmi:id="_sZlnkKeBEeexV7QKogiYQw" client="_k-AxMKddEee4N_F427T3yQ" supplier="_k941YKddEee4N_F427T3yQ"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_0nbT0KgSEeelWZ9aCTRdAA" client="_k-G30KddEee4N_F427T3yQ" supplier="_k-QBwKddEee4N_F427T3yQ"/>
+    <packagedElement xmi:type="uml:Dependency" xmi:id="_2BalkKgSEeelWZ9aCTRdAA" client="_k-G30KddEee4N_F427T3yQ" supplier="_k-J7IKddEee4N_F427T3yQ"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_tvKJkKgUEeelWZ9aCTRdAA" name="List&lt;String>"/>
     <profileApplication xmi:id="_ksPEsKddEee4N_F427T3yQ">
       <eAnnotations xmi:id="_ksSIAKddEee4N_F427T3yQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile-Annotation_2-UMLLabProfile"/>
@@ -4973,7 +5011,6 @@
   <UMLLabProfile:Reference xmi:id="_k__HIKddEee4N_F427T3yQ" base_Element="_k_-gEaddEee4N_F427T3yQ"/>
   <UMLLabProfile:Reference xmi:id="_k__uMKddEee4N_F427T3yQ" base_Element="_k__HIaddEee4N_F427T3yQ"/>
   <UMLLabProfile:Reference xmi:id="_lAAVQKddEee4N_F427T3yQ" base_Element="_k__uMaddEee4N_F427T3yQ"/>
-  <UMLLabProfile:LegacyStyledElement xmi:id="_6fdD8KdeEee4N_F427T3yQ" base_Element="_k99G0KddEee4N_F427T3yQ"/>
   <UMLLabProfile:Reference xmi:id="_Rv6SsKdfEee4N_F427T3yQ" base_Element="_Rv5roKdfEee4N_F427T3yQ"/>
   <UMLLabProfile:Reference xmi:id="_FuCLgad7EeexV7QKogiYQw" base_Element="_FuCLgKd7EeexV7QKogiYQw"/>
   <UMLLabProfile:Reference xmi:id="_FuCLlad7EeexV7QKogiYQw" base_Element="_FuCLlKd7EeexV7QKogiYQw"/>
@@ -5198,4 +5235,5 @@
   <UMLLabProfile:Reference xmi:id="_ILtvE6d7EeexV7QKogiYQw" base_Element="_ILtvEad7EeexV7QKogiYQw"/>
   <UMLLabProfile:Reference xmi:id="_ILtvFqd7EeexV7QKogiYQw" base_Element="_ILtvFKd7EeexV7QKogiYQw"/>
   <UMLLabProfile:Reference xmi:id="_VNiUg6d9EeexV7QKogiYQw" base_Element="_VNiUgqd9EeexV7QKogiYQw"/>
+  <UMLLabProfile:UnresolvedElement xmi:id="_tvLXsKgUEeelWZ9aCTRdAA" base_Element="_tvKJkKgUEeelWZ9aCTRdAA"/>
 </xmi:XMI>

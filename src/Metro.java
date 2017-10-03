@@ -10,7 +10,8 @@ public class Metro {
 		graph = new AdjacencyMapMultiGraph<>();
 	}
 	
-	public void initialise() {
+	public void populate() {
+		
 	}
 	
 	public List<Route<Station>> findPath(String startName, String endName) {

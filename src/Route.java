@@ -7,6 +7,10 @@ public class Route<N> implements LabeledEdge<N>{
 	public Route(String label) {
 		this.label = label;
 	}
+	
+	public String getColor() {
+		return getLabel();
+	}
 
 	@Override
 	public String getLabel() {
