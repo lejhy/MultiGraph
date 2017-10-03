@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 
+import javax.xml.soap.Node;
+
 public class AdjacencyMapMultiGraph<N, E extends LabeledEdge<N>> implements MultiGraph<N, E> {
 	//This implementation of MultiGraph contains types N and E
 	//N represents a Station using generics
@@ -111,25 +113,42 @@ public class AdjacencyMapMultiGraph<N, E extends LabeledEdge<N>> implements Mult
 		visited.add(source);
 		queue.add(source);
 		N node;
+		List<E> sortedEdges;
 		while (queue.isEmpty() == false) {
+			//Continue searching until all connected nodes have been visited
 			node = queue.poll();
-			for(E edge: adjacencyMap.get(node)) {
+			sortedEdges = new ArrayList<E>();
+			for (E edge : adjacencyMap.get(node)) {
+				//Get an appropriately sorted list of all edges connected to current node
+				if (edge.getLabel() == pathSource.get(node).getLabel()) {
+					//Those edges whose label matches the label of the source edge of the current node go at the beginning
+					sortedEdges.add(0, edge);
+				} else {
+					//Those edges whose label does not match the label of the source edge of the current node go at the end
+					sortedEdges.add(edge);
+				}
+			}
+			for(E edge: sortedEdges) {
+				//Walk the list of sorted edges looking for nodes that have not been visited yet
 				node = getNode(edge, node);
 				if (visited.contains(node) == false) {
+					//For unvisited nodes set a source edge and add them on the queue
 					visited.add(node);
 					pathSource.put(node, edge);
 					queue.add(node);
 				}
 			}
 		}
-		List<E> edgeList= new ArrayList<E>();
+		List<E> edgePath= new ArrayList<E>();
 		node = destination;
 		while (node != source) {
+			//Continue starting from the destination until the source node has been reached
 			E edge = pathSource.get(node);
-			edgeList.add(edge);
+			//Add the source edge at the beginning of the list
+			edgePath.add(0, edge);
 			node = getNode(edge, node);
 		}
-		return edgeList;
+		return edgePath;
 	}
 	
 	private boolean containsEdge(E edge) {
