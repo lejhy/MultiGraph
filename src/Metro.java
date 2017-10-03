@@ -1,5 +1,3 @@
-import java.util.List;
-
 public class Metro {
 	
 	private MultiGraph<Station, Route<Station>> graph;

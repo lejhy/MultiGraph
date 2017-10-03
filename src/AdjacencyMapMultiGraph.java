@@ -5,8 +5,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 
-import javax.xml.soap.Node;
-
 public class AdjacencyMapMultiGraph<N, E extends LabeledEdge<N>> implements MultiGraph<N, E> {
 	//This implementation of MultiGraph contains types N and E
 	//N represents a Station using generics

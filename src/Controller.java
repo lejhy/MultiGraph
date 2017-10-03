@@ -1,5 +1,3 @@
-import java.util.Set;
-import java.util.HashSet;
 
 public class Controller {
 	private Metro model;
@@ -10,18 +8,17 @@ public class Controller {
       Tell model to initialise all data necessary
       and send to menu to begin core loop
     */
-   private void initialise() {
+   public Controller() {
       view = new Display();
       model = new Metro();
-      model.initialise();
+      model.populate("data.txt");
       keepGoing=true;
-      menu();
    }
 
    /* Core loop which will continue until
       user has specified to exit
     */
-   private void menu() {
+   public void menu() {
 	   boolean isRunning= true;
 	   while(isRunning) {
            view.printMenu();

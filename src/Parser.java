@@ -1,38 +1,45 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.List;
-
-import org.omg.CORBA.PUBLIC_MEMBER;
+import java.util.Scanner;
 
 public class Parser {
 	
+	List<Station> stations;
+	List<Route<Station>> routes;
+	
 	public Parser(String fileName) {
-		// TODO implement this operation
-		throw new UnsupportedOperationException("not implemented");
+		stations = new ArrayList<Station>();
+		routes = new ArrayList<Route<Station>>();
+		parseFile(fileName);
 	}
 	
 	public List<Station> getStations(){
-		// TODO implement this operation
-		throw new UnsupportedOperationException("not implemented");
+		return stations;
 	}
 	
 	public List<Route<Station>> getRoutes(){
-		// TODO implement this operation
-		throw new UnsupportedOperationException("not implemented");
-	}
-   
-	public void parseLine() {
-		// TODO implement this operation
-		throw new UnsupportedOperationException("not implemented");
-	}
-   
-	public Station parseStation() {
-		// TODO implement this operation
-		throw new UnsupportedOperationException("not implemented");
+		return routes;
 	}
 	
-	public Route parseRoute() {
-		// TODO implement this operation
-		throw new UnsupportedOperationException("not implemented");
-	}
-   
-   
+	private void parseFile(String fileName) {
+		File file = new File(fileName);
+		try {
+			Scanner scanner = new Scanner(file);
+			stations.add(null);
+			while(scanner.hasNextLine()) {
+				stations.add(scanner.nextInt(), new Station(scanner.next()));
+				scanner.nextLine();
+			}
+			scanner.close();
+			scanner = new Scanner(file);
+			while(scanner.hasNextLine()) {
+				//TODO Retrieve all edges from file
+			}
+			scanner.close();
+		} catch (FileNotFoundException e) {
+			System.out.println("File not found in parseFile");
+		}
+	}   
 }
