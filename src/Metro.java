@@ -10,17 +10,30 @@ public class Metro {
 		graph = new AdjacencyMapMultiGraph<>();
 	}
 	
-	public void populate() {
-		
+	public void populate(String fileName) {
+		Parser parser = new Parser(fileName);
+		for (Station station : parser.getStations()) {
+			graph.addNode(station);
+		}
+		for (Route<Station> route : parser.getRoutes()) {
+			graph.addEdge(route);
+		}
 	}
 	
-	public List<Route<Station>> findPath(String startName, String endName) {
+	public String findPath(String startName, String endName) {
 		//Takes in the name of two stations and returns the fastest route between them in 
 		//the form of a list of individual routes
 		Station start = getStation(startName);
 		Station end = getStation(endName);
 		if (start != null && end != null) {
-			return graph.getPath(start, end);
+			String path = "";
+			path.concat(startName);
+			for (Route<Station> route : graph.getPath(start, end)) {
+				path.concat(route.getLabel());
+				//TODO needs some work
+			}
+			path.concat(endName);
+			return path;
 		} else {
 			return null;
 		}
@@ -34,7 +47,6 @@ public class Metro {
 			}
 		}		
 		return null;
-	}
-   
-  }
+	} 
+}
 

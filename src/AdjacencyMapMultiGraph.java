@@ -30,6 +30,11 @@ public class AdjacencyMapMultiGraph<N, E extends LabeledEdge<N>> implements Mult
 		}
 	}
 	
+	@Override 
+	public boolean addEdge(E edge) {
+		return addEdge(edge.getNodeIn(), edge.getNodeOut(), edge);
+	}
+	
 	@Override
 	public boolean addEdge(N nodeIn, N nodeOut, E edge) {
 		//Take in an edge and adds it to the two specified Nodes
