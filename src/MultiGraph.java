@@ -3,6 +3,8 @@ import java.util.List;
 public interface MultiGraph <N, E extends LabeledEdge<N>> {
    public boolean addNode(N node);
    
+   public boolean addEdge(E edge);
+   
    public boolean addEdge(N node1, N node2, E edge);
    
    public boolean removeNode(N node);

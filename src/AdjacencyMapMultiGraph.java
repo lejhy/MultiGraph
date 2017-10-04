@@ -6,28 +6,20 @@ import java.util.Map;
 import java.util.Queue;
 
 public class AdjacencyMapMultiGraph<N, E extends LabeledEdge<N>> implements MultiGraph<N, E> {
+	//This implementation of MultiGraph contains types N and E
+	//N represents a Station using generics
+	//E represents the type LabeledEdge (The interface for the station class)
 	
-	public static void main(String args[]) {
-		// just a main method for temporary testing until the rest of the system has been finished
-		MultiGraph <Station, Route<Station>> graph = new AdjacencyMapMultiGraph<Station, Route<Station>>();
-		System.out.println(graph.addEdge(new Station("First"), new Station("Second"), new Route<Station> ("green")));
-		System.out.println(graph.addNode(new Station("First")));
-		System.out.println(graph.addNode(new Station("Second")));
-		System.out.println(graph.addEdge(graph.getNodes().get(0), graph.getNodes().get(1), new Route<Station> ("green")));
-		System.out.println(graph.addEdge(graph.getNodes().get(0), graph.getNodes().get(1), graph.getEdges().get(0)));
-		System.out.println(graph.addNode(graph.getNodes().get(0)));
-		System.out.println(graph.getPath(graph.getNodes().get(0), graph.getNodes().get(1)));
-	}
-	
-	
-	private Map<N, List<E>> adjacencyMap;
+	private Map<N, List<E>> adjacencyMap; 
 
 	public AdjacencyMapMultiGraph() {
+		//creates the MultiGraph in the form of a HashMap
 	   adjacencyMap = new HashMap<N, List<E>>();
    	}
    
 	@Override
 	public boolean addNode(N node) {
+		//Takes in a node and adds it to the map
 		if (adjacencyMap.containsKey(node) == false) {
 			adjacencyMap.put(node, new ArrayList<E>());
 			return true;
@@ -36,12 +28,20 @@ public class AdjacencyMapMultiGraph<N, E extends LabeledEdge<N>> implements Mult
 		}
 	}
 	
+	@Override 
+	public boolean addEdge(E edge) {
+		return addEdge(edge.getNodeIn(), edge.getNodeOut(), edge);
+	}
+	
 	@Override
 	public boolean addEdge(N nodeIn, N nodeOut, E edge) {
+		//Take in an edge and adds it to the two specified Nodes
+		//The edge will go from NodeIn to NodeOut
 		List<E> edgeListIn = adjacencyMap.get(nodeIn);
 		List<E> edgeListOut = adjacencyMap.get(nodeOut);
 		if (edgeListIn != null && edgeListOut != null && containsEdge(edge) == false) {
-			edge.setNodeIn(nodeIn);
+			//If the nodes are found in the map and the edge to be added does not already exist
+			edge.setNodeIn(nodeIn);  
 			edge.setNodeOut(nodeOut);
 			edgeListIn.add(edge);
 			edgeListOut.add(edge);
@@ -53,11 +53,13 @@ public class AdjacencyMapMultiGraph<N, E extends LabeledEdge<N>> implements Mult
 
 	@Override
 	public boolean removeNode(N node) {
+		//Method to remove a node from the map
 		List<E> edgeList = adjacencyMap.get(node);
 		if (edgeList != null) {
+			//Checks if there are edges associated with the node to be deleted
 			for (E edge : edgeList) {
-				N adjacentNode = getNode(edge, node);
-				adjacencyMap.get(adjacentNode).remove(edge);
+				N adjacentNode = getNode(edge, node); //Finds the next node
+				adjacencyMap.get(adjacentNode).remove(edge); //Removes the edge from the adjacent node to the deleted node
 			}
 			adjacencyMap.remove(node);
 			return true;
@@ -68,12 +70,15 @@ public class AdjacencyMapMultiGraph<N, E extends LabeledEdge<N>> implements Mult
 
 	@Override
 	public boolean removeEdge(E edge) {
+		//Removes an edge from the map and returns true is successful
 		N nodeIn = edge.getNodeIn();
 		N nodeOut = edge.getNodeOut();
 		if (nodeIn != null && nodeOut != null) {
+			//If the nodes on either side of the edge have been identified
 			List<E> edgeListIn = adjacencyMap.get(nodeIn);
 			List<E> edgeListOut = adjacencyMap.get(nodeOut);
 			if (edgeListIn != null && edgeListOut != null) {
+				//removes edge from each node adjacent to it
 				boolean inRemoval = edgeListIn.remove(edge);
 				boolean outRemoval = edgeListIn.remove(edge);
 				if (inRemoval == true && outRemoval == true) {
@@ -86,6 +91,7 @@ public class AdjacencyMapMultiGraph<N, E extends LabeledEdge<N>> implements Mult
 	
 	@Override
 	public List<N> getNodes() {
+		//Returns a list of all nodes in the MultiGraph
 		List<N> nodeList = new ArrayList<N>();
 		nodeList.addAll(adjacencyMap.keySet());
 		return nodeList;
@@ -93,6 +99,7 @@ public class AdjacencyMapMultiGraph<N, E extends LabeledEdge<N>> implements Mult
 	
 	@Override
 	public List<E> getEdges() {
+		//Returns a list of all edges in the MultiGraph
 		List<E> edgeList = new ArrayList<E>();
 		for (List<E> list : adjacencyMap.values()) {
 			edgeList.addAll(list);
@@ -102,34 +109,53 @@ public class AdjacencyMapMultiGraph<N, E extends LabeledEdge<N>> implements Mult
 
 	@Override
 	public List<E> getPath(N source, N destination) {
+		//Returns a path from one node to another in the form of a list of edges
 		Map<N, E> pathSource = new HashMap<N, E>();
 		List<N> visited = new ArrayList<N>();
 		Queue<N> queue = new ArrayDeque<N>();
 		visited.add(source);
 		queue.add(source);
 		N node;
+		List<E> sortedEdges;
 		while (queue.isEmpty() == false) {
+			//Continue searching until all connected nodes have been visited
 			node = queue.poll();
-			for(E edge: adjacencyMap.get(node)) {
+			sortedEdges = new ArrayList<E>();
+			for (E edge : adjacencyMap.get(node)) {
+				//Get an appropriately sorted list of all edges connected to current node
+				if (edge.getLabel() == pathSource.get(node).getLabel()) {
+					//Those edges whose label matches the label of the source edge of the current node go at the beginning
+					sortedEdges.add(0, edge);
+				} else {
+					//Those edges whose label does not match the label of the source edge of the current node go at the end
+					sortedEdges.add(edge);
+				}
+			}
+			for(E edge: sortedEdges) {
+				//Walk the list of sorted edges looking for nodes that have not been visited yet
 				node = getNode(edge, node);
 				if (visited.contains(node) == false) {
+					//For unvisited nodes set a source edge and add them on the queue
 					visited.add(node);
 					pathSource.put(node, edge);
 					queue.add(node);
 				}
 			}
 		}
-		List<E> edgeList= new ArrayList<E>();
+		List<E> edgePath= new ArrayList<E>();
 		node = destination;
 		while (node != source) {
+			//Continue starting from the destination until the source node has been reached
 			E edge = pathSource.get(node);
-			edgeList.add(edge);
+			//Add the source edge at the beginning of the list
+			edgePath.add(0, edge);
 			node = getNode(edge, node);
 		}
-		return edgeList;
+		return edgePath;
 	}
 	
 	private boolean containsEdge(E edge) {
+		//Returns true if a specified edge already exists in the multigraph
 		for (List<E> edgeList : adjacencyMap.values()) {
 			if (edgeList.contains(edge)) {
 				return true;
@@ -146,6 +172,20 @@ public class AdjacencyMapMultiGraph<N, E extends LabeledEdge<N>> implements Mult
 		} else {
 			return edge.getNodeOut();
 		}
+	}
+	
+	private List<N> getAdjacentNodes(N node){
+		//Takes in a node and returns a list of all adjacent nodes
+		List<N> adjacentNodes = new ArrayList<>();
+		List<E> connectedEdges = new ArrayList<>();
+		connectedEdges=adjacencyMap.get(node);
+		for(E currentEdge:connectedEdges){
+			if(currentEdge.getNodeOut().equals(node))
+				adjacentNodes.add(currentEdge.getNodeOut());
+			else
+				adjacentNodes.add(currentEdge.getNodeIn());
+		}
+		return adjacentNodes;
 	}
 	
 }
