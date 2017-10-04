@@ -47,14 +47,15 @@ public class Controller {
        int choiceStart;
        int choiceEnd;
        while(stationIDsStart.size() < 1) {
-           start = view.getStation("Please enter your starting station");
+           start = view.requestStation("Please enter your starting station");
+           System.out.println(start);
            stationIDsStart = isStation(start);
            if (stationIDsStart.size() < 1)
                view.output("Sorry, that is not a valid station");
        }
        while(stationIDsEnd.size() < 1) {
-           start = view.getStation("Please enter your starting station");
-           stationIDsEnd = isStation(start);
+           end = view.requestStation("Please enter your destination station");
+           stationIDsEnd = isStation(end);
            if (stationIDsEnd.size() < 1)
                view.output("Sorry, that is not a valid station");
        }
@@ -67,6 +68,7 @@ public class Controller {
        else
            choiceEnd = 1;
 
+       System.out.println(start+ " " + end +  " " + stationIDsStart.get(choiceStart-1) + " " + stationIDsEnd.get(choiceEnd-1));
        findPath(start, end, stationIDsStart.get(choiceStart-1), stationIDsEnd.get(choiceEnd-1));
    }
 

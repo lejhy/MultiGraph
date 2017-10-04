@@ -29,7 +29,7 @@ public class Parser {
 			Scanner scanner = new Scanner(file);
 			stations.add(null);
 			while(scanner.hasNextLine()) {
-				stations.add(scanner.nextInt(), new Station(scanner.next()));
+				stations.add(new Station(scanner.nextInt(), scanner.next()));
 				scanner.nextLine();
 			}
 			scanner.close();
@@ -39,6 +39,7 @@ public class Parser {
 				Scanner tokenScanner = new Scanner(currentLine);
 
 				Station currentStationId = stations.get(tokenScanner.nextInt());
+				System.out.println(currentStationId.getID());
 				tokenScanner.next();
 				while(tokenScanner.hasNext()) {
 					String routeName = tokenScanner.next();
@@ -62,6 +63,7 @@ public class Parser {
 				tokenScanner.close();
 			}
 			scanner.close();
+			stations.remove(0);
 		} catch (FileNotFoundException e) {
 			System.out.println("File not found in parseFile");
 		}

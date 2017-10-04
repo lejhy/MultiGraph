@@ -173,8 +173,8 @@ public class AdjacencyMapMultiGraph<N, E extends LabeledEdge<N>> implements Mult
 			return edge.getNodeOut();
 		}
 	}
-	
-	private List<N> getAdjacentNodes(N node){
+
+	public List<N> getAdjacentNodes(N node){
 		//Takes in a node and returns a list of all adjacent nodes
 		List<N> adjacentNodes = new ArrayList<>();
 		List<E> connectedEdges = new ArrayList<>();

@@ -13,6 +13,7 @@ public class Metro {
 		Parser parser = new Parser(fileName);
 		for (Station station : parser.getStations()) {
 			graph.addNode(station);
+			System.out.println(station.getID() + ". " + station.getName()+ " added");
 		}
 		for (Route<Station> route : parser.getRoutes()) {
 			graph.addEdge(route);
