@@ -16,5 +16,6 @@ public interface MultiGraph <N, E extends LabeledEdge<N>> {
    public List<E> getEdges();
    
    public List<E> getPath(N node1, N node2);
-   
-   }
+
+   public List<N> getAdjacentNodes(N node);
+}
