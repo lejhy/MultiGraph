@@ -35,7 +35,31 @@ public class Parser {
 			scanner.close();
 			scanner = new Scanner(file);
 			while(scanner.hasNextLine()) {
-				//TODO Retrieve all edges from file
+				String currentLine = scanner.nextLine();
+				Scanner tokenScanner = new Scanner(currentLine);
+
+				Station currentStationId = stations.get(tokenScanner.nextInt());
+				tokenScanner.next();
+				while(tokenScanner.hasNext()) {
+					String routeName = tokenScanner.next();
+
+					int stationId = tokenScanner.nextInt();
+					if(stationId!=0) {
+						route = new Route<N>(routeName);
+						route.setNodeIn(currentStationId);
+						route.setNodeOut(stations.get(stationId));
+						routes.add(route);
+					}
+
+					stationId = tokenScanner.nextInt();
+					if(stationId!=0) {
+						route = new Route<N>(routeName);
+						route.setNodeIn(currentStationId);
+						route.setNodeOut(stations.get(stationId));
+						routes.add(route);
+					}
+				}
+				tokenScanner.close();
 			}
 			scanner.close();
 		} catch (FileNotFoundException e) {
