@@ -48,7 +48,7 @@ public class Controller {
        int choiceEnd;
        while(stationIDsStart.size() < 1) {
            start = view.requestStation("Please enter your starting station");
-           System.out.println(start);
+//           System.out.println(start);
            stationIDsStart = isStation(start);
            if (stationIDsStart.size() < 1)
                view.output("Sorry, that is not a valid station");
@@ -68,7 +68,7 @@ public class Controller {
        else
            choiceEnd = 1;
 
-       System.out.println(start+ " " + end +  " " + stationIDsStart.get(choiceStart-1) + " " + stationIDsEnd.get(choiceEnd-1));
+//       System.out.println(start+ " " + end +  " " + stationIDsStart.get(choiceStart-1) + " " + stationIDsEnd.get(choiceEnd-1));
        findPath(start, end, stationIDsStart.get(choiceStart-1), stationIDsEnd.get(choiceEnd-1));
    }
 

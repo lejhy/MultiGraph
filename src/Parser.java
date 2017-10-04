@@ -39,7 +39,7 @@ public class Parser {
 				Scanner tokenScanner = new Scanner(currentLine);
 
 				Station currentStationId = stations.get(tokenScanner.nextInt());
-				System.out.println(currentStationId.getID());
+//				System.out.println(currentStationId.getID());
 				tokenScanner.next();
 				while(tokenScanner.hasNext()) {
 					String routeName = tokenScanner.next();
