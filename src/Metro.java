@@ -34,16 +34,16 @@ public class Metro {
 				if (route.getLabel().equals(lastRouteLabel) != true) {
 					path.concat(lastRouteLabel);
 					lastRouteLabel = route.getLabel();
-					
+
 					if (lastRoute.getNodeIn().equals(route.getNodeOut())) {
 						path.concat(route.getNodeOut().getName());
 					}
-					
+
 					if (lastRoute.getNodeOut().equals(route.getNodeIn())) {
 						path.concat(route.getNodeIn().getName());
 					}
 				}
-				
+
 				lastRoute = route;
 			}
 			path.concat(endName);
@@ -87,4 +87,4 @@ public class Metro {
 //		return null;
 //	}
 //>>>>>>> 3545a74b317b526f593772f38d2e0400e86baaa9
-//}
+}
