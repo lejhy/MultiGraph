@@ -42,10 +42,10 @@ public class Parser {
 				tokenScanner.next();
 				while(tokenScanner.hasNext()) {
 					String routeName = tokenScanner.next();
-
+					Route<Station> route;
 					int stationId = tokenScanner.nextInt();
 					if(stationId!=0) {
-						route = new Route<N>(routeName);
+						route = new Route<Station>(routeName);
 						route.setNodeIn(currentStationId);
 						route.setNodeOut(stations.get(stationId));
 						routes.add(route);
@@ -53,7 +53,7 @@ public class Parser {
 
 					stationId = tokenScanner.nextInt();
 					if(stationId!=0) {
-						route = new Route<N>(routeName);
+						route = new Route<Station>(routeName);
 						route.setNodeIn(currentStationId);
 						route.setNodeOut(stations.get(stationId));
 						routes.add(route);
