@@ -1,9 +1,9 @@
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public class Controller {
 	private Metro model;
 	private Display view;
-	private boolean keepGoing;
-
    /* Initialise the Metro model and display
       Tell model to initialise all data necessary
       and send to menu to begin core loop
@@ -12,7 +12,6 @@ public class Controller {
       view = new Display();
       model = new Metro();
       model.populate("data.txt");
-      keepGoing=true;
    }
 
    /* Core loop which will continue until
@@ -45,25 +44,23 @@ public class Controller {
       TODO: probably don't have to loop twice
     */
    private String[] retrieveStartAndEnd() {
-       boolean checkStation = false;
+       ArrayList<Integer> stationIDs = new ArrayList<>();
        String start = "";
        String end = "";
-       while(!checkStation && keepGoing) {
+       while(stationIDs.size()<1) {
            start = view.getStation("Please enter your starting station");
-           if(!keepGoing)
-               break;
-           checkStation = isStation(start);
-           if(!checkStation)
+           stationIDs = isStation(start);
+           if(stationIDs)
                view.output("Sorry, that is not a valid station");
        }
 
-       checkStation=false;
-       while(!checkStation && keepGoing) {
+       stationIDs=false;
+       while(!stationIDs && keepGoing) {
            end = view.getStation("Please enter your destination station");
            if(!keepGoing)
                break;
-           checkStation = isStation(end);
-           if(!checkStation)
+           stationIDs = isStation(end);
+           if(!stationIDs)
                view.output("Sorry, that is not a valid station");
        }
 
@@ -87,14 +84,11 @@ public class Controller {
    }
 
 
-   private boolean isStation(String station) {
+   private ArrayList<Integer> isStation(String station) {
        if(station==null) {
-           return false;
        }
-      if(model.getStation(station)!=null)
-          return true;
-      else
-          return false;
+       ArrayList<Integer> stationIDList = model.getStationsOfSameName(station);
+       return stationIDList;
    }
 
    private boolean isValidMenuChoice(int choice) {

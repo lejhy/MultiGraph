@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Metro {
 	
 	private MultiGraph<Station, Route<Station>> graph;
@@ -37,14 +39,28 @@ public class Metro {
 		}
 	}
 
-	public Station getStation (String name) {
-		//Takes the name of a station and returns it as a Sation type
-		for (Station station : graph.getNodes()) {
-			if (station.getName().equals(name)) {
-				return station;
+
+	public ArrayList<Integer> getStationsOfSameName(String name) {
+		//Takes the name of a station and RETURNS it as a Station type
+		ArrayList<Integer> stations = new ArrayList<>();
+			for (Station station : graph.getNodes()) {
+				if (station.getName().equals(name)) {
+					stations.add(station.getID());
 			}
-		}		
-		return null;
-	} 
+		}
+		return stations;
+	}
+
+
+	public Station getStation(String name , int id) {
+
+	}
+
+	public ArrayList<String> getNearbyStations() {
+
+	}
+
+
+
 }
 
