@@ -70,12 +70,12 @@ public class Metro {
 
 	}
 
-	public ArrayList<String> getNearbyStations() {
+	public ArrayList<String> getNearbyStations(int id) {
 
 	}
 
 
-
+//TODO: Need to adjust to accomodate multiple stations of same name
 //=======
 //	public Station getStation(String name) {
 //		// Takes the name of a station and returns it as a Station type

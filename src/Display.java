@@ -12,7 +12,7 @@ public class Display {
       return reader.nextLine();
    }
 
-   public int readInt() {
+   public int getMenuChoice() {
       return reader.nextInt();
    }
 

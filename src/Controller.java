@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Controller {
@@ -21,8 +20,8 @@ public class Controller {
 	   boolean isRunning= true;
 	   while(isRunning) {
            view.printMenu();
-           int result = view.readInt();
-           boolean checkMenu = isValidMenuChoice(result);
+           int result = view.getMenuChoice();
+           boolean checkMenu = isValidMenuChoice(result, 2);
            if(checkMenu) {
                if(result==2)
                    isRunning=false;
@@ -43,6 +42,8 @@ public class Controller {
       and destination
       TODO: probably don't have to loop twice
     */
+
+
    private String[] retrieveStartAndEnd() {
        ArrayList<Integer> stationIDs = new ArrayList<>();
        String start = "";
@@ -50,8 +51,35 @@ public class Controller {
        while(stationIDs.size()<1) {
            start = view.getStation("Please enter your starting station");
            stationIDs = isStation(start);
-           if(stationIDs)
+           if (stationIDs.size() < 1)
                view.output("Sorry, that is not a valid station");
+           else if (stationIDs.size() > 1) {
+               view.output("There appears to be more than one station with that name");
+               ArrayList<ArrayList<String>> nearbyStations = new ArrayList<>();
+               for (int id : stationIDs) {
+                   nearbyStations.add(model.getNearbyStations(id));
+               }
+
+               view.output("Would you like to select the " + start + " next to");
+               for (int i = 0; i < nearbyStations.size(); i++) {
+                   view.output(i + "");
+                   for (String station : nearbyStations.get(i)) {
+                       view.output(station + "and");
+                   }
+                   view.output("Or");
+               }
+               int choice = -1;
+               while (isValidMenuChoice(choice, nearbyStations.size())) {
+                   view.output("Please provide a valid number between 1 and " + nearbyStations.size());
+                   choice = view.getMenuChoice();
+               }
+
+
+
+
+
+
+           }
        }
 
        stationIDs=false;
@@ -91,8 +119,8 @@ public class Controller {
        return stationIDList;
    }
 
-   private boolean isValidMenuChoice(int choice) {
-      if(choice>0 && choice< 3)
+   private boolean isValidMenuChoice(int choice, int limit) {
+      if(choice>0 && choice<= limit)
           return true;
       else
           return false;
