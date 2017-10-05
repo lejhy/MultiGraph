@@ -9,11 +9,11 @@ public class Display {
    }
 
    public String readLine() {
-      return reader.nextLine();
+      reader = new Scanner(System.in);
+      return reader.nextLine().trim();
    }
 
-   public int getMenuChoice() {
-      return reader.nextInt();
+   public int getMenuChoice() { return reader.nextInt();
    }
 
 
@@ -24,7 +24,7 @@ public class Display {
    }
 
    
-   public String getStation(String line) {
+   public String requestStation(String line) {
       output(line);
 	   printPrompt();
 	   return readLine();
