@@ -123,7 +123,7 @@ public class AdjacencyMapMultiGraph<N, E extends LabeledEdge<N>> implements Mult
 			sortedEdges = new ArrayList<E>();
 			for (E edge : adjacencyMap.get(node)) {
 				//Get an appropriately sorted list of all edges connected to current node
-				if (edge.getLabel() == pathSource.get(node).getLabel()) {
+				if (pathSource.containsKey(node) && edge.getLabel() == pathSource.get(node).getLabel()) {
 					//Those edges whose label matches the label of the source edge of the current node go at the beginning
 					sortedEdges.add(0, edge);
 				} else {
@@ -174,6 +174,7 @@ public class AdjacencyMapMultiGraph<N, E extends LabeledEdge<N>> implements Mult
 		}
 	}
 
+	@Override
 	public List<N> getAdjacentNodes(N node){
 		//Takes in a node and returns a list of all adjacent nodes
 		List<N> adjacentNodes = new ArrayList<>();
@@ -187,5 +188,4 @@ public class AdjacencyMapMultiGraph<N, E extends LabeledEdge<N>> implements Mult
 		}
 		return adjacentNodes;
 	}
-	
 }

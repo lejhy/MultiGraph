@@ -1,3 +1,4 @@
+import java.net.PasswordAuthentication;
 import java.util.ArrayList;
 
 public class Metro {
@@ -27,27 +28,38 @@ public class Metro {
 		Station start = getStation(choiceStart);
 		Station end = getStation(choiceEnd);
 		if (start != null && end != null) {
-			String path = "";
-			path.concat(startName);
+			String path = startName;
 			Route<Station> lastRoute = null;
-			String lastRouteLabel = "";
 			for (Route<Station> route : graph.getPath(start, end)) {
-				if (route.getLabel().equals(lastRouteLabel) != true) {
-					path.concat(lastRouteLabel);
-					lastRouteLabel = route.getLabel();
-
+				if (lastRoute == null) {
+					path = path.concat(" where you board ");
+					path = path.concat(route.getLabel());
+					path = path.concat(" and set off towards ");
+				} else if (route.getLabel().equals(lastRoute.getLabel()) == false) {
+					
 					if (lastRoute.getNodeIn().equals(route.getNodeOut())) {
-						path.concat(route.getNodeOut().getName());
+						path = path.concat(route.getNodeOut().getName());
 					}
 
 					if (lastRoute.getNodeOut().equals(route.getNodeIn())) {
-						path.concat(route.getNodeIn().getName());
+						path = path.concat(route.getNodeIn().getName());
 					}
+					
+					if (lastRoute.getNodeIn().equals(route.getNodeIn())) {
+						path = path.concat(route.getNodeIn().getName());
+					}
+					
+					if (lastRoute.getNodeOut().equals(route.getNodeOut())) {
+						path = path.concat(route.getNodeOut().getName());
+					}
+					
+					path = path.concat(" where you switch to ");
+					path = path.concat(route.getLabel());
+					path = path.concat(" and continue towards ");
 				}
-
 				lastRoute = route;
 			}
-			path.concat(endName);
+			path = path.concat(endName);
 			return path;
 		} else {
 			return null;
