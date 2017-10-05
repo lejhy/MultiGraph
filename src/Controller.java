@@ -20,15 +20,13 @@ public class Controller {
 	   boolean isRunning= true;
 	   while(isRunning) {
            view.printMenu();
-           int result = view.getMenuChoice();
-           boolean checkMenu = isValidMenuChoice(result, 2);
-           if(checkMenu) {
-               if(result==2)
-                   isRunning=false;
-               else if(result==1) {
-                   findPathMenu();
-               }
+           int result = view.getMenuChoice(2);
+           if(result==2) {
+               isRunning = false;
            }
+           else if(result==1) {
+               findPathMenu();
+               }
        }
 
    }
@@ -90,7 +88,7 @@ public class Controller {
         }
         while (!isValidMenuChoice(choice, nearbyStations.size())) {
             view.output("Please provide a valid number between 1 and " + nearbyStations.size());
-            choice = view.getMenuChoice();
+            choice = view.getMenuChoice(2);
         }
         return choice;
     }

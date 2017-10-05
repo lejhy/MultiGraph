@@ -13,7 +13,28 @@ public class Display {
       return reader.nextLine().trim();
    }
 
-   public int getMenuChoice() { return reader.nextInt();
+   public int getMenuChoice(int limit) {
+      int choice=-1;
+      while(choice==-1) {
+         try {
+            choice = Integer.parseInt(reader.next());
+            if(choice<1 || choice>limit) {
+               output("Sorry, that number is not an option. Please enter a number between 1 and " + limit + " for this menu");
+               printPrompt();
+               choice=-1;
+            }
+            else {
+               return choice;
+            }
+         }
+         catch (NumberFormatException e) {
+            output("Sorry, this menu will only accept whole numbers. Please enter a valid menu choice");
+            printPrompt();
+         }
+
+      }
+      System.out.println("Oops, shouldn't be here");
+      return choice;
    }
 
 
