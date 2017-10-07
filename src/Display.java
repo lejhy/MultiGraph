@@ -14,14 +14,16 @@ public class Display {
    }
 
    public int getMenuChoice(int limit) {
-      int choice=-1;
-      while(choice==-1) {
+	  int choice;
+	  
+	  output("Please enter the number of the option you require");
+	  printPrompt();
+      while(true) {
          try {
             choice = Integer.parseInt(reader.next());
-            if(choice<1 || choice>limit) {
+            if(choice < 1 || choice > limit) {
                output("Sorry, that number is not an option. Please enter a number between 1 and " + limit + " for this menu");
                printPrompt();
-               choice=-1;
             }
             else {
                return choice;
@@ -31,24 +33,13 @@ public class Display {
             output("Sorry, this menu will only accept whole numbers. Please enter a valid menu choice");
             printPrompt();
          }
-
       }
-      System.out.println("Oops, shouldn't be here");
-      return choice;
    }
-
-
-   public void printMenu() {
-      output("\nWould you like to:\n1. Plan your route \n2. Exit");
-      output("Please enter the number of the option you require");
-      printPrompt();
-   }
-
    
    public String requestStation(String line) {
       output(line);
-	   printPrompt();
-	   return readLine();
+	  printPrompt();
+	  return readLine();
    }
 
 

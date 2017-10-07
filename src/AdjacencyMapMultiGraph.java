@@ -108,6 +108,7 @@ public class AdjacencyMapMultiGraph<N, E extends LabeledEdge<N>> implements Mult
 		visited.add(source);
 		queue.add(source);
 		N node;
+		N neighbourNode;
 		List<E> sortedEdges;
 		while (queue.isEmpty() == false) {
 			//Continue searching until all connected nodes have been visited
@@ -125,12 +126,12 @@ public class AdjacencyMapMultiGraph<N, E extends LabeledEdge<N>> implements Mult
 			}
 			for(E edge: sortedEdges) {
 				//Walk the list of sorted edges looking for nodes that have not been visited yet
-				node = getNode(edge, node);
-				if (visited.contains(node) == false) {
+				neighbourNode = getNode(edge, node);
+				if (visited.contains(neighbourNode) == false) {
 					//For unvisited nodes set a source edge and add them on the queue
-					visited.add(node);
-					pathSource.put(node, edge);
-					queue.add(node);
+					visited.add(neighbourNode);
+					pathSource.put(neighbourNode, edge);
+					queue.add(neighbourNode);
 				}
 			}
 		}

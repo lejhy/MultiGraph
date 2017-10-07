@@ -3,128 +3,99 @@ import java.util.ArrayList;
 public class Controller {
 	private Metro model;
 	private Display view;
-   /* Initialise the Metro model and display
-      Tell model to initialise all data necessary
-      and send to menu to begin core loop
+	
+   /** 
+    * Initialise the Metro model and display 
+    * Tell model to initialise all data necessary
     */
+	
    public Controller() {
       view = new Display();
       model = new Metro();
       model.populate("data.txt");
    }
 
-   /* Core loop which will continue until
-      user has specified to exit
+   /**
+    * Core loop which will continue until the user has specified to exit
     */
-   public void menu() {
+   
+   public void mainMenu() {
 	   boolean isRunning= true;
 	   while(isRunning) {
-           view.printMenu();
+           view.output("\nWould you like to:\n1. Plan your route \n2. Exit");
            int result = view.getMenuChoice(2);
            if(result==2) {
                isRunning = false;
-           }
-           else if(result==1) {
+           } else if(result==1) {
                findPathMenu();
-               }
+           }
        }
 
    }
 
-   /* Prompt display to give the starting point
-      and destination
-      TODO: probably don't have to loop twice
+   /**
+    *  Prompt display to give the starting point and destination
     */
 
-
    private void findPathMenu() {
-       ArrayList<Integer> stationIDsStart = new ArrayList<>();
-       ArrayList<Integer> stationIDsEnd = new ArrayList<>();
-       String start = "";
-       String end = "";
-       int choiceStart;
-       int choiceEnd;
-       while(stationIDsStart.size() < 1) {
-           start = view.requestStation("Please enter your starting station");
-//           System.out.println(start);
-           stationIDsStart = isStation(start);
-           if (stationIDsStart.size() < 1)
+       ArrayList<Integer> startIds = new ArrayList<>();
+       ArrayList<Integer> endIds = new ArrayList<>();
+       String startName = "";
+       String endName = "";
+       int startIdIndex;
+       int endIdIndex;
+       
+       while(startIds.size() < 1) {
+    	   startName = view.requestStation("Please enter your starting station");
+    	   startIds = model.getStationsOfSameName(startName);
+           if (startIds.size() < 1)
                view.output("Sorry, that is not a valid station");
        }
-       while(stationIDsEnd.size() < 1) {
-           end = view.requestStation("Please enter your destination station");
-           stationIDsEnd = isStation(end);
-           if (stationIDsEnd.size() < 1)
+       
+       if (startIds.size() > 1) {
+    	   startIdIndex = clarifyStationChoice(startIds, startName);
+       } else {
+    	   startIdIndex = 0;
+       }
+       
+       while(endIds.size() < 1) {
+    	   endName = view.requestStation("Please enter your destination station");
+           endIds = model.getStationsOfSameName(endName);
+           if (endIds.size() < 1)
                view.output("Sorry, that is not a valid station");
        }
-       if (stationIDsStart.size() > 1)
-           choiceStart = clarifyStationChoice(stationIDsStart, start);
-       else
-           choiceStart = 1;
-       if(stationIDsEnd.size()>1)
-           choiceEnd = clarifyStationChoice(stationIDsEnd, end);
-       else
-           choiceEnd = 1;
-
-       findPath(stationIDsStart.get(choiceStart-1), stationIDsEnd.get(choiceEnd-1));
+       
+       if(endIds.size() > 1) {
+    	   endIdIndex = clarifyStationChoice(endIds, endName);
+       } else {
+    	   endIdIndex = 0;
+       }
+       
+       if (startIds.get(startIdIndex) == endIds.get(endIdIndex)) {
+    	   view.output("You are already on " + endName);
+       } else {
+    	   view.output(model.findPath(startIds.get(startIdIndex), endIds.get(endIdIndex)));
+       }
    }
 
 
     private int clarifyStationChoice(ArrayList<Integer> stationIDs, String stationName) {
-       int choice=-1;
+    	int choice;
         view.output("There appears to be more than one station with that name");
         ArrayList<ArrayList<String>> nearbyStations = new ArrayList<>();
         for (int id : stationIDs) {
             nearbyStations.add(model.getNearbyStations(id));
         }
-        view.output("Would you like to select the " + stationName + " station next to");
+        
+        view.output("Would you like to select the " + stationName + " station next to:");
         for (int i = 0; i < nearbyStations.size(); i++) {
-            view.output(i + "");
+        	String stations = (i+1) + ". ";
             for (String station : nearbyStations.get(i)) {
-                view.output(station + "and");
+                stations += station + ", ";
             }
-            view.output("Or");
+            view.output(stations);
         }
-        while (!isValidMenuChoice(choice, nearbyStations.size())) {
-            view.output("Please provide a valid number between 1 and " + nearbyStations.size());
-            choice = view.getMenuChoice(2);
-        }
-        return choice;
+        choice = view.getMenuChoice(nearbyStations.size());
+        return choice-1;
     }
-
-    /* Send a request to find the
-       best path between 2 stations
-       and send the route to the
-       display to be printed
-     */
-
-    private void findPath(int choiceStart, int choiceEnd) {
-        String result = model.findPath(choiceStart, choiceEnd);
-        view.output(result);
-    }
-
-
-   private ArrayList<Integer> isStation(String station) {
-       ArrayList<Integer> stationIDList = model.getStationsOfSameName(station);
-       return stationIDList;
-   }
-
-   private boolean isValidMenuChoice(int choice, int limit) {
-      if(choice>0 && choice<= limit)
-          return true;
-      else
-          return false;
-   }
-
-
-
-
-
-
-
-
-
-
-
-
 }

@@ -1,4 +1,3 @@
-import java.net.PasswordAuthentication;
 import java.util.ArrayList;
 
 public class Metro {
@@ -51,7 +50,35 @@ public class Metro {
 			return null;
 		}
 	}
+
+	public ArrayList<Integer> getStationsOfSameName(String name) {
+		//Takes the name of a station and returns a list of IDs of stations with same name
+		ArrayList<Integer> stations = new ArrayList<>();
+		for (Station station : graph.getNodes()) {
+			if (station.getName().equals(name)) {
+				stations.add(station.getID());
+			}
+		}
+		return stations;
+	}
+
+	public ArrayList<String> getNearbyStations(int id) {
+		ArrayList<String> nearbyStations = new ArrayList<>();
+		for (Station station : graph.getAdjacentNodes(getStation(id))) {
+			nearbyStations.add(station.getName());
+		}
+		return nearbyStations;
+	}
 	
+	private Station getStation(int id) {
+		for (Station station : graph.getNodes()) {
+			if (station.getID() == id) {
+				return station;
+			}
+		}
+		return null;
+	}
+
 	private Station getStation(Route<Station> route1, Route<Station> route2) {
 		Station route1In = route1.getNodeIn();
 		Station route1Out = route1.getNodeOut();
@@ -64,38 +91,6 @@ public class Metro {
 			return route1Out;
 		}
 	}
-
-
-	public ArrayList<Integer> getStationsOfSameName(String name) {
-		//Takes the name of a station and RETURNS it as a Station type
-		ArrayList<Integer> stations = new ArrayList<>();
-		for (Station station : graph.getNodes()) {
-			if (station.getName().equals(name)) {
-				stations.add(station.getID());
-			}
-		}
-		return stations;
-	}
-
-
-	private Station getStation(int id) {
-		for (Station station : graph.getNodes()) {
-			if (station.getID() == id) {
-				return station;
-			}
-		}
-
-		return null;
-	}
-
-	public ArrayList<String> getNearbyStations(int id) {
-		ArrayList<String> nearbyStations = new ArrayList<>();
-		for (Station station : graph.getAdjacentNodes(getStation(id))) {
-			nearbyStations.add(station.getName());
-		}
-		return nearbyStations;
-	}
-
 }
 
 
