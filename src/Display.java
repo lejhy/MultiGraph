@@ -39,7 +39,7 @@ public class Display {
 
 
    public void printMenu() {
-      output("Would you like to 1.Plan your route or 2.exit");
+      output("\nWould you like to:\n1. Plan your route \n2. Exit");
       output("Please enter the number of the option you require");
       printPrompt();
    }

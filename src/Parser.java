@@ -25,44 +25,59 @@ public class Parser {
 	
 	private void parseFile(String fileName) {
 		File file = new File(fileName);
+		Scanner fileScanner;
+		Scanner tokenScanner;
+		String currentLine;
+		int currentStationId;
+		Station currentStation;
+		int destinationStationId;
+		Route<Station> route;
+		
 		try {
-			Scanner scanner = new Scanner(file);
+			fileScanner = new Scanner(file);
+			// Station with id 0 does not exist, but we add it anyway so that indexing of remaining stations starts from 1
 			stations.add(null);
-			while(scanner.hasNextLine()) {
-				stations.add(new Station(scanner.nextInt(), scanner.next()));
-				scanner.nextLine();
+			
+			// Scan through the file first time to create all stations and add them to the list
+			while(fileScanner.hasNextLine()) {
+				stations.add(new Station(fileScanner.nextInt(), fileScanner.next()));
+				fileScanner.nextLine();
 			}
-			scanner.close();
-			scanner = new Scanner(file);
-			while(scanner.hasNextLine()) {
-				String currentLine = scanner.nextLine();
-				Scanner tokenScanner = new Scanner(currentLine);
-
-				Station currentStationId = stations.get(tokenScanner.nextInt());
-//				System.out.println(currentStationId.getID());
-				tokenScanner.next();
+			
+			// Recreate the scanner to point at the beginning of the file
+			fileScanner.close();
+			fileScanner = new Scanner(file);
+			
+			// Scan through the file second time to create all edges and add them to the list
+			while(fileScanner.hasNextLine()) {
+				
+				// Get the line and its station object
+				currentLine = fileScanner.nextLine();
+				tokenScanner = new Scanner(currentLine);
+				currentStationId = tokenScanner.nextInt();
+				tokenScanner.next(); // station name
+				currentStation = stations.get(currentStationId);
+				
+				// Get all pairs of outgoing edges
 				while(tokenScanner.hasNext()) {
 					String routeName = tokenScanner.next();
-					Route<Station> route;
-					int stationId = tokenScanner.nextInt();
-					if(stationId!=0) {
-						route = new Route<Station>(routeName);
-						route.setNodeIn(currentStationId);
-						route.setNodeOut(stations.get(stationId));
-						routes.add(route);
-					}
-
-					stationId = tokenScanner.nextInt();
-					if(stationId!=0) {
-						route = new Route<Station>(routeName);
-						route.setNodeIn(currentStationId);
-						route.setNodeOut(stations.get(stationId));
-						routes.add(route);
+					for (int i = 0; i < 2; i++) {
+						destinationStationId = tokenScanner.nextInt();
+						
+						// Create an edge only if it exists and points to a station with greater id to prevent duplicates 
+						if(destinationStationId != 0 && destinationStationId >= currentStationId) {
+							route = new Route<Station>(routeName);
+							route.setNodeIn(currentStation);
+							route.setNodeOut(stations.get(destinationStationId));
+							routes.add(route);
+						}
 					}
 				}
 				tokenScanner.close();
 			}
-			scanner.close();
+			fileScanner.close();
+			
+			// Do not forget to remove the non-existing station from the list now that the indeces do not matter anymore
 			stations.remove(0);
 		} catch (FileNotFoundException e) {
 			System.out.println("File not found in parseFile");

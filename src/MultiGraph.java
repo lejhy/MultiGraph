@@ -5,8 +5,6 @@ public interface MultiGraph <N, E extends LabeledEdge<N>> {
    
    public boolean addEdge(E edge);
    
-   public boolean addEdge(N node1, N node2, E edge);
-   
    public boolean removeNode(N node);
    
    public boolean removeEdge(E edge);

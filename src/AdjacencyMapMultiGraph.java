@@ -28,21 +28,13 @@ public class AdjacencyMapMultiGraph<N, E extends LabeledEdge<N>> implements Mult
 		}
 	}
 	
-	@Override 
-	public boolean addEdge(E edge) {
-		return addEdge(edge.getNodeIn(), edge.getNodeOut(), edge);
-	}
-	
 	@Override
-	public boolean addEdge(N nodeIn, N nodeOut, E edge) {
-		//Take in an edge and adds it to the two specified Nodes
-		//The edge will go from NodeIn to NodeOut
-		List<E> edgeListIn = adjacencyMap.get(nodeIn);
-		List<E> edgeListOut = adjacencyMap.get(nodeOut);
+	public boolean addEdge(E edge) {
+		//Take in an edge and adds it to the graph
+		List<E> edgeListIn = adjacencyMap.get(edge.getNodeIn());
+		List<E> edgeListOut = adjacencyMap.get(edge.getNodeOut());
 		if (edgeListIn != null && edgeListOut != null && containsEdge(edge) == false) {
 			//If the nodes are found in the map and the edge to be added does not already exist
-			edge.setNodeIn(nodeIn);  
-			edge.setNodeOut(nodeOut);
 			edgeListIn.add(edge);
 			edgeListOut.add(edge);
 			return true;
@@ -177,11 +169,10 @@ public class AdjacencyMapMultiGraph<N, E extends LabeledEdge<N>> implements Mult
 	@Override
 	public List<N> getAdjacentNodes(N node){
 		//Takes in a node and returns a list of all adjacent nodes
-		List<N> adjacentNodes = new ArrayList<>();
-		List<E> connectedEdges = new ArrayList<>();
-		connectedEdges=adjacencyMap.get(node);
-		for(E currentEdge:connectedEdges){
-			if(currentEdge.getNodeOut().equals(node))
+		List<N> adjacentNodes = new ArrayList<N>();
+		List<E> connectedEdges = adjacencyMap.get(node);
+		for(E currentEdge : connectedEdges){
+			if(currentEdge.getNodeOut() != node)
 				adjacentNodes.add(currentEdge.getNodeOut());
 			else
 				adjacentNodes.add(currentEdge.getNodeIn());

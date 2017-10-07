@@ -1,12 +1,4 @@
-/AdjacencyMapMultiGraph.class
 /Application.class
-/Controller.class
-/Display.class
-/LabeledEdge.class
-/Metro.class
-/MultiGraph.class
 /Parser.class
-/Route.class
-/Station.class
 /w02-multigraph.uml
 /w02-multigraph.umlcd

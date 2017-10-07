@@ -60,14 +60,13 @@ public class Controller {
        if (stationIDsStart.size() > 1)
            choiceStart = clarifyStationChoice(stationIDsStart, start);
        else
-           choiceStart=1;
+           choiceStart = 1;
        if(stationIDsEnd.size()>1)
            choiceEnd = clarifyStationChoice(stationIDsEnd, end);
        else
            choiceEnd = 1;
 
-//       System.out.println(start+ " " + end +  " " + stationIDsStart.get(choiceStart-1) + " " + stationIDsEnd.get(choiceEnd-1));
-       findPath(start, end, stationIDsStart.get(choiceStart-1), stationIDsEnd.get(choiceEnd-1));
+       findPath(stationIDsStart.get(choiceStart-1), stationIDsEnd.get(choiceEnd-1));
    }
 
 
@@ -99,8 +98,8 @@ public class Controller {
        display to be printed
      */
 
-    private void findPath(String start, String end, int choiceStart, int choiceEnd) {
-        String result = model.findPath(start, end, choiceStart, choiceEnd);
+    private void findPath(int choiceStart, int choiceEnd) {
+        String result = model.findPath(choiceStart, choiceEnd);
         view.output(result);
     }
 

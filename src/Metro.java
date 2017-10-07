@@ -14,56 +14,54 @@ public class Metro {
 		Parser parser = new Parser(fileName);
 		for (Station station : parser.getStations()) {
 			graph.addNode(station);
-//			System.out.println(station.getID() + ". " + station.getName()+ " added");
 		}
 		for (Route<Station> route : parser.getRoutes()) {
 			graph.addEdge(route);
 		}
 	}
 
-	public String findPath(String startName, String endName, int choiceStart, int choiceEnd) {
-		// Takes in the name of two stations and returns the fastest route
-		// between them in
-		// the form of a list of individual routes
+	public String findPath(int choiceStart, int choiceEnd) {
+		// Takes in the IDs of two stations and returns the fastest route between them in the form of a descriptive sentence
 		Station start = getStation(choiceStart);
 		Station end = getStation(choiceEnd);
+		String path = "";
 		if (start != null && end != null) {
-			String path = "Board Metro at ";
-			path = path.concat(startName);
-			path = path.concat(" on the ");
+			path += "Board Metro at ";
+			path += start.getName();
+			path += " on the ";
 			Route<Station> lastRoute = null;
 			for (Route<Station> route : graph.getPath(start, end)) {
+				
+				// Check for first case scenario
 				if (lastRoute == null) {
-					path = path.concat(route.getLabel());
-					path = path.concat(" Line\nFollow this line to ");
+					path += route.getLabel();
+					path += " line.\nFollow this line to ";
 				} else if (route.getLabel().equals(lastRoute.getLabel()) == false) {
-					
-					if (lastRoute.getNodeIn().equals(route.getNodeOut())) {
-						path = path.concat(route.getNodeOut().getName());
-					}
-
-					if (lastRoute.getNodeOut().equals(route.getNodeIn())) {
-						path = path.concat(route.getNodeIn().getName());
-					}
-					
-					if (lastRoute.getNodeIn().equals(route.getNodeIn())) {
-						path = path.concat(route.getNodeIn().getName());
-					}
-					
-					if (lastRoute.getNodeOut().equals(route.getNodeOut())) {
-						path = path.concat(route.getNodeOut().getName());
-					}
-					
-					path = path.concat(" where you switch to the ");
-					path = path.concat(route.getLabel());
-					path = path.concat(" line\nFollow this line to ");
+					Station switchStation = getStation(route, lastRoute);
+					path += switchStation.getName();
+					path += ", where you switch to the ";
+					path += route.getLabel();
+					path += " line.\nFollow this line to ";
 				}
 				lastRoute = route;
 			}
-			path = path.concat(endName);
+			path += end.getName();
 			return path;
 		} else {
 			return null;
+		}
+	}
+	
+	private Station getStation(Route<Station> route1, Route<Station> route2) {
+		Station route1In = route1.getNodeIn();
+		Station route1Out = route1.getNodeOut();
+		Station route2In = route2.getNodeIn();
+		Station route2Out = route2.getNodeOut();
+		
+		if (route1In.equals(route2In) || route1In.equals(route2Out)) {
+			return route1In;
+		} else {
+			return route1Out;
 		}
 	}
 
