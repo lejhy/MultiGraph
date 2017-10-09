@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Metro {
 
@@ -51,9 +52,9 @@ public class Metro {
 		}
 	}
 
-	public ArrayList<Integer> getStationsOfSameName(String name) {
+	public List<Integer> getStationsOfSameName(String name) {
 		//Takes the name of a station and returns a list of IDs of stations with same name
-		ArrayList<Integer> stations = new ArrayList<>();
+		List<Integer> stations = new ArrayList<>();
 		for (Station station : graph.getNodes()) {
 			if (station.getName().equals(name)) {
 				stations.add(station.getID());
@@ -62,8 +63,8 @@ public class Metro {
 		return stations;
 	}
 
-	public ArrayList<String> getNearbyStations(int id) {
-		ArrayList<String> nearbyStations = new ArrayList<>();
+	public List<String> getNearbyStations(int id) {
+		List<String> nearbyStations = new ArrayList<>();
 		for (Station station : graph.getAdjacentNodes(getStation(id))) {
 			nearbyStations.add(station.getName());
 		}

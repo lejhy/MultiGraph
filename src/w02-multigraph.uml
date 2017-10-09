@@ -4,7 +4,7 @@
     <eAnnotations xmi:id="_ksKzQKddEee4N_F427T3yQ" source="http://ns.yatta.de/umllab">
       <contents xmi:type="ecore:EAnnotation" xmi:id="_ksKzQaddEee4N_F427T3yQ" source="codegen">
         <details xmi:id="_ksLaUKddEee4N_F427T3yQ" key="codegenDirectory" value="/w02-multigraph/src"/>
-        <details xmi:id="_scFFQKddEee4N_F427T3yQ" key="AssociatedSourceCode" value="/Metro/src/MultiGraph.java;2788057972/1;/Metro/src/LabeledEdge.java;3239313891/1;/Metro/src/Route.java;2051857071/1;/Metro/src/Display.java;2685728325/1;/Metro/src/Controller.java;4223611413/1;/Metro/src/Station.java;1410879963/1;/Metro/src/Parser.java;2749606967/1;"/>
+        <details xmi:id="_scFFQKddEee4N_F427T3yQ" key="AssociatedSourceCode" value="/Metro/src/MultiGraph.java;2788057972/1;/Metro/src/LabeledEdge.java;3239313891/1;/Metro/src/Route.java;2051857071/1;/Metro/src/Display.java;2685728325/1;/Metro/src/Controller.java;1275750302/1;/Metro/src/Station.java;1410879963/1;/Metro/src/Parser.java;2749606967/1;"/>
       </contents>
       <contents xmi:type="ecore:EAnnotation" xmi:id="_yMHb4KzcEee4NZ-NUWnz-g" source="preferences">
         <contents xmi:type="ecore:EAnnotation" xmi:id="_yMHb4azcEee4NZ-NUWnz-g" source="com.yattasolutions.codegen.reverse">
@@ -806,8 +806,8 @@
       </ownedBehavior>
       <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_k_uBY6ddEee4N_F427T3yQ" name="findPathMenu" specification="_k9xgoaddEee4N_F427T3yQ">
         <language>java</language>
-        <body>ArrayList&lt;Integer> startIds = new ArrayList&lt;>();&#xD;
-    ArrayList&lt;Integer> endIds = new ArrayList&lt;>();&#xD;
+        <body>List&lt;Integer> startIds = new ArrayList&lt;>();&#xD;
+    List&lt;Integer> endIds = new ArrayList&lt;>();&#xD;
     String startName = &quot;&quot;;&#xD;
     String endName = &quot;&quot;;&#xD;
     int startIdIndex;&#xD;
@@ -847,17 +847,17 @@
 </body>
       </ownedBehavior>
       <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_k_uBZqddEee4N_F427T3yQ" name="clarifyStationChoice" specification="_k9yHsqddEee4N_F427T3yQ">
-        <ownedParameter xmi:id="_yeUmMKzcEee4NZ-NUWnz-g" name="stationIDs" type="_k-zbYaddEee4N_F427T3yQ"/>
-        <ownedParameter xmi:id="_yeUmMazcEee4NZ-NUWnz-g" direction="return">
+        <ownedParameter xmi:id="_O-ODYKzfEee4NZ-NUWnz-g" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
         </ownedParameter>
-        <ownedParameter xmi:id="_yeUmMqzcEee4NZ-NUWnz-g" name="stationName">
+        <ownedParameter xmi:id="_O-ODYazfEee4NZ-NUWnz-g" name="stationIDs" type="_k-0pgaddEee4N_F427T3yQ"/>
+        <ownedParameter xmi:id="_O-ODYqzfEee4NZ-NUWnz-g" name="stationName">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
         <language>java</language>
         <body>int choice;&#xD;
      view.output(&quot;There appears to be more than one station with that name&quot;);&#xD;
-     ArrayList&lt;ArrayList&lt;String>> nearbyStations = new ArrayList&lt;>();&#xD;
+     List&lt;List&lt;String>> nearbyStations = new ArrayList&lt;>();&#xD;
      for (int id : stationIDs) {&#xD;
          nearbyStations.add(model.getNearbyStations(id));&#xD;
      }&#xD;
@@ -895,10 +895,10 @@
         </ownedComment>
       </ownedOperation>
       <ownedOperation xmi:id="_k9yHsqddEee4N_F427T3yQ" name="clarifyStationChoice" visibility="private" method="_k_uBZqddEee4N_F427T3yQ">
-        <ownedParameter xmi:id="_vRYwIKzcEee4NZ-NUWnz-g" name="stationIDs" type="_k-zbYaddEee4N_F427T3yQ"/>
         <ownedParameter xmi:id="_vRy_0KzcEee4NZ-NUWnz-g" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
         </ownedParameter>
+        <ownedParameter xmi:id="_yeUmMKzcEee4NZ-NUWnz-g" name="stationIDs" type="_k-0pgaddEee4N_F427T3yQ"/>
         <ownedParameter xmi:id="_k_uBZ6ddEee4N_F427T3yQ" name="stationName">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
@@ -1040,6 +1040,7 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_J8FKA6dfEee4N_F427T3yQ"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_J8FKBKdfEee4N_F427T3yQ" value="*"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_1DC60KzeEee4NZ-NUWnz-g" name="graph" visibility="private" type="_k-AxMKddEee4N_F427T3yQ"/>
       <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_k_xEsKddEee4N_F427T3yQ" name="findPath" specification="_k99G0addEee4N_F427T3yQ">
         <ownedParameter xmi:id="_k_xEsaddEee4N_F427T3yQ" name="startName">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
@@ -1114,6 +1115,23 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:id="_9ggPUKzeEee4NZ-NUWnz-g" name="getNearbyStations" visibility="public">
+        <ownedParameter xmi:id="_9ggPUazeEee4NZ-NUWnz-g" type="_k-0pgaddEee4N_F427T3yQ" direction="return"/>
+        <ownedParameter xmi:id="_C1FuYKzfEee4NZ-NUWnz-g" name="id">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_Yb-XQKzfEee4NZ-NUWnz-g" name="getStation" visibility="private">
+        <ownedParameter xmi:id="_Yb-XQazfEee4NZ-NUWnz-g" type="_k-QBwKddEee4N_F427T3yQ" direction="return"/>
+        <ownedParameter xmi:id="_bF5m4KzfEee4NZ-NUWnz-g" name="id">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_cEShwKzfEee4NZ-NUWnz-g" name="getStation" visibility="private">
+        <ownedParameter xmi:id="_cEShwazfEee4NZ-NUWnz-g" type="_k-QBwKddEee4N_F427T3yQ" direction="return"/>
+        <ownedParameter xmi:id="_giCfcKzfEee4NZ-NUWnz-g" name="route1" type="_k-J7IKddEee4N_F427T3yQ"/>
+        <ownedParameter xmi:id="_giGJ0KzfEee4NZ-NUWnz-g" name="route2" type="_k-J7IKddEee4N_F427T3yQ"/>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_k-AxMKddEee4N_F427T3yQ" name="MultiGraph">
       <eAnnotations xmi:id="_z3pYwKd6EeexV7QKogiYQw" source="http://ns.yatta.de/umllab">
@@ -1163,6 +1181,12 @@
         <ownedParameter xmi:id="_myBXUKgfEeelWZ9aCTRdAA" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
         </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_s5LbQKzfEee4NZ-NUWnz-g" name="getEdges" visibility="public">
+        <ownedParameter xmi:id="_s5LbQazfEee4NZ-NUWnz-g" type="_k-0pgaddEee4N_F427T3yQ" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_wFUAEKzfEee4NZ-NUWnz-g" name="getNodes" visibility="public">
+        <ownedParameter xmi:id="_wFUAEazfEee4NZ-NUWnz-g" type="_k-0pgaddEee4N_F427T3yQ" direction="return"/>
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_k-G30KddEee4N_F427T3yQ" name="Parser">
@@ -5405,6 +5429,6 @@
   <UMLLabProfile:Patch xmi:id="_pBsFIKglEeelWZ9aCTRdAA" base_Element="_k9cJcKddEee4N_F427T3yQ" patchText="@@ -1,3861 +0,0 @@&#xA;-import java.util.List;%0D%0A%0D%0Apublic class AdjacencyMapMultiGraph %3CN, E extends LabeledEdge%3CN%3E%3E implements MultiGraph %3CN, E%3E  %7B%0D%0A   private Map%3CN, List %3CE%3E %3E adjacencyMap;%0D%0A   public AdjacencyMapMultiGraph () %7B%0D%0A      adjacencyMap = new HashMap%3CN, List%3CE%3E%3E();%0D%0A      %09%7D%0D%0A   %0D%0A   @Override%0D%0A   public List%3CN%3E getNodes () %0D%0A   %7B%0D%0A      List%3CN%3E nodeList = new ArrayList%3CN%3E();%0D%0A      %09%09nodeList.addAll(adjacencyMap.keySet());%0D%0A      %09%09return nodeList;%0D%0A      %09%7D%0D%0A   @Override%0D%0A   public List%3CE%3E getEdges () %0D%0A   %7B%0D%0A      List%3CE%3E edgeList = new ArrayList%3CE%3E();%0D%0A      %09%09for (List%3CE%3E list : adjacencyMap.values()) %7B%0D%0A      %09%09%09edgeList.addAll(list);%0D%0A      %09%09%7D%0D%0A      %09%09return edgeList;%0D%0A      %09%7D%0D%0A   @Override%0D%0A   public boolean addNode (N node) %0D%0A   %7B%0D%0A      if (adjacencyMap.containsKey(node) == false) %7B%0D%0A      %09%09%09adjacencyMap.put(node, new ArrayList%3CE%3E());%0D%0A      %09%09%09return true;%0D%0A      %09%09%7D else %7B%0D%0A      %09%09%09return false;%0D%0A      %09%09%7D%0D%0A      %09%7D%0D%0A   @Override%0D%0A   public boolean addEdge (N nodeIn, N nodeOut, E edge) %0D%0A   %7B%0D%0A      List%3CE%3E edgeListIn = adjacencyMap.get(nodeIn);%0D%0A      %09%09List%3CE%3E edgeListOut = adjacencyMap.get(nodeOut);%0D%0A      %09%09if (edgeListIn != null &amp;&amp; edgeListOut != null &amp;&amp; containsEdge(edge) == false) %7B%0D%0A      %09%09%09edge.setNodeIn(nodeIn);%0D%0A      %09%09%09edge.setNodeOut(nodeOut);%0D%0A      %09%09%09edgeListIn.add(edge);%0D%0A      %09%09%09edgeListOut.add(edge);%0D%0A      %09%09%09return true;%0D%0A      %09%09%7D else %7B%0D%0A      %09%09%09return false;%0D%0A      %09%09%7D%0D%0A      %09%7D%0D%0A   @Override%0D%0A   public boolean removeNode (N node) %0D%0A   %7B%0D%0A      List%3CE%3E edgeList = adjacencyMap.get(node);%0D%0A      %09%09if (edgeList != null) %7B%0D%0A      %09%09%09for (E edge : edgeList) %7B%0D%0A      %09%09%09%09N adjacentNode = getNode(edge, node);%0D%0A      %09%09%09%09adjacencyMap.get(adjacentNode).remove(edge);%0D%0A      %09%09%09%7D%0D%0A      %09%09%09adjacencyMap.remove(node);%0D%0A      %09%09%09return true;%0D%0A      %09%09%7D else %7B%0D%0A      %09%09%09return false;%0D%0A      %09%09%7D%0D%0A      %09%7D%0D%0A   @Override%0D%0A   public boolean removeEdge (E edge) %0D%0A   %7B%0D%0A      N nodeIn = edge.getNodeIn();%0D%0A      %09%09N nodeOut = edge.getNodeOut();%0D%0A      %09%09if (nodeIn != null &amp;&amp; nodeOut != null) %7B%0D%0A      %09%09%09List%3CE%3E edgeListIn = adjacencyMap.get(nodeIn);%0D%0A      %09%09%09List%3CE%3E edgeListOut = adjacencyMap.get(nodeOut);%0D%0A      %09%09%09if (edgeListIn != null &amp;&amp; edgeListOut != null) %7B%0D%0A      %09%09%09%09boolean inRemoval = edgeListIn.remove(edge);%0D%0A      %09%09%09%09boolean outRemoval = edgeListIn.remove(edge);%0D%0A      %09%09%09%09if (inRemoval == true &amp;&amp; outRemoval == true) %7B%0D%0A      %09%09%09%09%09return true;%0D%0A      %09%09%09%09%7D%0D%0A      %09%09%09%7D%0D%0A      %09%09%7D%0D%0A      %09%09return false;%0D%0A      %09%7D%0D%0A   @Override%0D%0A   public List%3CE%3E getPath (N source, N destination) %0D%0A   %7B%0D%0A      Map%3CN, E%3E pathSource = new HashMap%3CN, E%3E();%0D%0A      %09%09List%3CN%3E visited = new ArrayList%3CN%3E();%0D%0A      %09%09Queue%3CN%3E queue = new ArrayDeque%3CN%3E();%0D%0A      %09%09visited.add(source);%0D%0A      %09%09queue.add(source);%0D%0A      %09%09N node;%0D%0A      %09%09while (queue.isEmpty() == false) %7B%0D%0A      %09%09%09node = queue.poll();%0D%0A      %09%09%09for(E edge: adjacencyMap.get(node)) %7B%0D%0A      %09%09%09%09node = getNode(edge, node);%0D%0A      %09%09%09%09if (visited.contains(node) == false) %7B%0D%0A      %09%09%09%09%09visited.add(node);%0D%0A      %09%09%09%09%09pathSource.put(node, edge);%0D%0A      %09%09%09%09%09queue.add(node);%0D%0A      %09%09%09%09%7D%0D%0A      %09%09%09%7D%0D%0A      %09%09%7D%0D%0A      %09%09List%3CE%3E edgeList= new ArrayList%3CE%3E();%0D%0A      %09%09node = destination;%0D%0A      %09%09while (node != source) %7B%0D%0A      %09%09%09E edge = pathSource.get(node);%0D%0A      %09%09%09edgeList.add(edge);%0D%0A      %09%09%09node = getNode(edge, node);%0D%0A      %09%09%7D%0D%0A      %09%09return edgeList;%0D%0A      %09%7D%0D%0A   private boolean containsEdge(E edge) %7B%0D%0A      for (List%3CE%3E edgeList : adjacencyMap.values()) %7B%0D%0A      %09%09%09if (edgeList.contains(edge)) %7B%0D%0A      %09%09%09%09return true;%0D%0A      %09%09%09%7D%0D%0A      %09%09%7D%0D%0A      %09%09return false;%0D%0A      %09%7D%0D%0A   %0D%0A   private N getNode(E edge, N node) %7B%0D%0A      N nodeIn = edge.getNodeIn();%0D%0A      %09%09if (nodeIn != node) %7B%0D%0A      %09%09%09return nodeIn;%0D%0A      %09%09%7D else %7B%0D%0A      %09%09%09return edge.getNodeOut();%0D%0A      %09%09%7D%0D%0A      %09%7D%0D%0A   %0D%0A   public class E %7B%0D%0A   %7D%0D%0A   %7D%0D%0A&#xA;" conflicting="false"/>
   <UMLLabProfile:Patch xmi:id="_pBuhYKglEeelWZ9aCTRdAA" base_Element="_k974sKddEee4N_F427T3yQ" patchText="@@ -1,2043 +0,0 @@&#xA;-import java.util.Set;%0D%0Aimport java.util.HashSet;%0D%0A%0D%0Apublic class Metro %7B%0D%0A   private MultiGraph %3CStation, Route%3CStation%3E%3E graph;%0D%0A   /**%0D%0A    * %3Cpre%3E%0D%0A    *           0..*     0..*%0D%0A    * Metro ------------------------%3E Station%0D%0A    *           metro        &amp;gt;       station%0D%0A    * %3C/pre%3E%0D%0A    */%0D%0A   private Set%3CStation%3E station;%0D%0A   %0D%0A   public Set%3CStation%3E getStation() %7B%0D%0A      if (this.station == null) %7B%0D%0A         this.station = new HashSet%3CStation%3E();%0D%0A      %7D%0D%0A      return this.station;%0D%0A   %7D%0D%0A   %0D%0A   /**%0D%0A    * %3Cpre%3E%0D%0A    *           0..*     0..*%0D%0A    * Metro ------------------------%3E Route%0D%0A    *           metro        &amp;gt;       route%0D%0A    * %3C/pre%3E%0D%0A    */%0D%0A   private Set%3CRoute%3E route;%0D%0A   %0D%0A   public Set%3CRoute%3E getRoute() %7B%0D%0A      if (this.route == null) %7B%0D%0A         this.route = new HashSet%3CRoute%3E();%0D%0A      %7D%0D%0A      return this.route;%0D%0A   %7D%0D%0A   %0D%0A   /**%0D%0A    * %3Cpre%3E%0D%0A    *           0..*     0..*%0D%0A    * Metro ------------------------%3E Parser%0D%0A    *           metro        &amp;gt;       parser%0D%0A    * %3C/pre%3E%0D%0A    */%0D%0A   private Set%3CParser%3E parser;%0D%0A   %0D%0A   public Set%3CParser%3E getParser() %7B%0D%0A      if (this.parser == null) %7B%0D%0A         this.parser = new HashSet%3CParser%3E();%0D%0A      %7D%0D%0A      return this.parser;%0D%0A   %7D%0D%0A   %0D%0A   public String %3CStation%3E findPath(String startName, String endName) %7B%0D%0A      Station start = getStation(startName);%0D%0A      %09%09Station end = getStation(endName);%0D%0A      %09%09if (start != null &amp;&amp; end != null) %7B%0D%0A      %09%09%09return graph.getPath(start, end);%0D%0A      %09%09%7D else %7B%0D%0A      %09%09%09return null;%0D%0A      %09%09%7D%0D%0A      %09%7D%0D%0A   %0D%0A   public Station getStation(String name) %7B%0D%0A      for (Station station : graph.getNodes()) %7B%0D%0A      %09%09%09if (station.getName().equals(name)) %7B%0D%0A      %09%09%09%09return station;%0D%0A      %09%09%09%7D%0D%0A      %09%09%7D%09%09%0D%0A      %09%09return null;%0D%0A      %09%7D%0D%0A   %0D%0A   public Metro () %7B%0D%0A      graph = new AdjacencyMapMultiGraph%3C%3E();%0D%0A      %09%7D%0D%0A   %0D%0A   public void populate(String fileName) %7B%0D%0A      // TODO implement this operation%0D%0A      throw new UnsupportedOperationException(%22not implemented%22);%0D%0A   %7D%0D%0A   %0D%0A   %7D%0D%0A&#xA;" conflicting="false"/>
   <UMLLabProfile:Reference xmi:id="_pz-LwKgnEeelWZ9aCTRdAA" base_Element="_pz9ksKgnEeelWZ9aCTRdAA"/>
-  <UMLLabProfile:Generics xmi:id="_vRZ-QKzcEee4NZ-NUWnz-g" genericsValue="Integer" base_Element="_vRYwIKzcEee4NZ-NUWnz-g"/>
   <UMLLabProfile:LegacyStyledElement xmi:id="_yeTYEKzcEee4NZ-NUWnz-g" base_Element="_yeSxAKzcEee4NZ-NUWnz-g"/>
+  <UMLLabProfile:Generics xmi:id="_NcDGAKzfEee4NZ-NUWnz-g" genericsValue="Integer" base_Element="_yeUmMKzcEee4NZ-NUWnz-g"/>
 </xmi:XMI>

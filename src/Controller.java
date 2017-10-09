@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Controller {
 	private Metro model;
@@ -38,8 +39,8 @@ public class Controller {
     */
 
    private void findPathMenu() {
-       ArrayList<Integer> startIds = new ArrayList<>();
-       ArrayList<Integer> endIds = new ArrayList<>();
+       List<Integer> startIds = new ArrayList<>();
+       List<Integer> endIds = new ArrayList<>();
        String startName = "";
        String endName = "";
        int startIdIndex;
@@ -79,10 +80,10 @@ public class Controller {
    }
 
 
-    private int clarifyStationChoice(ArrayList<Integer> stationIDs, String stationName) {
+    private int clarifyStationChoice(List<Integer> stationIDs, String stationName) {
     	int choice;
         view.output("There appears to be more than one station with that name");
-        ArrayList<ArrayList<String>> nearbyStations = new ArrayList<>();
+        List<List<String>> nearbyStations = new ArrayList<>();
         for (int id : stationIDs) {
             nearbyStations.add(model.getNearbyStations(id));
         }
