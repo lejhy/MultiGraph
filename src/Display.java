@@ -1,3 +1,4 @@
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class Display {
@@ -9,8 +10,15 @@ public class Display {
    }
 
    public String readLine() {
-      reader = new Scanner(System.in);
-      return reader.nextLine().trim();
+      try {
+         reader = new Scanner(System.in);
+         return reader.nextLine().trim();
+      }
+      catch(NoSuchElementException a) {
+         output("Exiting in response to CTRL+D");
+         System.exit(0);
+      }
+      return null;
    }
 
    public int getMenuChoice(int limit) {
@@ -32,6 +40,10 @@ public class Display {
          catch (NumberFormatException e) {
             output("Sorry, this menu will only accept whole numbers. Please enter a valid menu choice");
             printPrompt();
+         }
+         catch (NoSuchElementException e) {
+            output("Exiting in response to CTRL+D");
+            System.exit(0);
          }
       }
    }
