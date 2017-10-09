@@ -4,7 +4,14 @@
     <eAnnotations xmi:id="_ksKzQKddEee4N_F427T3yQ" source="http://ns.yatta.de/umllab">
       <contents xmi:type="ecore:EAnnotation" xmi:id="_ksKzQaddEee4N_F427T3yQ" source="codegen">
         <details xmi:id="_ksLaUKddEee4N_F427T3yQ" key="codegenDirectory" value="/w02-multigraph/src"/>
-        <details xmi:id="_scFFQKddEee4N_F427T3yQ" key="AssociatedSourceCode" value="/Metro/src/MultiGraph.java;3867106341/1;/Metro/src/LabeledEdge.java;3239313891/1;/Metro/src/Route.java;2051857071/1;/Metro/src/Display.java;3092925843/1;/Metro/src/Controller.java;2835783190/1;/Metro/src/Station.java;3872793795/1;/Metro/src/Parser.java;844469754/1;"/>
+        <details xmi:id="_scFFQKddEee4N_F427T3yQ" key="AssociatedSourceCode" value="/Metro/src/MultiGraph.java;2788057972/1;/Metro/src/LabeledEdge.java;3239313891/1;/Metro/src/Route.java;2051857071/1;/Metro/src/Display.java;2685728325/1;/Metro/src/Controller.java;4223611413/1;/Metro/src/Station.java;1410879963/1;/Metro/src/Parser.java;2749606967/1;"/>
+      </contents>
+      <contents xmi:type="ecore:EAnnotation" xmi:id="_yMHb4KzcEee4NZ-NUWnz-g" source="preferences">
+        <contents xmi:type="ecore:EAnnotation" xmi:id="_yMHb4azcEee4NZ-NUWnz-g" source="com.yattasolutions.codegen.reverse">
+          <details xmi:id="_yMHb4qzcEee4NZ-NUWnz-g" key="com.yattasolutions.codegen.reverse.roundtrip.ReverseEngineerNewFiles" value="true"/>
+          <details xmi:id="_yMHb46zcEee4NZ-NUWnz-g" key="com.yattasolutions.codegen.reverse.roundtrip.ReverseEngineerChangedFiles" value="true"/>
+          <details xmi:id="_yMHb5KzcEee4NZ-NUWnz-g" key="com.yattasolutions.codegen.reverse.roundtrip.RemoveDeletedFiles" value="true"/>
+        </contents>
       </contents>
     </eAnnotations>
     <elementImport xmi:id="_k9fMwKddEee4N_F427T3yQ">
@@ -772,9 +779,6 @@
       </eAnnotations>
       <ownedAttribute xmi:id="_k_gmAKddEee4N_F427T3yQ" name="model" visibility="private" type="_k974sKddEee4N_F427T3yQ" association="_k_8q4addEee4N_F427T3yQ"/>
       <ownedAttribute xmi:id="_k_hNEKddEee4N_F427T3yQ" name="view" visibility="private" type="_k90j8KddEee4N_F427T3yQ" association="_k_9R8addEee4N_F427T3yQ"/>
-      <ownedAttribute xmi:id="_k_hNEqddEee4N_F427T3yQ" name="keepGoing" visibility="private">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
-      </ownedAttribute>
       <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_k_taVKddEee4N_F427T3yQ" name="Controller" specification="_k9wSgKddEee4N_F427T3yQ">
         <ownedParameter xmi:id="_9vltAKgkEeelWZ9aCTRdAA" type="_k9vEYKddEee4N_F427T3yQ" direction="return">
           <name xsi:nil="true"/>
@@ -783,145 +787,120 @@
         <body>view = new Display();&#xD;
    model = new Metro();&#xD;
    model.populate(&quot;data.txt&quot;);&#xD;
-   keepGoing=true;&#xD;
 </body>
       </ownedBehavior>
-      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_k_taVaddEee4N_F427T3yQ" name="menu" specification="_k9wSgaddEee4N_F427T3yQ">
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_k_taVaddEee4N_F427T3yQ" name="mainMenu" specification="_k9wSgaddEee4N_F427T3yQ">
         <language>java</language>
         <body>boolean isRunning= true;&#xD;
 	   while(isRunning) {&#xD;
-        view.printMenu();&#xD;
-        int result = view.readInt();&#xD;
-        boolean checkMenu = isValidMenuChoice(result);&#xD;
-        if(checkMenu) {&#xD;
-            if(result==2)&#xD;
-                isRunning=false;&#xD;
-            else if(result==1) {&#xD;
-                String[] startAndEnd = retrieveStartAndEnd();&#xD;
-                if(!keepGoing) {&#xD;
-                    keepGoing=true;&#xD;
-                    continue;&#xD;
-                }&#xD;
-                findPath(startAndEnd);&#xD;
-            }&#xD;
+        view.output(&quot;\nWould you like to:\n1. Plan your route \n2. Exit&quot;);&#xD;
+        int result = view.getMenuChoice(2);&#xD;
+        if(result==2) {&#xD;
+            isRunning = false;&#xD;
+        } else if(result==1) {&#xD;
+            findPathMenu();&#xD;
         }&#xD;
     }&#xD;
 &#xD;
 </body>
       </ownedBehavior>
-      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_k_uBYKddEee4N_F427T3yQ" name="retrieveStartAndEnd" specification="_k9w5kKddEee4N_F427T3yQ">
-        <ownedParameter xmi:id="_k_uBYaddEee4N_F427T3yQ" direction="return">
-          <name xsi:nil="true"/>
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_k_uBYqddEee4N_F427T3yQ" value="*"/>
-        </ownedParameter>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_k_uBY6ddEee4N_F427T3yQ" name="findPathMenu" specification="_k9xgoaddEee4N_F427T3yQ">
         <language>java</language>
-        <body>boolean checkStation = false;&#xD;
-    String start = &quot;&quot;;&#xD;
-    String end = &quot;&quot;;&#xD;
-    while(!checkStation &amp;&amp; keepGoing) {&#xD;
-        start = view.getStation(&quot;Please enter your starting station&quot;);&#xD;
-        if(!keepGoing)&#xD;
-            break;&#xD;
-        checkStation = isStation(start);&#xD;
-        if(!checkStation)&#xD;
+        <body>ArrayList&lt;Integer> startIds = new ArrayList&lt;>();&#xD;
+    ArrayList&lt;Integer> endIds = new ArrayList&lt;>();&#xD;
+    String startName = &quot;&quot;;&#xD;
+    String endName = &quot;&quot;;&#xD;
+    int startIdIndex;&#xD;
+    int endIdIndex;&#xD;
+    &#xD;
+    while(startIds.size() &lt; 1) {&#xD;
+ 	   startName = view.requestStation(&quot;Please enter your starting station&quot;);&#xD;
+ 	   startIds = model.getStationsOfSameName(startName);&#xD;
+        if (startIds.size() &lt; 1)&#xD;
             view.output(&quot;Sorry, that is not a valid station&quot;);&#xD;
     }&#xD;
-&#xD;
-    checkStation=false;&#xD;
-    while(!checkStation &amp;&amp; keepGoing) {&#xD;
-        end = view.getStation(&quot;Please enter your destination station&quot;);&#xD;
-        if(!keepGoing)&#xD;
-            break;&#xD;
-        checkStation = isStation(end);&#xD;
-        if(!checkStation)&#xD;
+    &#xD;
+    if (startIds.size() > 1) {&#xD;
+ 	   startIdIndex = clarifyStationChoice(startIds, startName);&#xD;
+    } else {&#xD;
+ 	   startIdIndex = 0;&#xD;
+    }&#xD;
+    &#xD;
+    while(endIds.size() &lt; 1) {&#xD;
+ 	   endName = view.requestStation(&quot;Please enter your destination station&quot;);&#xD;
+        endIds = model.getStationsOfSameName(endName);&#xD;
+        if (endIds.size() &lt; 1)&#xD;
             view.output(&quot;Sorry, that is not a valid station&quot;);&#xD;
     }&#xD;
-&#xD;
-    String[] stations = new String[2];&#xD;
-    stations[0] = start;&#xD;
-    stations[1] = end;&#xD;
-    return stations;&#xD;
-&#xD;
-&#xD;
-</body>
-      </ownedBehavior>
-      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_k_uBY6ddEee4N_F427T3yQ" name="findPath" specification="_k9xgoaddEee4N_F427T3yQ">
-        <ownedParameter xmi:id="_k_uBZKddEee4N_F427T3yQ" name="stations">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_k_uBZaddEee4N_F427T3yQ" value="*"/>
-        </ownedParameter>
-        <language>java</language>
-        <body>model.findPath(stations[0], stations[1]);&#xD;
-&#xD;
-</body>
-      </ownedBehavior>
-      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_k_uBZqddEee4N_F427T3yQ" name="isStation" specification="_k9yHsqddEee4N_F427T3yQ">
-        <ownedParameter xmi:id="_k_uBZ6ddEee4N_F427T3yQ" name="station">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedParameter>
-        <ownedParameter xmi:id="_k_uBaKddEee4N_F427T3yQ" direction="return">
-          <name xsi:nil="true"/>
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
-        </ownedParameter>
-        <language>java</language>
-        <body>if(station==null) {&#xD;
-        return false;&#xD;
+    &#xD;
+    if(endIds.size() > 1) {&#xD;
+ 	   endIdIndex = clarifyStationChoice(endIds, endName);&#xD;
+    } else {&#xD;
+ 	   endIdIndex = 0;&#xD;
     }&#xD;
-   if(model.getStation(station)!=null)&#xD;
-       return true;&#xD;
-   else&#xD;
-       return false;&#xD;
+    &#xD;
+    if (startIds.get(startIdIndex) == endIds.get(endIdIndex)) {&#xD;
+ 	   view.output(&quot;You are already on &quot; + endName);&#xD;
+    } else {&#xD;
+ 	   view.output(model.findPath(startIds.get(startIdIndex), endIds.get(endIdIndex)));&#xD;
+    }&#xD;
 </body>
       </ownedBehavior>
-      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_k_uBaaddEee4N_F427T3yQ" name="isValidMenuChoice" specification="_k9yuwqddEee4N_F427T3yQ">
-        <ownedParameter xmi:id="_k_uBaqddEee4N_F427T3yQ" name="choice">
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_k_uBZqddEee4N_F427T3yQ" name="clarifyStationChoice" specification="_k9yHsqddEee4N_F427T3yQ">
+        <ownedParameter xmi:id="_yeUmMKzcEee4NZ-NUWnz-g" name="stationIDs" type="_k-zbYaddEee4N_F427T3yQ"/>
+        <ownedParameter xmi:id="_yeUmMazcEee4NZ-NUWnz-g" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
         </ownedParameter>
-        <ownedParameter xmi:id="_k_uBa6ddEee4N_F427T3yQ" direction="return">
-          <name xsi:nil="true"/>
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        <ownedParameter xmi:id="_yeUmMqzcEee4NZ-NUWnz-g" name="stationName">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
         <language>java</language>
-        <body>if(choice>0 &amp;&amp; choice&lt; 3)&#xD;
-       return true;&#xD;
-   else&#xD;
-       return false;&#xD;
-</body>
+        <body>int choice;&#xD;
+     view.output(&quot;There appears to be more than one station with that name&quot;);&#xD;
+     ArrayList&lt;ArrayList&lt;String>> nearbyStations = new ArrayList&lt;>();&#xD;
+     for (int id : stationIDs) {&#xD;
+         nearbyStations.add(model.getNearbyStations(id));&#xD;
+     }&#xD;
+     &#xD;
+     view.output(&quot;Would you like to select the &quot; + stationName + &quot; station next to:&quot;);&#xD;
+     for (int i = 0; i &lt; nearbyStations.size(); i++) {&#xD;
+     	String stations = (i+1) + &quot;. &quot;;&#xD;
+         for (String station : nearbyStations.get(i)) {&#xD;
+             stations += station + &quot;, &quot;;&#xD;
+         }&#xD;
+         view.output(stations);&#xD;
+     }&#xD;
+     choice = view.getMenuChoice(nearbyStations.size());&#xD;
+     return choice-1;&#xD;
+ </body>
       </ownedBehavior>
       <ownedOperation xmi:id="_k9wSgKddEee4N_F427T3yQ" name="Controller" visibility="public" method="_k_taVKddEee4N_F427T3yQ">
         <eAnnotations xmi:id="_9vke4KgkEeelWZ9aCTRdAA" source="http://www.eclipse.org/uml2/2.0.0/UML">
           <details xmi:id="_9vke4agkEeelWZ9aCTRdAA" key="create"/>
         </eAnnotations>
+        <ownedComment xmi:id="_vR3RQKzcEee4NZ-NUWnz-g">
+          <body>Initialise the Metro model and display &#xD;
+    * Tell model to initialise all data necessary</body>
+        </ownedComment>
         <ownedParameter xmi:id="_9vke4qgkEeelWZ9aCTRdAA" type="_k9vEYKddEee4N_F427T3yQ" direction="return"/>
       </ownedOperation>
-      <ownedOperation xmi:id="_k9wSgaddEee4N_F427T3yQ" name="menu" visibility="public" method="_k_taVaddEee4N_F427T3yQ"/>
-      <ownedOperation xmi:id="_k9w5kKddEee4N_F427T3yQ" name="retrieveStartAndEnd" visibility="private" method="_k_uBYKddEee4N_F427T3yQ">
-        <ownedParameter xmi:id="_k9w5kaddEee4N_F427T3yQ" direction="return">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_k9w5kqddEee4N_F427T3yQ" value="*"/>
-        </ownedParameter>
+      <ownedOperation xmi:id="_k9wSgaddEee4N_F427T3yQ" name="mainMenu" visibility="public" method="_k_taVaddEee4N_F427T3yQ">
+        <ownedComment xmi:id="_vR3RQazcEee4NZ-NUWnz-g">
+          <body>Core loop which will continue until the user has specified to exit</body>
+        </ownedComment>
       </ownedOperation>
-      <ownedOperation xmi:id="_k9xgoaddEee4N_F427T3yQ" name="findPath" visibility="private" method="_k_uBY6ddEee4N_F427T3yQ">
-        <ownedParameter xmi:id="_k9xgoqddEee4N_F427T3yQ" name="stations">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_k9yHsKddEee4N_F427T3yQ" value="*"/>
-        </ownedParameter>
+      <ownedOperation xmi:id="_k9xgoaddEee4N_F427T3yQ" name="findPathMenu" visibility="private" method="_k_uBY6ddEee4N_F427T3yQ">
+        <ownedComment xmi:id="_vR3RQqzcEee4NZ-NUWnz-g">
+          <body> Prompt display to give the starting point and destination</body>
+        </ownedComment>
       </ownedOperation>
-      <ownedOperation xmi:id="_k9yHsqddEee4N_F427T3yQ" name="isStation" visibility="private" method="_k_uBZqddEee4N_F427T3yQ">
-        <ownedParameter xmi:id="_k9yuwKddEee4N_F427T3yQ" name="station">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedParameter>
-        <ownedParameter xmi:id="_k9yuwaddEee4N_F427T3yQ" direction="return">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
-        </ownedParameter>
-      </ownedOperation>
-      <ownedOperation xmi:id="_k9yuwqddEee4N_F427T3yQ" name="isValidMenuChoice" visibility="private" method="_k_uBaaddEee4N_F427T3yQ">
-        <ownedParameter xmi:id="_k9yuw6ddEee4N_F427T3yQ" name="choice">
+      <ownedOperation xmi:id="_k9yHsqddEee4N_F427T3yQ" name="clarifyStationChoice" visibility="private" method="_k_uBZqddEee4N_F427T3yQ">
+        <ownedParameter xmi:id="_vRYwIKzcEee4NZ-NUWnz-g" name="stationIDs" type="_k-zbYaddEee4N_F427T3yQ"/>
+        <ownedParameter xmi:id="_vRy_0KzcEee4NZ-NUWnz-g" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
         </ownedParameter>
-        <ownedParameter xmi:id="_k9zV0KddEee4N_F427T3yQ" direction="return">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        <ownedParameter xmi:id="_k_uBZ6ddEee4N_F427T3yQ" name="stationName">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
       </ownedOperation>
     </packagedElement>
@@ -946,37 +925,48 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
         <language>java</language>
-        <body>return reader.nextLine();&#xD;
+        <body>reader = new Scanner(System.in);&#xD;
+   return reader.nextLine().trim();&#xD;
 </body>
       </ownedBehavior>
-      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_k_uodKddEee4N_F427T3yQ" name="readInt" specification="_k92ZIaddEee4N_F427T3yQ">
-        <ownedParameter xmi:id="_k_uodaddEee4N_F427T3yQ" direction="return">
-          <name xsi:nil="true"/>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_k_uodqddEee4N_F427T3yQ" name="getMenuChoice" specification="_k93AMKddEee4N_F427T3yQ">
+        <ownedParameter xmi:id="_yeUmM6zcEee4NZ-NUWnz-g" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_yeUmNKzcEee4NZ-NUWnz-g" name="limit">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
         </ownedParameter>
         <language>java</language>
-        <body>return reader.nextInt();&#xD;
+        <body>int choice;&#xD;
+	  &#xD;
+	  output(&quot;Please enter the number of the option you require&quot;);&#xD;
+	  printPrompt();&#xD;
+   while(true) {&#xD;
+      try {&#xD;
+         choice = Integer.parseInt(reader.next());&#xD;
+         if(choice &lt; 1 || choice > limit) {&#xD;
+            output(&quot;Sorry, that number is not an option. Please enter a number between 1 and &quot; + limit + &quot; for this menu&quot;);&#xD;
+            printPrompt();&#xD;
+         }&#xD;
+         else {&#xD;
+            return choice;&#xD;
+         }&#xD;
+      }&#xD;
+      catch (NumberFormatException e) {&#xD;
+         output(&quot;Sorry, this menu will only accept whole numbers. Please enter a valid menu choice&quot;);&#xD;
+         printPrompt();&#xD;
+      }&#xD;
+   }&#xD;
 </body>
       </ownedBehavior>
-      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_k_uodqddEee4N_F427T3yQ" name="printMenu" specification="_k93AMKddEee4N_F427T3yQ">
-        <language>java</language>
-        <body>output(&quot;Would you like to 1.Plan your route or 2.exit&quot;);&#xD;
-   output(&quot;Please enter the number of the option you require&quot;);&#xD;
-   printPrompt();&#xD;
-</body>
-      </ownedBehavior>
-      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_k_uod6ddEee4N_F427T3yQ" name="getStation" specification="_k93AMaddEee4N_F427T3yQ">
-        <ownedParameter xmi:id="_k_uoeKddEee4N_F427T3yQ" name="line">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-        </ownedParameter>
-        <ownedParameter xmi:id="_k_uoeaddEee4N_F427T3yQ" direction="return">
-          <name xsi:nil="true"/>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_k_uod6ddEee4N_F427T3yQ" name="requestStation" specification="_k93AMaddEee4N_F427T3yQ">
+        <ownedParameter xmi:id="_yeUmNazcEee4NZ-NUWnz-g" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
         <language>java</language>
         <body>output(line);&#xD;
-	   printPrompt();&#xD;
-	   return readLine();&#xD;
+	  printPrompt();&#xD;
+	  return readLine();&#xD;
 </body>
       </ownedBehavior>
       <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_k_vPgKddEee4N_F427T3yQ" name="output" specification="_k93nQKddEee4N_F427T3yQ">
@@ -1001,17 +991,19 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_k92ZIaddEee4N_F427T3yQ" name="readInt" method="_k_uodKddEee4N_F427T3yQ">
-        <ownedParameter xmi:id="_k92ZIqddEee4N_F427T3yQ" direction="return">
+      <ownedOperation xmi:id="_k93AMKddEee4N_F427T3yQ" name="getMenuChoice" method="_k_uodqddEee4N_F427T3yQ">
+        <ownedParameter xmi:id="_yePtsKzcEee4NZ-NUWnz-g" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_yePtsazcEee4NZ-NUWnz-g" name="limit">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_k93AMKddEee4N_F427T3yQ" name="printMenu" method="_k_uodqddEee4N_F427T3yQ"/>
-      <ownedOperation xmi:id="_k93AMaddEee4N_F427T3yQ" name="getStation" method="_k_uod6ddEee4N_F427T3yQ">
-        <ownedParameter xmi:id="_k93AMqddEee4N_F427T3yQ" name="line">
+      <ownedOperation xmi:id="_k93AMaddEee4N_F427T3yQ" name="requestStation" method="_k_uod6ddEee4N_F427T3yQ">
+        <ownedParameter xmi:id="_yePtsqzcEee4NZ-NUWnz-g" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
-        <ownedParameter xmi:id="_k93AM6ddEee4N_F427T3yQ" direction="return">
+        <ownedParameter xmi:id="_k_uoeKddEee4N_F427T3yQ" name="line">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
       </ownedOperation>
@@ -1141,12 +1133,10 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:id="_k_XcEaddEee4N_F427T3yQ" name="addEdge">
-        <ownedParameter xmi:id="_k_XcEqddEee4N_F427T3yQ" name="node1" type="_k_LO0KddEee4N_F427T3yQ"/>
-        <ownedParameter xmi:id="_k_XcE6ddEee4N_F427T3yQ" name="node2" type="_k_LO0KddEee4N_F427T3yQ"/>
-        <ownedParameter xmi:id="_k_XcFKddEee4N_F427T3yQ" name="edge" type="_VNiUgqd9EeexV7QKogiYQw"/>
-        <ownedParameter xmi:id="_k_YDIKddEee4N_F427T3yQ" direction="return">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+      <ownedOperation xmi:id="_k_XcEaddEee4N_F427T3yQ" name="getAdjacentNodes">
+        <ownedParameter xmi:id="_k_XcEqddEee4N_F427T3yQ" name="node" type="_k_LO0KddEee4N_F427T3yQ"/>
+        <ownedParameter xmi:id="_k_YDIKddEee4N_F427T3yQ" type="_k_LO0KddEee4N_F427T3yQ" isOrdered="true" direction="return">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yeF8sKzcEee4NZ-NUWnz-g" value="*"/>
         </ownedParameter>
       </ownedOperation>
       <ownedOperation xmi:id="_k_YDIaddEee4N_F427T3yQ" name="removeNode">
@@ -1224,26 +1214,60 @@
         </ownedParameter>
         <language>java</language>
         <body>File file = new File(fileName);
+		Scanner fileScanner;
+		Scanner tokenScanner;
+		String currentLine;
+		int currentStationId;
+		Station currentStation;
+		int destinationStationId;
+		Route&lt;Station> route;
+		
 		try {
-			Scanner scanner = new Scanner(file);
+			fileScanner = new Scanner(file);
+			// Station with id 0 does not exist, but we add it anyway so that indexing of remaining stations starts from 1
 			stations.add(null);
-			while(scanner.hasNextLine()) {
-				stations.add(scanner.nextInt(), new Station(scanner.next()));
-				scanner.nextLine();
+			
+			// Scan through the file first time to create all stations and add them to the list
+			while(fileScanner.hasNextLine()) {
+				stations.add(new Station(fileScanner.nextInt(), fileScanner.next()));
+				fileScanner.nextLine();
 			}
-			scanner.close();
-			scanner = new Scanner(file);
-			while(scanner.hasNextLine()) {
-				Station origin = stations.get(scanner.nextInt());
-				scanner.next();
-				while(scanner.hasNext()) {
-					Route&lt;Station> route = new Route&lt;Station>(scanner.next());
-					route.setNodeIn(origin);
-					route.setNodeOut(stations.get(scanner.nextInt()));
-					routes.add(route);
+			
+			// Recreate the scanner to point at the beginning of the file
+			fileScanner.close();
+			fileScanner = new Scanner(file);
+			
+			// Scan through the file second time to create all edges and add them to the list
+			while(fileScanner.hasNextLine()) {
+				
+				// Get the line and its station object
+				currentLine = fileScanner.nextLine();
+				tokenScanner = new Scanner(currentLine);
+				currentStationId = tokenScanner.nextInt();
+				tokenScanner.next(); // station name
+				currentStation = stations.get(currentStationId);
+				
+				// Get all pairs of outgoing edges
+				while(tokenScanner.hasNext()) {
+					String routeName = tokenScanner.next();
+					for (int i = 0; i &lt; 2; i++) {
+						destinationStationId = tokenScanner.nextInt();
+						
+						// Create an edge only if it exists and points to a station with greater id to prevent duplicates 
+						if(destinationStationId != 0 &amp;&amp; destinationStationId >= currentStationId) {
+							route = new Route&lt;Station>(routeName);
+							route.setNodeIn(currentStation);
+							route.setNodeOut(stations.get(destinationStationId));
+							routes.add(route);
+						}
+					}
 				}
+				tokenScanner.close();
 			}
-			scanner.close();
+			fileScanner.close();
+			
+			// Do not forget to remove the non-existing station from the list now that the indeces do not matter anymore
+			stations.remove(0);
 		} catch (FileNotFoundException e) {
 			System.out.println(&quot;File not found in parseFile&quot;);
 		}
@@ -1330,25 +1354,59 @@
       <ownedAttribute xmi:id="_k_pv8KddEee4N_F427T3yQ" name="name">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_yeSxAKzcEee4NZ-NUWnz-g" name="id" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </ownedAttribute>
       <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_k_zg96ddEee4N_F427T3yQ" name="Station" specification="_k-Qo0KddEee4N_F427T3yQ">
-        <ownedParameter xmi:id="_k_zg-KddEee4N_F427T3yQ" name="name">
+        <ownedParameter xmi:id="_yeVNQKzcEee4NZ-NUWnz-g" name="name">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
-        <ownedParameter xmi:id="_k_zg-addEee4N_F427T3yQ" type="_k-QBwKddEee4N_F427T3yQ" direction="return">
-          <name xsi:nil="true"/>
+        <ownedParameter xmi:id="_yeVNQazcEee4NZ-NUWnz-g" type="_k-QBwKddEee4N_F427T3yQ" direction="return"/>
+        <ownedParameter xmi:id="_yeVNQqzcEee4NZ-NUWnz-g" name="id">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
         </ownedParameter>
         <language>java</language>
         <body>this.name = name;&#xD;
+	   this.id = id;&#xD;
+</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_yeV0UKzcEee4NZ-NUWnz-g" name="getID" specification="_yeLcQKzcEee4NZ-NUWnz-g">
+        <ownedParameter xmi:id="_yeV0UazcEee4NZ-NUWnz-g" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>return id;&#xD;
+</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_yeV0UqzcEee4NZ-NUWnz-g" name="setID" specification="_yeRi4KzcEee4NZ-NUWnz-g">
+        <ownedParameter xmi:id="_yeV0U6zcEee4NZ-NUWnz-g" name="id">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>this.id = id;&#xD;
 </body>
       </ownedBehavior>
       <ownedOperation xmi:id="_k-Qo0KddEee4N_F427T3yQ" name="Station" method="_k_zg96ddEee4N_F427T3yQ">
         <eAnnotations xmi:id="_k-Qo0qddEee4N_F427T3yQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
           <details xmi:id="_k-Qo06ddEee4N_F427T3yQ" key="create"/>
         </eAnnotations>
+        <ownedParameter xmi:id="_k-Qo1KddEee4N_F427T3yQ" type="_k-QBwKddEee4N_F427T3yQ" direction="return"/>
+        <ownedParameter xmi:id="_yeQ70KzcEee4NZ-NUWnz-g" name="id">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
         <ownedParameter xmi:id="_k-Qo0addEee4N_F427T3yQ" name="name">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
         </ownedParameter>
-        <ownedParameter xmi:id="_k-Qo1KddEee4N_F427T3yQ" type="_k-QBwKddEee4N_F427T3yQ" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_yeLcQKzcEee4NZ-NUWnz-g" name="getID" method="_yeV0UKzcEee4NZ-NUWnz-g">
+        <ownedParameter xmi:id="_yeQ70azcEee4NZ-NUWnz-g" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_yeRi4KzcEee4NZ-NUWnz-g" name="setID" method="_yeV0UqzcEee4NZ-NUWnz-g">
+        <ownedParameter xmi:id="_yeRi4azcEee4NZ-NUWnz-g" name="id">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
       </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_k_LO0KddEee4N_F427T3yQ" name="N"/>
@@ -4972,7 +5030,6 @@
   <UMLLabProfile:Annotations xmi:id="_k9oWsKddEee4N_F427T3yQ" base_Element="_k9nIkaddEee4N_F427T3yQ">
     <annotations xmi:id="_k9oWsaddEee4N_F427T3yQ" name="Override"/>
   </UMLLabProfile:Annotations>
-  <UMLLabProfile:Array xmi:id="_k9xgoKddEee4N_F427T3yQ" base_Element="_k9w5kKddEee4N_F427T3yQ"/>
   <UMLLabProfile:Generics xmi:id="_k96DgKddEee4N_F427T3yQ" genericsValue="N" base_Element="_k941YKddEee4N_F427T3yQ"/>
   <UMLLabProfile:Generics xmi:id="_k9-U8KddEee4N_F427T3yQ" genericsValue="Station" base_Element="_k99G0addEee4N_F427T3yQ"/>
   <UMLLabProfile:Generics xmi:id="_k-BYQKddEee4N_F427T3yQ" genericsValue="N, E extends LabeledEdge&lt;N>" base_Element="_k-AxMKddEee4N_F427T3yQ"/>
@@ -5013,7 +5070,6 @@
   <UMLLabProfile:LegacyStyledElement xmi:id="_k_fX4KddEee4N_F427T3yQ" base_Element="_k_disKddEee4N_F427T3yQ"/>
   <UMLLabProfile:LegacyStyledElement xmi:id="_k_gmAaddEee4N_F427T3yQ" base_Element="_k_gmAKddEee4N_F427T3yQ"/>
   <UMLLabProfile:LegacyStyledElement xmi:id="_k_hNEaddEee4N_F427T3yQ" base_Element="_k_hNEKddEee4N_F427T3yQ"/>
-  <UMLLabProfile:LegacyStyledElement xmi:id="_k_h0IKddEee4N_F427T3yQ" base_Element="_k_hNEqddEee4N_F427T3yQ"/>
   <UMLLabProfile:LegacyStyledElement xmi:id="_k_ibMKddEee4N_F427T3yQ" base_Element="_k_h0IaddEee4N_F427T3yQ"/>
   <UMLLabProfile:Generics xmi:id="_k_jpUKddEee4N_F427T3yQ" genericsValue="Station, Route&lt;Station>" base_Element="_k_jCQKddEee4N_F427T3yQ"/>
   <UMLLabProfile:LegacyStyledElement xmi:id="_k_jpUaddEee4N_F427T3yQ" base_Element="_k_jCQKddEee4N_F427T3yQ"/>
@@ -5349,4 +5405,6 @@
   <UMLLabProfile:Patch xmi:id="_pBsFIKglEeelWZ9aCTRdAA" base_Element="_k9cJcKddEee4N_F427T3yQ" patchText="@@ -1,3861 +0,0 @@&#xA;-import java.util.List;%0D%0A%0D%0Apublic class AdjacencyMapMultiGraph %3CN, E extends LabeledEdge%3CN%3E%3E implements MultiGraph %3CN, E%3E  %7B%0D%0A   private Map%3CN, List %3CE%3E %3E adjacencyMap;%0D%0A   public AdjacencyMapMultiGraph () %7B%0D%0A      adjacencyMap = new HashMap%3CN, List%3CE%3E%3E();%0D%0A      %09%7D%0D%0A   %0D%0A   @Override%0D%0A   public List%3CN%3E getNodes () %0D%0A   %7B%0D%0A      List%3CN%3E nodeList = new ArrayList%3CN%3E();%0D%0A      %09%09nodeList.addAll(adjacencyMap.keySet());%0D%0A      %09%09return nodeList;%0D%0A      %09%7D%0D%0A   @Override%0D%0A   public List%3CE%3E getEdges () %0D%0A   %7B%0D%0A      List%3CE%3E edgeList = new ArrayList%3CE%3E();%0D%0A      %09%09for (List%3CE%3E list : adjacencyMap.values()) %7B%0D%0A      %09%09%09edgeList.addAll(list);%0D%0A      %09%09%7D%0D%0A      %09%09return edgeList;%0D%0A      %09%7D%0D%0A   @Override%0D%0A   public boolean addNode (N node) %0D%0A   %7B%0D%0A      if (adjacencyMap.containsKey(node) == false) %7B%0D%0A      %09%09%09adjacencyMap.put(node, new ArrayList%3CE%3E());%0D%0A      %09%09%09return true;%0D%0A      %09%09%7D else %7B%0D%0A      %09%09%09return false;%0D%0A      %09%09%7D%0D%0A      %09%7D%0D%0A   @Override%0D%0A   public boolean addEdge (N nodeIn, N nodeOut, E edge) %0D%0A   %7B%0D%0A      List%3CE%3E edgeListIn = adjacencyMap.get(nodeIn);%0D%0A      %09%09List%3CE%3E edgeListOut = adjacencyMap.get(nodeOut);%0D%0A      %09%09if (edgeListIn != null &amp;&amp; edgeListOut != null &amp;&amp; containsEdge(edge) == false) %7B%0D%0A      %09%09%09edge.setNodeIn(nodeIn);%0D%0A      %09%09%09edge.setNodeOut(nodeOut);%0D%0A      %09%09%09edgeListIn.add(edge);%0D%0A      %09%09%09edgeListOut.add(edge);%0D%0A      %09%09%09return true;%0D%0A      %09%09%7D else %7B%0D%0A      %09%09%09return false;%0D%0A      %09%09%7D%0D%0A      %09%7D%0D%0A   @Override%0D%0A   public boolean removeNode (N node) %0D%0A   %7B%0D%0A      List%3CE%3E edgeList = adjacencyMap.get(node);%0D%0A      %09%09if (edgeList != null) %7B%0D%0A      %09%09%09for (E edge : edgeList) %7B%0D%0A      %09%09%09%09N adjacentNode = getNode(edge, node);%0D%0A      %09%09%09%09adjacencyMap.get(adjacentNode).remove(edge);%0D%0A      %09%09%09%7D%0D%0A      %09%09%09adjacencyMap.remove(node);%0D%0A      %09%09%09return true;%0D%0A      %09%09%7D else %7B%0D%0A      %09%09%09return false;%0D%0A      %09%09%7D%0D%0A      %09%7D%0D%0A   @Override%0D%0A   public boolean removeEdge (E edge) %0D%0A   %7B%0D%0A      N nodeIn = edge.getNodeIn();%0D%0A      %09%09N nodeOut = edge.getNodeOut();%0D%0A      %09%09if (nodeIn != null &amp;&amp; nodeOut != null) %7B%0D%0A      %09%09%09List%3CE%3E edgeListIn = adjacencyMap.get(nodeIn);%0D%0A      %09%09%09List%3CE%3E edgeListOut = adjacencyMap.get(nodeOut);%0D%0A      %09%09%09if (edgeListIn != null &amp;&amp; edgeListOut != null) %7B%0D%0A      %09%09%09%09boolean inRemoval = edgeListIn.remove(edge);%0D%0A      %09%09%09%09boolean outRemoval = edgeListIn.remove(edge);%0D%0A      %09%09%09%09if (inRemoval == true &amp;&amp; outRemoval == true) %7B%0D%0A      %09%09%09%09%09return true;%0D%0A      %09%09%09%09%7D%0D%0A      %09%09%09%7D%0D%0A      %09%09%7D%0D%0A      %09%09return false;%0D%0A      %09%7D%0D%0A   @Override%0D%0A   public List%3CE%3E getPath (N source, N destination) %0D%0A   %7B%0D%0A      Map%3CN, E%3E pathSource = new HashMap%3CN, E%3E();%0D%0A      %09%09List%3CN%3E visited = new ArrayList%3CN%3E();%0D%0A      %09%09Queue%3CN%3E queue = new ArrayDeque%3CN%3E();%0D%0A      %09%09visited.add(source);%0D%0A      %09%09queue.add(source);%0D%0A      %09%09N node;%0D%0A      %09%09while (queue.isEmpty() == false) %7B%0D%0A      %09%09%09node = queue.poll();%0D%0A      %09%09%09for(E edge: adjacencyMap.get(node)) %7B%0D%0A      %09%09%09%09node = getNode(edge, node);%0D%0A      %09%09%09%09if (visited.contains(node) == false) %7B%0D%0A      %09%09%09%09%09visited.add(node);%0D%0A      %09%09%09%09%09pathSource.put(node, edge);%0D%0A      %09%09%09%09%09queue.add(node);%0D%0A      %09%09%09%09%7D%0D%0A      %09%09%09%7D%0D%0A      %09%09%7D%0D%0A      %09%09List%3CE%3E edgeList= new ArrayList%3CE%3E();%0D%0A      %09%09node = destination;%0D%0A      %09%09while (node != source) %7B%0D%0A      %09%09%09E edge = pathSource.get(node);%0D%0A      %09%09%09edgeList.add(edge);%0D%0A      %09%09%09node = getNode(edge, node);%0D%0A      %09%09%7D%0D%0A      %09%09return edgeList;%0D%0A      %09%7D%0D%0A   private boolean containsEdge(E edge) %7B%0D%0A      for (List%3CE%3E edgeList : adjacencyMap.values()) %7B%0D%0A      %09%09%09if (edgeList.contains(edge)) %7B%0D%0A      %09%09%09%09return true;%0D%0A      %09%09%09%7D%0D%0A      %09%09%7D%0D%0A      %09%09return false;%0D%0A      %09%7D%0D%0A   %0D%0A   private N getNode(E edge, N node) %7B%0D%0A      N nodeIn = edge.getNodeIn();%0D%0A      %09%09if (nodeIn != node) %7B%0D%0A      %09%09%09return nodeIn;%0D%0A      %09%09%7D else %7B%0D%0A      %09%09%09return edge.getNodeOut();%0D%0A      %09%09%7D%0D%0A      %09%7D%0D%0A   %0D%0A   public class E %7B%0D%0A   %7D%0D%0A   %7D%0D%0A&#xA;" conflicting="false"/>
   <UMLLabProfile:Patch xmi:id="_pBuhYKglEeelWZ9aCTRdAA" base_Element="_k974sKddEee4N_F427T3yQ" patchText="@@ -1,2043 +0,0 @@&#xA;-import java.util.Set;%0D%0Aimport java.util.HashSet;%0D%0A%0D%0Apublic class Metro %7B%0D%0A   private MultiGraph %3CStation, Route%3CStation%3E%3E graph;%0D%0A   /**%0D%0A    * %3Cpre%3E%0D%0A    *           0..*     0..*%0D%0A    * Metro ------------------------%3E Station%0D%0A    *           metro        &amp;gt;       station%0D%0A    * %3C/pre%3E%0D%0A    */%0D%0A   private Set%3CStation%3E station;%0D%0A   %0D%0A   public Set%3CStation%3E getStation() %7B%0D%0A      if (this.station == null) %7B%0D%0A         this.station = new HashSet%3CStation%3E();%0D%0A      %7D%0D%0A      return this.station;%0D%0A   %7D%0D%0A   %0D%0A   /**%0D%0A    * %3Cpre%3E%0D%0A    *           0..*     0..*%0D%0A    * Metro ------------------------%3E Route%0D%0A    *           metro        &amp;gt;       route%0D%0A    * %3C/pre%3E%0D%0A    */%0D%0A   private Set%3CRoute%3E route;%0D%0A   %0D%0A   public Set%3CRoute%3E getRoute() %7B%0D%0A      if (this.route == null) %7B%0D%0A         this.route = new HashSet%3CRoute%3E();%0D%0A      %7D%0D%0A      return this.route;%0D%0A   %7D%0D%0A   %0D%0A   /**%0D%0A    * %3Cpre%3E%0D%0A    *           0..*     0..*%0D%0A    * Metro ------------------------%3E Parser%0D%0A    *           metro        &amp;gt;       parser%0D%0A    * %3C/pre%3E%0D%0A    */%0D%0A   private Set%3CParser%3E parser;%0D%0A   %0D%0A   public Set%3CParser%3E getParser() %7B%0D%0A      if (this.parser == null) %7B%0D%0A         this.parser = new HashSet%3CParser%3E();%0D%0A      %7D%0D%0A      return this.parser;%0D%0A   %7D%0D%0A   %0D%0A   public String %3CStation%3E findPath(String startName, String endName) %7B%0D%0A      Station start = getStation(startName);%0D%0A      %09%09Station end = getStation(endName);%0D%0A      %09%09if (start != null &amp;&amp; end != null) %7B%0D%0A      %09%09%09return graph.getPath(start, end);%0D%0A      %09%09%7D else %7B%0D%0A      %09%09%09return null;%0D%0A      %09%09%7D%0D%0A      %09%7D%0D%0A   %0D%0A   public Station getStation(String name) %7B%0D%0A      for (Station station : graph.getNodes()) %7B%0D%0A      %09%09%09if (station.getName().equals(name)) %7B%0D%0A      %09%09%09%09return station;%0D%0A      %09%09%09%7D%0D%0A      %09%09%7D%09%09%0D%0A      %09%09return null;%0D%0A      %09%7D%0D%0A   %0D%0A   public Metro () %7B%0D%0A      graph = new AdjacencyMapMultiGraph%3C%3E();%0D%0A      %09%7D%0D%0A   %0D%0A   public void populate(String fileName) %7B%0D%0A      // TODO implement this operation%0D%0A      throw new UnsupportedOperationException(%22not implemented%22);%0D%0A   %7D%0D%0A   %0D%0A   %7D%0D%0A&#xA;" conflicting="false"/>
   <UMLLabProfile:Reference xmi:id="_pz-LwKgnEeelWZ9aCTRdAA" base_Element="_pz9ksKgnEeelWZ9aCTRdAA"/>
+  <UMLLabProfile:Generics xmi:id="_vRZ-QKzcEee4NZ-NUWnz-g" genericsValue="Integer" base_Element="_vRYwIKzcEee4NZ-NUWnz-g"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_yeTYEKzcEee4NZ-NUWnz-g" base_Element="_yeSxAKzcEee4NZ-NUWnz-g"/>
 </xmi:XMI>
