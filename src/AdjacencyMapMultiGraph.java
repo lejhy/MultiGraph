@@ -10,7 +10,7 @@ public class AdjacencyMapMultiGraph<N, E extends LabeledEdge<N>> implements Mult
 	//N represents a Station using generics
 	//E represents the type LabeledEdge (The interface for the station class)
 	
-	private Map<N, List<E>> adjacencyMap; 
+	private Map<N, List<E>> adjacencyMap;
 
 	public AdjacencyMapMultiGraph() {
 		//creates the MultiGraph in the form of a HashMap
@@ -31,12 +31,15 @@ public class AdjacencyMapMultiGraph<N, E extends LabeledEdge<N>> implements Mult
 	@Override
 	public boolean addEdge(E edge) {
 		//Take in an edge and adds it to the graph
+
 		List<E> edgeListIn = adjacencyMap.get(edge.getNodeIn());
 		List<E> edgeListOut = adjacencyMap.get(edge.getNodeOut());
 		if (edgeListIn != null && edgeListOut != null && containsEdge(edge) == false) {
 			//If the nodes are found in the map and the edge to be added does not already exist
 			edgeListIn.add(edge);
 			edgeListOut.add(edge);
+            //asertions
+            assert this.containsEdge(edge) : edge.getLabel();
 			return true;
 		} else {
 			return false;
@@ -92,7 +95,8 @@ public class AdjacencyMapMultiGraph<N, E extends LabeledEdge<N>> implements Mult
 	@Override
 	public List<E> getEdges() {
 		//Returns a list of all edges in the MultiGraph
-		List<E> edgeList = new ArrayList<E>();
+
+        List<E> edgeList = new ArrayList<E>();
 		for (List<E> list : adjacencyMap.values()) {
 			edgeList.addAll(list);
 		}
@@ -102,6 +106,23 @@ public class AdjacencyMapMultiGraph<N, E extends LabeledEdge<N>> implements Mult
 	@Override
 	public List<E> getPath(N source, N destination) {
 		//Returns a path from one node to another in the form of a list of edges
+        assert adjacencyMap.containsKey(source) && adjacencyMap.containsKey(destination);
+
+		//checks multigraph has not been altered
+        class DataCopy {
+            private HashMap mapCopy;
+
+            DataCopy(){mapCopy = new HashMap();
+            mapCopy.putAll(adjacencyMap);
+            }
+            boolean isConsistent(){return mapCopy.equals(adjacencyMap);}
+            HashMap getMapCopy(){return mapCopy;}
+            }
+		DataCopy copy = null;
+		assert((copy = new DataCopy())!=null);
+        //
+
+
 		Map<N, E> pathSource = new HashMap<N, E>();
 		List<N> visited = new ArrayList<N>();
 		Queue<N> queue = new ArrayDeque<N>();
@@ -144,6 +165,7 @@ public class AdjacencyMapMultiGraph<N, E extends LabeledEdge<N>> implements Mult
 			edgePath.add(0, edge);
 			node = getNode(edge, node);
 		}
+		assert copy.isConsistent():"Original size: "+adjacencyMap.size() +" Current size: "+copy.getMapCopy().size();
 		return edgePath;
 	}
 	
